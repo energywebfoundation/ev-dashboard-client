@@ -465,6 +465,10 @@
     {
       "packageName": "@ev-dashboard-client/signer-provider-interface",
       "projectFolder": "packages/signer-provider-interface"
+    },
+    {
+      "packageName": "@ev-dashboard-client/asset-operator-server",
+      "projectFolder": "apps/asset-operator-server"
     }
     // 
     // {
