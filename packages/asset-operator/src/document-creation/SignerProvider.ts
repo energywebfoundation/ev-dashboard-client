@@ -1,4 +1,4 @@
-import { KeyManagerClient } from "../../key-manager-client/KeyManagerClient"
+import { KeyManagerClient } from "@ev-dashboard-client/key-manager-client"
 
 const keyManagerClient = new KeyManagerClient()
 

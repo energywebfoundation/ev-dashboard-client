@@ -1,6 +1,6 @@
 import { Wallet } from "ethers"
-import { KeyManager } from "../key-manager/key-manager"
-import { ISignerProvider } from "../signer-provider-interface/ISignerProvider"
+import { KeyManager } from "@ev-dashboard-client/key-manager"
+import { ISignerProvider } from "../../signer-provider-interface/src/ISignerProvider"
 
 export class KeyManagerClient implements ISignerProvider {
   private readonly keyManager: KeyManager

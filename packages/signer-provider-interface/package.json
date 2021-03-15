@@ -1,0 +1,16 @@
+{
+  "name": "@ev-dashboard-client/signer-provider-interface",
+  "version": "1.0.0",
+  "description": "An interface which provides access to a Signer for a given DID",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Energy Web",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ethers": "^4.0.48"
+  },
+  "devDependencies": {
+    "typescript": "~4.2.3"
+  }
+}

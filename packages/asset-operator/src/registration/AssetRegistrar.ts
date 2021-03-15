@@ -1,11 +1,10 @@
-import { Keys } from "@ew-did-registry/keys"
 import { getDIDFromAddress } from "../utils"
 import { AssetDB } from "./AssetDB"
 import { EvRegistry } from "./contracts/ev-registry"
 
 export class AssetRegistrar {
 
-  constructor(private readonly assetDB: AssetDB, private readonly operatorKeys: Keys) {
+  constructor(private readonly assetDB: AssetDB, private readonly evRegistry: EvRegistry) {
   }
 
   /**
@@ -24,8 +23,7 @@ export class AssetRegistrar {
       console.log("[ASSET] not cached, likely hasn't been registered")
     }
     console.log(`[${new Date()}]`, "[EV REGISTRY] adding entry", address, uid)
-    const registry = new EvRegistry(this.operatorKeys)
-    await registry.addDevice(address, uid)
+    await this.evRegistry.addDevice(address, uid)
     console.log(`[EV REGISTRY] Registered asset ${address}`)
     console.log(`[${new Date()}]`, "[ASSET] caching asset", did, uid)
     this.assetDB.setAssetIdentity({

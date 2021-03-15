@@ -1,5 +1,5 @@
 {
-  "name": "asset-operator",
+  "name": "@ev-dashboard-client/asset-operator",
   "version": "1.0.0",
   "description": "API for AssetOperators to enable their assets to participate in the ev-dashboard.",
   "scripts": {
@@ -12,6 +12,8 @@
     "@ethersproject/contracts": "^5.0.8",
     "@ethersproject/providers": "^5.0.16",
     "@ethersproject/wallet": "^5.0.8",
+    "@ev-dashboard-client/signer-provider-interface": "1.0.0",
+    "@ev-dashboard-client/key-manager-client": "1.0.0",
     "@ew-did-registry/did": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-document": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-ethr-resolver": "0.0.1-alpha.694.1",
@@ -19,7 +21,8 @@
     "@ew-did-registry/did-resolver-interface": "0.0.1-alpha.694.1",
     "@ew-did-registry/keys": "0.0.1-alpha.694.1",
     "better-sqlite3": "^5.4.3",
-    "ethers": "^4.0.48"
+    "ethers": "^4.0.48",
+    "web3-utils": "^1.3.0"
   },
   "devDependencies": {
     "typescript": "~4.2.3"

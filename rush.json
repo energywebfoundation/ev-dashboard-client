@@ -447,23 +447,23 @@
     // },
     // 
     {
-      "packageName": "asset-operator",
+      "packageName": "@ev-dashboard-client/asset-operator",
       "projectFolder": "packages/asset-operator"
     },
     {
-      "packageName": "key-manager",
+      "packageName": "@ev-dashboard-client/key-manager",
       "projectFolder": "packages/key-manager"
     },
     {
-      "packageName": "key-manager-client",
+      "packageName": "@ev-dashboard-client/key-manager-client",
       "projectFolder": "packages/key-manager-client"
     },
     {
-      "packageName": "prequalification-client",
+      "packageName": "@ev-dashboard-client/prequalification-client",
       "projectFolder": "packages/prequalification-client"
     },
     {
-      "packageName": "signer-provider-interface",
+      "packageName": "@ev-dashboard-client/signer-provider-interface",
       "projectFolder": "packages/signer-provider-interface"
     }
     // 

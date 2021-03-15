@@ -1,5 +1,9 @@
 import { Client, connect } from "nats"
-import { config } from "../../config/config"
+
+export interface NatsUrl {
+    host: string,
+    port: number
+}
 
 /**
  * Creates and monitors a NATS connection
@@ -8,16 +12,17 @@ import { config } from "../../config/config"
 export class NatsConnection {
     private static readonly logPrefix = "[NATS Connection]"
     private readonly createSubscriptions: (Client) => void
+    private readonly natsUrl: NatsUrl
     private natsClient: Client
 
-    constructor({ createSubscriptions }: { createSubscriptions: (Client) => void }) {
+    constructor({ createSubscriptions, natsUrl }: { createSubscriptions: (Client) => void, natsUrl: NatsUrl }) {
         this.createSubscriptions = createSubscriptions
+        this.natsUrl = natsUrl
         this.natsClient = this.connect()
     }
 
     private connect(): Client {
-        const assetIamConfig = config.prequalification.asset_claims_iam
-        const url = `${assetIamConfig.natsServerUrl}:${assetIamConfig.natsProtocolPort}`
+        const url = `${this.natsUrl.host}:${this.natsUrl.port}`
         console.log(`[NATS] Connecting to ${url}`)
         const nc = connect({ url: `nats://${url}` })
 

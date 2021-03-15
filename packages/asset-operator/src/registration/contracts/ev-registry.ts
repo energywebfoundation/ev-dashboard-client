@@ -4,22 +4,18 @@ import { JsonRpcProvider } from "@ethersproject/providers"
 import { Wallet } from "@ethersproject/wallet"
 import { Keys } from "@ew-did-registry/keys"
 import { soliditySha3 } from "web3-utils"
-import { config } from "../../../../config/config"
 import abi from "./ev-registry.abi"
 
 export class EvRegistry {
 
     private readonly contract: Contract
 
-    constructor(operatorKeys: Keys) {
-        if (!config.evRegistry) {
-            throw Error("EV Registry contract address not set in config.")
-        }
-        console.log("[EV REGISTRY] connecting to provider", config.evRegistry?.provider)
-        const provider = new JsonRpcProvider(config.evRegistry?.provider)
+    constructor(operatorKeys: Keys, providerUrl: string, evRegistryAddress: string) {
+        console.log("[EV REGISTRY] connecting to provider", providerUrl)
+        const provider = new JsonRpcProvider(providerUrl)
         const signer = new Wallet(operatorKeys.privateKey, provider)
-        console.log("[EV REGISTRY] connecting to contract", config.evRegistry.address)
-        this.contract = new Contract(config.evRegistry.address, abi, signer)
+        console.log("[EV REGISTRY] connecting to contract", evRegistryAddress)
+        this.contract = new Contract(evRegistryAddress, abi, signer)
     }
 
     /**

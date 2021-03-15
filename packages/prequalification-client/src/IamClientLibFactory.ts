@@ -1,23 +1,23 @@
 import { CacheServerClient, IAM } from "iam-client-lib"
-import { config } from "../../config/config"
 
 export class IamClientLibFactory {
 
+    constructor(private readonly params: IamClientLibFactoryParams) {}
     /**
      * Returns an initialized iam-client
      * @param privateKey 
      * @param isForUserClaims 
      */
-    public static async create({ privateKey, cacheServerUrl }: IamClientParams) {
+    public async create({privateKey}: {privateKey: string}) {
         const cacheClient = new CacheServerClient({
-            url: cacheServerUrl
+            url: this.params.cacheServerUrl
         })
 
         // Because iam-client-lib is running on the server, the private key is passed in directly
         const iamClient = new IAM({
             privateKey,
-            rpcUrl: config.prequalification.provider,
-            chainId: config.prequalification.chainId,
+            rpcUrl: this.params.rpcUrl,
+            chainId: this.params.chainId,
             cacheClient
         })
 
@@ -27,7 +27,8 @@ export class IamClientLibFactory {
     }
 }
 
-interface IamClientParams {
+export interface IamClientLibFactoryParams {
     cacheServerUrl: string,
-    privateKey: string
+    rpcUrl: string,
+    chainId: number,
 }

@@ -1,0 +1,17 @@
+{
+  "name": "@ev-dashboard-client/key-manager-client",
+  "version": "1.0.0",
+  "description": "Optional component that can be used to centrally manage keys",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Energy Web",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@ev-dashboard-client/key-manager": "1.0.0",
+    "ethers": "^4.0.48"
+  },
+  "devDependencies": {
+    "typescript": "~4.2.3"
+  }
+}
