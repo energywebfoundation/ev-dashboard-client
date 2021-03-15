@@ -1,0 +1,17 @@
+{
+  "name": "asset-operator",
+  "version": "1.0.0",
+  "description": "API for AssetOperators to enable their assets to participate in the ev-dashboard.",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Energy Web",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "better-sqlite3": "^5.4.3",
+    "ethers": "^4.0.48"
+  },
+  "devDependencies": {
+    "typescript": "~4.2.3"
+  }
+}
