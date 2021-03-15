@@ -446,11 +446,10 @@
     //   // "versionPolicyName": ""
     // },
     // 
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production"
-    // },
+    {
+      "packageName": "asset-operator",
+      "projectFolder": "packages/asset-operator"
+    }
     // 
     // {
     //   "packageName": "my-toolchain",
