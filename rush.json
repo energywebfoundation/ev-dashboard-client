@@ -449,6 +449,22 @@
     {
       "packageName": "asset-operator",
       "projectFolder": "packages/asset-operator"
+    },
+    {
+      "packageName": "key-manager",
+      "projectFolder": "packages/key-manager"
+    },
+    {
+      "packageName": "key-manager-client",
+      "projectFolder": "packages/key-manager-client"
+    },
+    {
+      "packageName": "prequalification-client",
+      "projectFolder": "packages/prequalification-client"
+    },
+    {
+      "packageName": "signer-provider-interface",
+      "projectFolder": "packages/signer-provider-interface"
     }
     // 
     // {
