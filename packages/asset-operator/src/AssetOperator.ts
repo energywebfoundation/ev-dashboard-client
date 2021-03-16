@@ -3,8 +3,8 @@ import { Methods } from "@ew-did-registry/did"
 import { abi1056, address1056 } from "@ew-did-registry/did-ethr-resolver"
 import { ProviderTypes } from "@ew-did-registry/did-resolver-interface"
 import { DID } from "./document-creation/DID"
-// import { assetDB } from "./registration/AssetDB"
-// import { AssetRegistrar } from "./registration/AssetRegistrar"
+import { assetDB } from "./registration/AssetDB"
+import { AssetRegistrar } from "./registration/AssetRegistrar"
 import { EvRegistry } from "./registration/contracts/ev-registry"
 import { Keys } from "@ew-did-registry/keys"
 
@@ -23,8 +23,8 @@ export class AssetOperator {
 
   public async registerAsset(address: string, uid: string, providerUrl: string, evRegistryAddress: string) {
     const evRegistry = new EvRegistry(this.operatorKeys, providerUrl, evRegistryAddress )
-    // const registrar = new AssetRegistrar(assetDB, evRegistry)
-    await evRegistry.addDevice(address, uid)
+    const registrar = new AssetRegistrar(assetDB, evRegistry)
+    await registrar.registerDevice(address, uid)
   }
 
   public async getRegisteredAsset(address: string, providerUrl: string, evRegistryAddress: string) {
@@ -45,5 +45,4 @@ export class AssetOperator {
     const did = new DID(signerProvider, this.operatorKeys, resolverSettings)
     await did.createDocument(address)
   }
-
 }

@@ -13,7 +13,7 @@ export class AssetRegistrar {
    * @param address asset EWC or Volta address
    * @param uid asset UID used to identify it on OCN
    */
-  public async saveInEvRegistry(address: string, uid: string): Promise<void> {
+  public async registerDevice(address: string, uid: string): Promise<void> {
     const did = getDIDFromAddress(address)
     const existent = this.assetDB.getAssetIdentity(did)
     if (existent) {
