@@ -1,4 +1,5 @@
 import * as sqlite3 from "better-sqlite3"
+import { Wallet } from "@ethersproject/wallet"
 import { IKeyPair } from "./IKeyPair"
 
 export class KeyManager {
@@ -25,6 +26,16 @@ export class KeyManager {
         this.db
             .prepare("INSERT INTO dids (did, private_key) VALUES (?,?)")
             .run(keyPair.did, keyPair.privateKey)
+    }
+
+    /**
+     * @returns the DID of the generated keypair
+     */
+    public generateKeyPair(): string {
+        const wallet = Wallet.createRandom()
+        const did = `did:ethr:${wallet.address}`
+        this.setKeyPair({did, privateKey: wallet.privateKey})
+        return did
     }
 
 }

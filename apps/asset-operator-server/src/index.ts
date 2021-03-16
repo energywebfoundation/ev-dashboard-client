@@ -18,6 +18,26 @@ app.post( "/asset-operator/create-did-document", async ( req, res ) => {
   res.send( "did document created" );
 } );
 
+app.post( "/asset-operator/register-user", async ( _req, res ) => {
+  await assetOperator.registerUser(config.assetOperator.evRegistry.providerUrl, config.assetOperator.evRegistry.address)
+  res.send( "user registered" );
+} );
+
+app.get( "/asset-operator/get-registered-asset", async ( req, res ) => {
+  const isRegistered = await assetOperator.getRegisteredAsset(req.query.address as string, config.assetOperator.evRegistry.providerUrl, config.assetOperator.evRegistry.address)
+  res.send( isRegistered );
+} );
+
+app.post( "/asset-operator/register-asset", async ( req, res ) => {
+  await assetOperator.registerAsset(req.body.address, req.body.uid, config.assetOperator.evRegistry.providerUrl, config.assetOperator.evRegistry.address)
+  res.send( "asset registered" );
+} );
+
+app.post( "/key-manager/generate", async ( _req, res ) => {
+  const newDID = keyManagerClient.generateKeyPair();
+  res.send( newDID );
+} );
+
 // start the Express server
 app.listen( port, () => {
     console.log( `server started at http://localhost:${ port }` );

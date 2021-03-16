@@ -25,6 +25,7 @@ dependencies:
   iam-client-lib: 2.0.0-alpha.3
   nats: 1.4.12
   rimraf: 3.0.2
+  ts-node: 9.1.1_typescript@4.2.3
   typescript: 4.2.3
   web3-utils: 1.3.4
 lockfileVersion: 5.2
@@ -941,6 +942,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-q8av7tzqUugJzcA3au0845Y10X8=
+  /arg/4.1.3:
+    dev: false
+    resolution:
+      integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
   /array-flatten/1.1.1:
     dev: false
     resolution:
@@ -1555,6 +1560,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==
+  /create-require/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
   /cross-fetch/2.2.3:
     dependencies:
       node-fetch: 2.1.2
@@ -1739,6 +1748,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-WKa9p+/MNwmTiS+V2AS6eGxic+807qvnV3hC+4z2GTY+F42h1n8AynVTMMc4EJBC32qMs6yjOTpeDEQQt/AVqQ==
+  /diff/4.0.2:
+    dev: false
+    engines:
+      node: '>=0.3.1'
+    resolution:
+      integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
   /diffie-hellman/5.0.3:
     dependencies:
       bn.js: 4.12.0
@@ -3625,6 +3640,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-2w31R7SJtieJJnQtGc7RVL2StM2vGYVfqUOvUDxH6bC6aJTxPxTF0GnIgCyu7tjockiUWAYQRbxa7vKn34s5sQ==
+  /make-error/1.3.6:
+    dev: false
+    resolution:
+      integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -4775,12 +4794,25 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-o+c6FpkiHd+HPjmjEVpQgH7fqZ14tJpXhho+/bQXlXbliLIS/xjXb42Vxh+qQY1WCSTMQ0+a5vR9vi0MfhU6mA==
+  /source-map-support/0.5.19:
+    dependencies:
+      buffer-from: 1.1.1
+      source-map: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
   /source-map/0.5.7:
     dev: false
     engines:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
+  /source-map/0.6.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
   /spdx-correct/3.1.1:
     dependencies:
       spdx-expression-parse: 3.0.1
@@ -5048,6 +5080,23 @@ packages:
     dev: false
     resolution:
       integrity: sha512-1qrhAlavbm36wtW+7NtKOgxpzl+70NTF8xlz9mEhiA5zHMlMxjj3sEVKWm3pGZhHXE0Q3ykjrj+OSRVaYw+Dqg==
+  /ts-node/9.1.1_typescript@4.2.3:
+    dependencies:
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      source-map-support: 0.5.19
+      typescript: 4.2.3
+      yn: 3.1.1
+    dev: false
+    engines:
+      node: '>=10.0.0'
+    hasBin: true
+    peerDependencies:
+      typescript: '>=2.7'
+    resolution:
+      integrity: sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
   /tslib/2.1.0:
     dev: false
     resolution:
@@ -5762,18 +5811,26 @@ packages:
     dev: false
     resolution:
       integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=
+  /yn/3.1.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
   file:projects/asset-operator-server.tgz:
     dependencies:
+      '@ew-did-registry/keys': 0.0.1-alpha.694.1
       '@types/express': 4.17.11
       '@types/node': 14.14.35
       body-parser: 1.19.0
       express: 4.17.1
       rimraf: 3.0.2
+      ts-node: 9.1.1_typescript@4.2.3
       typescript: 4.2.3
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-eeEymjLY4juUKEs1Yw0juF3P7IORgUa/e/O3zlAje9OhztEps8UYPv9s9sS0c/2zE+eXX63BTJNklniTk99fKQ==
+      integrity: sha512-yGoBsKlLWURVLOU43T7qZwYxjDsMGhqF95SkZwrFtEdg+DEBDV4SsF09fe4XHHj3VjkLP6MCmxM8m/Z7qARVOw==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
   file:projects/asset-operator.tgz:
@@ -5790,12 +5847,13 @@ packages:
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
       better-sqlite3: 5.4.3
       ethers: 4.0.48
+      rimraf: 3.0.2
       typescript: 4.2.3
       web3-utils: 1.3.4
     dev: false
     name: '@rush-temp/asset-operator'
     resolution:
-      integrity: sha512-grKYwGTrI1OdTSsXGbxfF8E6sEwnLbuEfNlBBzqptTrKMJ6gs/IJxC6Q3/CFzTjNRv0zjcj6a76M0vipuCPItA==
+      integrity: sha512-dfeyvFE7V2V9D6+B3upRnk37Wj6zMFcz5kZtKBjlCQ7ljfO4hYXH7bLhpgYwTTA2QvhqWxl3ltInyY2onruiqQ==
       tarball: file:projects/asset-operator.tgz
     version: 0.0.0
   file:projects/key-manager-client.tgz:
@@ -5811,12 +5869,13 @@ packages:
     version: 0.0.0
   file:projects/key-manager.tgz:
     dependencies:
+      '@ethersproject/wallet': 5.0.12
       better-sqlite3: 5.4.3
       typescript: 4.2.3
     dev: false
     name: '@rush-temp/key-manager'
     resolution:
-      integrity: sha512-4XPzauKnzYnknObLOdVwg6tk5LcJRr91OIqBgadBXvWpWamlcjtfG5RIoiRRVsOYVq11cfnMz+AxAf3Ob50nlg==
+      integrity: sha512-O8PYyNBqCxa8IgScteVVdqchmhG1sYIQ26HfWDROitg2r1EdZV7JQYoN7rfFkz2lW1JBPMJUXShvWhLe4/evpA==
       tarball: file:projects/key-manager.tgz
     version: 0.0.0
   file:projects/prequalification-client.tgz:
@@ -5879,5 +5938,6 @@ specifiers:
   iam-client-lib: 2.0.0-alpha.3
   nats: ^1.4.12
   rimraf: ~3.0.2
+  ts-node: ~9.1.1
   typescript: ~4.2.3
   web3-utils: ^1.3.0

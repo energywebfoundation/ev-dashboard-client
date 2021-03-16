@@ -15,4 +15,8 @@ export class KeyManagerClient implements ISignerProvider {
     }
     return new Wallet(keyPair.privateKey)
   }
+
+  public generateKeyPair(): string {
+    return this.keyManager.generateKeyPair()
+  }
 }

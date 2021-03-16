@@ -9,6 +9,7 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
+    "@ethersproject/wallet": "^5.0.8",
     "better-sqlite3": "^5.4.3"
   },
   "devDependencies": {
