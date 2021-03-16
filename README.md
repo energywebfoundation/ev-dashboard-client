@@ -1,38 +1,46 @@
-# EV-Dashboard Client Packages
+# EV Dashboard Client
 
-This repository provides packages to allow assets/devices to register in the ev-dashboard
-and obtain claims for participate in a flexibility market
+This repository provides apps and packages to allow assets/devices to register in the ev-dashboard
+and obtain claims for participation in a flexibility market
 
 ## Architecture Diagram
 
 ![EV Dashboard Client Architecture](https://github.com/energywebfoundation/ev-dashboard-client/blob/master/architecture.png)
 
-## Package description
+## Component Descriptions
 
-### asset-operator
+### Apps
 
-Provides an API for AssetOperators to enable their assets to participate in the ev-dashboard.
-Two broad tasks are supported:
+#### asset-operator-server
 
-- document-creation: Fund an asset's EWC account and create its DID Document to prepare it to request a prequalification claim
-- registration: Register an asset in the `ev-registry` smart contract
+A node express HTTP server which bundles and operator the client libraries
 
-### prequalification-client
+### Libraries
 
-A node app which has the ability to listen to prequalification claim events on behalf of asset(s).
+#### did-hydrator
 
-### signer-provider-interface
+Fund an asset's EWC account and create its DID Document to prepare it to request a prequalification claim
+
+#### asset-registrar
+
+Registers an asset or user in the `ev-registry` smart contract and caches in registry-cache
+
+#### prequalification-client
+
+Listens for NATS events regarding prequalification claims and handles them on behalf of asset(s).
+
+#### signer-provider-interface
 
 An interface which provides access to a Signer for a given DID
 
-### key-manager
+### Databases
+#### key-manager
 
 Optional component that can be used to centrally manage keys.
+Implements `signer-provider-interface`.
 Can generate a new address/key-pair and well as provide existing key-pairs.
 
-### key-manager-client
-
-A typescript class which provides access to key-manager API. Implements signer-provider-interface
+#### registry-cache
 
 ## Development
 
