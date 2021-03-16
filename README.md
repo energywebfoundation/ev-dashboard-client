@@ -33,3 +33,33 @@ Can generate a new address/key-pair and well as provide existing key-pairs.
 ### key-manager-client
 
 A typescript class which provides access to key-manager API. Implements signer-provider-interface
+
+## Development
+
+This repository is a monorepo that uses [Rush](https://rushjs.io/) with the PNPM package manager.
+
+PNPM is used for its speed and solution to NPM doppelgangers (as well as being the default option for rush). See comparison of [NPM vs PNPM vs Yarn for Rush](https://rushjs.io/pages/maintainer/package_managers/).
+
+### Install PNPM and Rush
+
+PNPM is required. See installation instructions here: https://pnpm.js.org/installation/
+
+Rush is required. See installation instructions here: https://rushjs.io/pages/intro/get_started/
+
+### Installing Dependencies
+
+Use rush to install dependencies (not the package manager directly).
+In other words, do not run `npm install` or `pnpm install`.
+This is because [Rush optimizes](https://rushjs.io/pages/developer/new_developer/) by installing all of the dependency packages in a central folder, and then uses symlinks to create the “node_modules” folder for each of the projects.
+
+```sh
+$ rush install
+```
+
+### Compile & Build
+
+Use rush to build.
+
+```sh
+$ rush build
+```

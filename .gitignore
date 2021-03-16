@@ -67,3 +67,7 @@ common/autoinstallers/*/.npmrc
 dist
 
 .vscode
+
+#SQLite Databases
+assets
+key_manager
