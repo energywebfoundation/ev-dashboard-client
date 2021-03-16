@@ -5,7 +5,7 @@ and obtain claims for participate in a flexibility market
 
 ## Architecture Diagram
 
-![EV Dashboard Client Architecture](https://github.com/energywebfoundation/ocn-tools/blob/refactor-to-client/ev-registry-client-architecture.png)
+![EV Dashboard Client Architecture](https://github.com/energywebfoundation/ev-dashboard-client/blob/master/architecture.png)
 
 ## Package description
 
