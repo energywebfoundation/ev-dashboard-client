@@ -5,7 +5,7 @@ import { ISignerProvider } from "@ev-dashboard-client/signer-provider-interface"
 export class KeyManagerClient implements ISignerProvider {
   private readonly keyManager: KeyManager
   constructor() {
-    this.keyManager = new KeyManager("key_manager")
+    this.keyManager = new KeyManager("key_manager.db")
   }
 
   public async getSignerForDID(did: string): Promise<Wallet | undefined> {

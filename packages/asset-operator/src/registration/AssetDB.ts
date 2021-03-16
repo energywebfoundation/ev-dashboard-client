@@ -28,6 +28,6 @@ export class AssetDB {
     }
 }
 
-const assetDB = new AssetDB("assets")
+const assetDB = new AssetDB("assets.db")
 
 export { assetDB }
