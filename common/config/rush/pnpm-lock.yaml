@@ -9,8 +9,9 @@ dependencies:
   '@ew-did-registry/did-ipfs-store': 0.0.1-alpha.694.1
   '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
   '@ew-did-registry/keys': 0.0.1-alpha.694.1
-  '@rush-temp/asset-operator': file:projects/asset-operator.tgz
   '@rush-temp/asset-operator-server': file:projects/asset-operator-server.tgz
+  '@rush-temp/asset-registrar': file:projects/asset-registrar.tgz
+  '@rush-temp/did-hydrator': file:projects/did-hydrator.tgz
   '@rush-temp/key-manager': file:projects/key-manager.tgz
   '@rush-temp/key-manager-client': file:projects/key-manager-client.tgz
   '@rush-temp/prequalification-client': file:projects/prequalification-client.tgz
@@ -5830,13 +5831,29 @@ packages:
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-yGoBsKlLWURVLOU43T7qZwYxjDsMGhqF95SkZwrFtEdg+DEBDV4SsF09fe4XHHj3VjkLP6MCmxM8m/Z7qARVOw==
+      integrity: sha512-CBeNDgGqJYFTmtEgwkB6zAHthn8dMfOHUpK9oTSZrN02mb0OhfHRecR9V6LxdcR5Atg/vvO5WtytcC6xlfedlA==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
-  file:projects/asset-operator.tgz:
+  file:projects/asset-registrar.tgz:
     dependencies:
       '@ethersproject/bytes': 5.0.11
       '@ethersproject/contracts': 5.0.12
+      '@ethersproject/providers': 5.0.24
+      '@ethersproject/wallet': 5.0.12
+      '@ew-did-registry/keys': 0.0.1-alpha.694.1
+      better-sqlite3: 5.4.3
+      ethers: 4.0.48
+      rimraf: 3.0.2
+      typescript: 4.2.3
+      web3-utils: 1.3.4
+    dev: false
+    name: '@rush-temp/asset-registrar'
+    resolution:
+      integrity: sha512-J6/sBxUurQ/U07lI24e93a/URgqE382EUSRomD0xdHGMb5AwF/sY4stHorJbig1bNph3zyTM8Wt/S0UGq77+nA==
+      tarball: file:projects/asset-registrar.tgz
+    version: 0.0.0
+  file:projects/did-hydrator.tgz:
+    dependencies:
       '@ethersproject/providers': 5.0.24
       '@ethersproject/wallet': 5.0.12
       '@ew-did-registry/did': 0.0.1-alpha.694.1
@@ -5845,16 +5862,14 @@ packages:
       '@ew-did-registry/did-ipfs-store': 0.0.1-alpha.694.1
       '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
-      better-sqlite3: 5.4.3
       ethers: 4.0.48
       rimraf: 3.0.2
       typescript: 4.2.3
-      web3-utils: 1.3.4
     dev: false
-    name: '@rush-temp/asset-operator'
+    name: '@rush-temp/did-hydrator'
     resolution:
-      integrity: sha512-dfeyvFE7V2V9D6+B3upRnk37Wj6zMFcz5kZtKBjlCQ7ljfO4hYXH7bLhpgYwTTA2QvhqWxl3ltInyY2onruiqQ==
-      tarball: file:projects/asset-operator.tgz
+      integrity: sha512-vQ5baoTMfQFxFMLri3z41jobSEyhl2yA5hEllLye31YFoep0n0D10lTNwXbgu+qLa085Jks7goGJ9pT4jG75ug==
+      tarball: file:projects/did-hydrator.tgz
     version: 0.0.0
   file:projects/key-manager-client.tgz:
     dependencies:
@@ -5922,8 +5937,9 @@ specifiers:
   '@ew-did-registry/did-ipfs-store': 0.0.1-alpha.694.1
   '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
   '@ew-did-registry/keys': 0.0.1-alpha.694.1
-  '@rush-temp/asset-operator': file:./projects/asset-operator.tgz
   '@rush-temp/asset-operator-server': file:./projects/asset-operator-server.tgz
+  '@rush-temp/asset-registrar': file:./projects/asset-registrar.tgz
+  '@rush-temp/did-hydrator': file:./projects/did-hydrator.tgz
   '@rush-temp/key-manager': file:./projects/key-manager.tgz
   '@rush-temp/key-manager-client': file:./projects/key-manager-client.tgz
   '@rush-temp/prequalification-client': file:./projects/prequalification-client.tgz

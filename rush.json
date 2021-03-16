@@ -447,8 +447,12 @@
     // },
     // 
     {
-      "packageName": "@ev-dashboard-client/asset-operator",
-      "projectFolder": "packages/asset-operator"
+      "packageName": "@ev-dashboard-client/asset-registrar",
+      "projectFolder": "packages/asset-registrar"
+    },
+    {
+      "packageName": "@ev-dashboard-client/did-hydrator",
+      "projectFolder": "packages/did-hydrator"
     },
     {
       "packageName": "@ev-dashboard-client/key-manager",

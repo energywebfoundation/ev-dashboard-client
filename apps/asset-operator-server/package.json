@@ -9,7 +9,8 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@ev-dashboard-client/asset-operator": "1.0.0",
+    "@ev-dashboard-client/asset-registrar": "1.0.0",
+    "@ev-dashboard-client/did-hydrator": "1.0.0",
     "@ev-dashboard-client/key-manager-client": "1.0.0",
     "@ew-did-registry/keys": "0.0.1-alpha.694.1",
     "express": "~4.17.1",

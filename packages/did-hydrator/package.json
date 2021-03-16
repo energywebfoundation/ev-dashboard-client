@@ -1,16 +1,14 @@
 {
-  "name": "@ev-dashboard-client/asset-operator",
+  "name": "@ev-dashboard-client/did-hydrator",
   "version": "1.0.0",
   "description": "API for AssetOperators to enable their assets to participate in the ev-dashboard.",
-  "main": "dist/AssetOperator.js",
+  "main": "dist/DID.js",
   "scripts": {
     "build": "rimraf dist && tsc"
   },
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@ethersproject/bytes": "^5.0.8",
-    "@ethersproject/contracts": "^5.0.8",
     "@ethersproject/providers": "^5.0.16",
     "@ethersproject/wallet": "^5.0.8",
     "@ev-dashboard-client/signer-provider-interface": "1.0.0",
@@ -20,9 +18,7 @@
     "@ew-did-registry/did-ipfs-store": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-resolver-interface": "0.0.1-alpha.694.1",
     "@ew-did-registry/keys": "0.0.1-alpha.694.1",
-    "better-sqlite3": "^5.4.3",
-    "ethers": "^4.0.48",
-    "web3-utils": "^1.3.0"
+    "ethers": "^4.0.48"
   },
   "devDependencies": {
     "rimraf": "~3.0.2",

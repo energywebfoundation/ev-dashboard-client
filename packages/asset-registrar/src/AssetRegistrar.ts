@@ -1,9 +1,7 @@
-import { getDIDFromAddress } from "../utils"
 import { AssetDB } from "./AssetDB"
 import { EvRegistry } from "./contracts/ev-registry"
 
 export class AssetRegistrar {
-
   constructor(private readonly assetDB: AssetDB, private readonly evRegistry: EvRegistry) {
   }
 
@@ -14,7 +12,7 @@ export class AssetRegistrar {
    * @param uid asset UID used to identify it on OCN
    */
   public async registerDevice(address: string, uid: string): Promise<void> {
-    const did = getDIDFromAddress(address)
+    const did = this.getDIDFromAddress(address)
     const existent = this.assetDB.getAssetIdentity(did)
     if (existent) {
       console.log("[ASSET] cached, has already been register in EV dashboard")
@@ -30,5 +28,9 @@ export class AssetRegistrar {
       uid,
       did
     })
+  }
+
+  private getDIDFromAddress(address: string): string {
+    return `did:ethr:${address}`
   }
 }

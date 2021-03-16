@@ -27,7 +27,3 @@ export class AssetDB {
             .run(asset.uid, asset.did)
     }
 }
-
-const assetDB = new AssetDB("assets.db")
-
-export { assetDB }

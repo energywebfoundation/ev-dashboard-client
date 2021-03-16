@@ -1,15 +1,29 @@
 import { JsonRpcProvider } from "@ethersproject/providers"
 import { Wallet } from "@ethersproject/wallet"
 import { DIDDocumentFull } from "@ew-did-registry/did-document"
-import { Operator } from "@ew-did-registry/did-ethr-resolver"
-import { IResolverSettings } from "@ew-did-registry/did-resolver-interface"
+import { abi1056, address1056, Operator } from "@ew-did-registry/did-ethr-resolver"
+import { IResolverSettings, ProviderTypes } from "@ew-did-registry/did-resolver-interface"
 import { Keys } from "@ew-did-registry/keys"
 import { Signer } from "ethers"
 import { ISignerProvider } from "@ev-dashboard-client/signer-provider-interface"
-import { getDIDFromAddress } from "../utils"
+import { getDIDFromAddress } from "./utils"
+import { Methods } from "@ew-did-registry/did"
+
 export class DID {
 
-    constructor(private readonly signerProvider: ISignerProvider, private readonly operatorKeys: Keys, private readonly resolverSettings: IResolverSettings) { }
+    private readonly resolverSettings: IResolverSettings
+
+    constructor(private readonly signerProvider: ISignerProvider, private readonly operatorKeys: Keys, providerUrl: string) {
+        this.resolverSettings = {
+        provider: {
+            uriOrInfo: providerUrl,
+            type: ProviderTypes.HTTP
+        },
+        method: Methods.Erc1056,
+        abi: abi1056,
+        address: address1056
+        }
+    }
 
     /**
      * Creates a DIDDocument
