@@ -459,10 +459,6 @@
       "projectFolder": "packages/key-manager"
     },
     {
-      "packageName": "@ev-dashboard-client/key-manager-client",
-      "projectFolder": "packages/key-manager-client"
-    },
-    {
       "packageName": "@ev-dashboard-client/prequalification-client",
       "projectFolder": "packages/prequalification-client"
     },

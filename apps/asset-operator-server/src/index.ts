@@ -2,7 +2,7 @@ import express from "express"
 import bodyParser from "body-parser"
 import { AssetRegistrar, EvRegistry, AssetDB } from "@ev-dashboard-client/asset-registrar"
 import { DID } from "@ev-dashboard-client/did-hydrator"
-import { KeyManagerClient } from "@ev-dashboard-client/key-manager-client"
+import { KeyManager } from "@ev-dashboard-client/key-manager"
 import { Keys } from "@ew-did-registry/keys"
 import { config } from "./config"
 
@@ -33,16 +33,16 @@ app.post( "/asset-operator/register-device", async ( req, res ) => {
 } );
 
 /** DID DOCUMENT */
-const keyManagerClient = new KeyManagerClient()
+const keyManager = new KeyManager("keymanager.db")
 app.post( "/asset-operator/create-did-document", async ( req, res ) => {
-  const did = new DID(keyManagerClient, keys, config.assetOperator.didDocument.providerUrl)
+  const did = new DID(keyManager, keys, config.assetOperator.didDocument.providerUrl)
   await did.createDocument(req.body.address)
   res.send( "did document created" );
 } );
 
 /** KEY MANAGER */
 app.post( "/key-manager/generate", async ( _req, res ) => {
-  const newDID = keyManagerClient.generateKeyPair();
+  const newDID = keyManager.generateKeyPair();
   res.send( newDID );
 } );
 

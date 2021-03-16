@@ -9,8 +9,6 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@ethersproject/providers": "^5.0.16",
-    "@ethersproject/wallet": "^5.0.8",
     "@ev-dashboard-client/signer-provider-interface": "1.0.0",
     "@ew-did-registry/did": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-document": "0.0.1-alpha.694.1",

@@ -1,10 +1,9 @@
-import { JsonRpcProvider } from "@ethersproject/providers"
-import { Wallet } from "@ethersproject/wallet"
 import { DIDDocumentFull } from "@ew-did-registry/did-document"
 import { abi1056, address1056, Operator } from "@ew-did-registry/did-ethr-resolver"
 import { IResolverSettings, ProviderTypes } from "@ew-did-registry/did-resolver-interface"
 import { Keys } from "@ew-did-registry/keys"
-import { Signer } from "ethers"
+import { Wallet } from "ethers"
+import { JsonRpcProvider } from "ethers/providers"
 import { ISignerProvider } from "@ev-dashboard-client/signer-provider-interface"
 import { getDIDFromAddress } from "./utils"
 import { Methods } from "@ew-did-registry/did"
@@ -30,7 +29,7 @@ export class DID {
      */
     public async createDocument(address: string): Promise<void> {
         const did = getDIDFromAddress(address)
-        const signer: Signer | undefined = await this.signerProvider.getSignerForDID(did)
+        const signer = await this.signerProvider.getSignerForDID(did)
         if (!signer) {
             throw Error("Unable to create DID Document as unable to retrieve signer")
         }

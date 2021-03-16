@@ -13,7 +13,6 @@ dependencies:
   '@rush-temp/asset-registrar': file:projects/asset-registrar.tgz
   '@rush-temp/did-hydrator': file:projects/did-hydrator.tgz
   '@rush-temp/key-manager': file:projects/key-manager.tgz
-  '@rush-temp/key-manager-client': file:projects/key-manager-client.tgz
   '@rush-temp/prequalification-client': file:projects/prequalification-client.tgz
   '@rush-temp/signer-provider-interface': file:projects/signer-provider-interface.tgz
   '@types/events': 3.0.0
@@ -5831,7 +5830,7 @@ packages:
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-CBeNDgGqJYFTmtEgwkB6zAHthn8dMfOHUpK9oTSZrN02mb0OhfHRecR9V6LxdcR5Atg/vvO5WtytcC6xlfedlA==
+      integrity: sha512-mlFPYiRKu9JEiLlWgV1xsQzK8a5Mbw+TM20RHM4UwMUsmY70NOx4b+5C4ydcgu56bFF4e0XdQGbuq2mkcX+gOQ==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
   file:projects/asset-registrar.tgz:
@@ -5871,17 +5870,6 @@ packages:
       integrity: sha512-vQ5baoTMfQFxFMLri3z41jobSEyhl2yA5hEllLye31YFoep0n0D10lTNwXbgu+qLa085Jks7goGJ9pT4jG75ug==
       tarball: file:projects/did-hydrator.tgz
     version: 0.0.0
-  file:projects/key-manager-client.tgz:
-    dependencies:
-      ethers: 4.0.48
-      rimraf: 3.0.2
-      typescript: 4.2.3
-    dev: false
-    name: '@rush-temp/key-manager-client'
-    resolution:
-      integrity: sha512-wC15M7ySADLgyGw+wpmWoGdtiOm1dOXSy/wrQWpRg7Vjpys7fBRuUaXHRh8HaLDvBQNJ9kXQWld4YAGf1lAmxw==
-      tarball: file:projects/key-manager-client.tgz
-    version: 0.0.0
   file:projects/key-manager.tgz:
     dependencies:
       '@ethersproject/wallet': 5.0.12
@@ -5890,7 +5878,7 @@ packages:
     dev: false
     name: '@rush-temp/key-manager'
     resolution:
-      integrity: sha512-O8PYyNBqCxa8IgScteVVdqchmhG1sYIQ26HfWDROitg2r1EdZV7JQYoN7rfFkz2lW1JBPMJUXShvWhLe4/evpA==
+      integrity: sha512-zmLay4pifFPBEJoggOLlUmso3Y0J/nl3rn5KLpbpZ/mC+Ab71GMfFlykIEp6kLIH3EGedDUYldA1yztO3zKdUw==
       tarball: file:projects/key-manager.tgz
     version: 0.0.0
   file:projects/prequalification-client.tgz:
@@ -5941,7 +5929,6 @@ specifiers:
   '@rush-temp/asset-registrar': file:./projects/asset-registrar.tgz
   '@rush-temp/did-hydrator': file:./projects/did-hydrator.tgz
   '@rush-temp/key-manager': file:./projects/key-manager.tgz
-  '@rush-temp/key-manager-client': file:./projects/key-manager-client.tgz
   '@rush-temp/prequalification-client': file:./projects/prequalification-client.tgz
   '@rush-temp/signer-provider-interface': file:./projects/signer-provider-interface.tgz
   '@types/events': ~3.0.0

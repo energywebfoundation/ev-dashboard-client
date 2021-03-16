@@ -9,8 +9,9 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@ethersproject/wallet": "^5.0.8",
-    "better-sqlite3": "^5.4.3"
+    "@ev-dashboard-client/signer-provider-interface": "1.0.0",
+    "better-sqlite3": "^5.4.3",
+    "ethers": "^4.0.48"
   },
   "devDependencies": {
     "typescript": "~4.2.3"
