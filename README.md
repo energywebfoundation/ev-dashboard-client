@@ -23,7 +23,7 @@ Fund an asset's EWC account and create its DID Document to prepare it to request
 
 #### asset-registrar
 
-Registers an asset or user in the `ev-registry` smart contract and caches in registry-cache
+Registers an asset or user in the `ev-registry` smart contract
 
 #### prequalification-client
 
