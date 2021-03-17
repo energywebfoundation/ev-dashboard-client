@@ -68,6 +68,8 @@ dist
 
 .vscode
 
-#SQLite Databases
-assets
-key_manager
+# SQLite Databases
+keymanager.db
+
+# Contract ethers typechain
+ethers-types

@@ -1,6 +1,6 @@
 import express from "express"
 import bodyParser from "body-parser"
-import { AssetRegistrar, EvRegistry, AssetDB } from "@ev-dashboard-client/asset-registrar"
+import { EvRegistry } from "@ev-dashboard-client/asset-registrar"
 import { DID } from "@ev-dashboard-client/did-hydrator"
 import { KeyManager } from "@ev-dashboard-client/key-manager"
 import { Keys } from "@ew-did-registry/keys"
@@ -14,8 +14,6 @@ const keys = new Keys({ privateKey: config.assetOperator.operatorKey })
 
 /** REGISTRATION */
 const evRegistry = new EvRegistry(keys, config.assetOperator.evRegistry.providerUrl, config.assetOperator.evRegistry.address)
-const assetDB = new AssetDB("assets.db")
-const assetRegistrar = new AssetRegistrar(assetDB, evRegistry)
 
 app.post( "/asset-operator/register-user", async ( _req, res ) => {
   await evRegistry.addUser()
@@ -28,12 +26,12 @@ app.get( "/asset-operator/device-exists", async ( req, res ) => {
 } );
 
 app.get( "/asset-operator/device-is-registered", async ( req, res ) => {
-  const isRegistered = await evRegistry.deviceIsRegistered(req.query.uid as string)
+  const isRegistered = await evRegistry.getRegisteredDevice(req.query.uid as string)
   res.send( isRegistered );
 } );
 
 app.post( "/asset-operator/register-device", async ( req, res ) => {
-  await assetRegistrar.registerDevice(req.body.address, req.body.uid)
+  await evRegistry.addDevice(req.body.address, req.body.uid)
   res.send( "asset registered" );
 } );
 
