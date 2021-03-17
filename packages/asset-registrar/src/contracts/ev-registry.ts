@@ -36,6 +36,18 @@ export class EvRegistry {
     }
 
     /**
+     * 
+     * @returns device address and user address associated with a OCPI uid
+     */
+    public async deviceIsRegistered(uid: string): Promise<boolean> {
+        if (!uid) {
+            return false
+        }
+        const registered = await this.contract.getDeviceFromIdentifier(uid)
+        return registered
+    }
+
+    /**
      * Adds user (MSP/CPO, represented by wallet) to registry contract 
      */
     public async addUser(): Promise<void> {

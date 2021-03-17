@@ -27,6 +27,11 @@ app.get( "/asset-operator/device-exists", async ( req, res ) => {
   res.send( isRegistered );
 } );
 
+app.get( "/asset-operator/device-is-registered", async ( req, res ) => {
+  const isRegistered = await evRegistry.deviceIsRegistered(req.query.uid as string)
+  res.send( isRegistered );
+} );
+
 app.post( "/asset-operator/register-device", async ( req, res ) => {
   await assetRegistrar.registerDevice(req.body.address, req.body.uid)
   res.send( "asset registered" );
