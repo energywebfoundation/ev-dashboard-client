@@ -10,7 +10,7 @@ const keys = new Keys({ privateKey: wallet.privateKey })
 
 export const rpcUrl = `http://localhost:${GANACHE_PORT}`;
 
-describe("IAM tests", () => {
+describe("EvRegistry tests", () => {
   beforeAll(async () => {
     await deployContracts(wallet.privateKey);
   });
