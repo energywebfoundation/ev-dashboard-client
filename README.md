@@ -34,13 +34,12 @@ Listens for NATS events regarding prequalification claims and handles them on be
 An interface which provides access to a Signer for a given DID
 
 ### Databases
+
 #### key-manager
 
 Optional component that can be used to centrally manage keys.
 Implements `signer-provider-interface`.
 Can generate a new address/key-pair and well as provide existing key-pairs.
-
-#### registry-cache
 
 ## Development
 
