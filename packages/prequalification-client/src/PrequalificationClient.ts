@@ -1,9 +1,9 @@
 import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
 import { Client } from 'nats';
-import { ISignerProvider } from '../../signer-provider-interface/src/ISignerProvider';
+import { ISignerProvider } from '@ev-dashboard-client/signer-provider-interface';
 import { Asset, IPrequalificationRole } from './Asset';
 import { IamClientLibFactory, IamClientLibFactoryParams } from './IamClientLibFactory';
-import { NatsConnection, INatsUrl } from './NatsConnection';
+import { NatsConnection } from './NatsConnection';
 
 export class PrequalificationClient {
   private readonly _iamClientLibFactory: IamClientLibFactory;
@@ -19,7 +19,7 @@ export class PrequalificationClient {
   }: {
     signerProvider: ISignerProvider;
     prequalificationRole: IPrequalificationRole;
-    natsUrl: INatsUrl;
+    natsUrl: string;
   }): void {
     const createSubscriptions = (natsConnection: Client): void => {
       this._initVehiclePrequalificationListener({
@@ -29,7 +29,8 @@ export class PrequalificationClient {
       });
     };
     // tslint:disable-next-line: no-unused-expression
-    new NatsConnection({ createSubscriptions, natsUrl });
+    const natsConnection = new NatsConnection({ createSubscriptions, natsUrl });
+    natsConnection._connect();
   }
 
   private _initVehiclePrequalificationListener({

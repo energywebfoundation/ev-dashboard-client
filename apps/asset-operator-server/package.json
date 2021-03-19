@@ -12,6 +12,7 @@
     "@ev-dashboard-client/asset-registrar": "1.0.0",
     "@ev-dashboard-client/did-hydrator": "1.0.0",
     "@ev-dashboard-client/key-manager": "1.0.0",
+    "@ev-dashboard-client/prequalification-client": "1.0.0",
     "@ew-did-registry/keys": "0.0.1-alpha.694.1",
     "express": "~4.17.1",
     "body-parser": "~1.19.0"

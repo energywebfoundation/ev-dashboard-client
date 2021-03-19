@@ -1,14 +1,16 @@
 {
   "name": "@ev-dashboard-client/prequalification-client",
   "version": "1.0.0",
-  "description": "listens for prequalification claim events on behalf of asset(s",
+  "description": "listens for prequalification claim events on behalf of assets",
+  "main": "dist/prequalification-client.js",
   "scripts": {
-    "build": "tsc"
+    "build": "rimraf dist && tsc"
   },
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@ev-dashboard-client/key-manager": "1.0.0",
+    "@ev-dashboard-client/signer-provider-interface": "1.0.0",
     "ethers": "^4.0.48",
     "iam-client-lib": "2.0.0-alpha.3",
     "nats": "^1.4.12"

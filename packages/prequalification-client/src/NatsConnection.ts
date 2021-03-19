@@ -1,10 +1,5 @@
 import { Client, connect } from 'nats';
 
-export interface INatsUrl {
-  host: string;
-  port: number;
-}
-
 /**
  * Creates and monitors a NATS connection
  * Event handling code taken from: https://docs.nats.io/developing-with-nats/events/events
@@ -12,63 +7,62 @@ export interface INatsUrl {
 export class NatsConnection {
   private static readonly _logPrefix: string = '[NATS Connection]';
   private readonly _createSubscriptions: (Client) => void;
-  private readonly _natsUrl: INatsUrl;
-  private _natsClient: Client;
+  private readonly _natsUrl: string;
+  private _natsClient: Client | undefined;
 
   public constructor({
     createSubscriptions,
     natsUrl
   }: {
     createSubscriptions: (Client) => void;
-    natsUrl: INatsUrl;
+    natsUrl: string;
   }) {
     this._createSubscriptions = createSubscriptions;
     this._natsUrl = natsUrl;
-    this._natsClient = this._connect();
   }
 
-  private _connect(): Client {
-    const url = `${this._natsUrl.host}:${this._natsUrl.port}`;
+  public _connect(): Client {
+    const url = this._natsUrl;
     console.log(`[NATS] Connecting to ${url}`);
-    const nc = connect({ url: `nats://${url}` });
+    this._natsClient = connect({ url: `nats://${url}` });
 
-    nc.on('error', (err) => {
+    this._natsClient.on('error', (err) => {
       console.error(`${NatsConnection._logPrefix} error occured`, err);
       this._reconnect();
     });
-    nc.on('connect', () => {
+    this._natsClient.on('connect', () => {
       console.log(`${NatsConnection._logPrefix} client connected. Creating subscriptions.`);
-      this._createSubscriptions(nc);
+      this._createSubscriptions(this._natsClient);
     });
 
-    nc.on('disconnect', () => {
+    this._natsClient.on('disconnect', () => {
       console.log(`${NatsConnection._logPrefix} client disconnected`);
     });
 
-    nc.on('reconnecting', () => {
+    this._natsClient.on('reconnecting', () => {
       console.log(`${NatsConnection._logPrefix} client reconnecting`);
     });
 
-    nc.on('reconnect', () => {
+    this._natsClient.on('reconnect', () => {
       console.log(`${NatsConnection._logPrefix} client reconnected`);
     });
 
-    nc.on('close', () => {
+    this._natsClient.on('close', () => {
       console.log(`${NatsConnection._logPrefix} client closed`);
       this._reconnect();
     });
 
-    nc.on('permission_error', (err) => {
+    this._natsClient.on('permission_error', (err) => {
       console.error(`${NatsConnection._logPrefix} permission_error`, err);
     });
-    return nc;
+    return this._natsClient;
   }
 
   private _reconnect(): void {
     console.log(`${NatsConnection._logPrefix} draining and closing client`);
-    this._natsClient.removeAllListeners();
-    this._natsClient.drain();
-    this._natsClient.close();
+    this._natsClient?.removeAllListeners();
+    this._natsClient?.drain();
+    this._natsClient?.close();
 
     // Set timeout to space out reconnection attempts to as to not overwhelm NATS server
     setTimeout(() => {

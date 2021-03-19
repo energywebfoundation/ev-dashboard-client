@@ -732,7 +732,7 @@ packages:
   /@ew-did-registry/did-document/0.0.1-alpha.694.1:
     dependencies:
       '@ew-did-registry/did': 0.0.1-alpha.694.1
-      '@ew-did-registry/did-ethr-resolver': 0.0.1-alpha.827.0
+      '@ew-did-registry/did-ethr-resolver': 0.0.1-alpha.694.1
       '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
     dev: false
@@ -9776,7 +9776,7 @@ packages:
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-s/5aqV3JVttjxY7VrF+t1+hqqi8WqrqNwZPaev8V1T8L9ps8UzeMsl8TbC+q4dvoiFasjRAd99tG19M+U/Fz9A==
+      integrity: sha512-jzjMyQ2aTPFiLhj0OUholBd0SXMP8iBuQmjRzFLiSvtbdFXs+6srIpmDHKYuLuPFx0hNChwiOX8/a+vKija5Pg==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
   file:projects/asset-registrar.tgz_ts-node@9.1.1:
@@ -9852,7 +9852,7 @@ packages:
     dev: false
     name: '@rush-temp/prequalification-client'
     resolution:
-      integrity: sha512-lSv+g8cHJk/wJcbK4wiykLyB7pFD9dwMPsKUZGpxBhtmdgPNCDnoDXqY8ExWOK3V3oi1oGwUXQcVoEse8Jh34A==
+      integrity: sha512-tO3tnTRXmAaeWVkObcG6iLaKDDHOXlX7eL55MCV7v62/FqaUE20yYE88F3U1zSlQ7hDJbcBZJJb0jAWOv+Yw6g==
       tarball: file:projects/prequalification-client.tgz
     version: 0.0.0
   file:projects/signer-provider-interface.tgz:
