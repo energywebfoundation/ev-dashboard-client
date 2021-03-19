@@ -70,3 +70,8 @@ Use rush to build.
 ```sh
 $ rush build
 ```
+
+### Linting and Formating
+
+This repository use ESLint for code conventions and prettier for syntax formatting.
+ESLint is configured per project while Prettier is configured globally. See rational here: https://rushjs.io/pages/maintainer/enabling_prettier/
