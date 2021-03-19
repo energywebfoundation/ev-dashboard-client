@@ -12,6 +12,8 @@
     "ethers": "^4.0.48"
   },
   "devDependencies": {
+    "@rushstack/eslint-config": "~2.3.2",
+    "eslint": "~7.22.0",
     "typescript": "~4.2.3"
   }
 }
