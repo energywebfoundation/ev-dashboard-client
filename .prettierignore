@@ -102,3 +102,7 @@ lib
 
 # Prettier reformats code blocks inside Markdown, which affects rendered output
 *.md
+
+# Root tsconfig.json has a bunch of comments and prettier messes up the spacing
+/tsconfig.json
+

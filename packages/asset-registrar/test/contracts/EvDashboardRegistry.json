@@ -176,21 +176,14 @@
   "ast": {
     "absolutePath": "/Users/john/shareandcharge/ocn-registry/contracts/EvDashboardRegistry.sol",
     "exportedSymbols": {
-      "EvDashboardRegistry": [
-        269
-      ]
+      "EvDashboardRegistry": [269]
     },
     "id": 270,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".15"
-        ],
+        "literals": ["solidity", "^", "0.5", ".15"],
         "nodeType": "PragmaDirective",
         "src": "0:24:0"
       },
@@ -212,9 +205,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 269,
-        "linearizedBaseContracts": [
-          269
-        ],
+        "linearizedBaseContracts": [269],
         "name": "EvDashboardRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -715,10 +706,7 @@
               "src": "719:151:0",
               "statements": [
                 {
-                  "assignments": [
-                    48,
-                    null
-                  ],
+                  "assignments": [48, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -943,10 +931,7 @@
                       "id": 54,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "797:7:0",
                       "typeDescriptions": {
@@ -1034,9 +1019,7 @@
               "src": "1282:398:0",
               "statements": [
                 {
-                  "assignments": [
-                    76
-                  ],
+                  "assignments": [76],
                   "declarations": [
                     {
                       "constant": false,
@@ -1171,9 +1154,7 @@
                   "src": "1292:53:0"
                 },
                 {
-                  "assignments": [
-                    85
-                  ],
+                  "assignments": [85],
                   "declarations": [
                     {
                       "constant": false,
@@ -1494,10 +1475,7 @@
                       "id": 99,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "1448:7:0",
                       "typeDescriptions": {
@@ -1691,10 +1669,7 @@
                       "id": 110,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "1552:7:0",
                       "typeDescriptions": {
@@ -2008,9 +1983,7 @@
               "src": "2165:560:0",
               "statements": [
                 {
-                  "assignments": [
-                    148
-                  ],
+                  "assignments": [148],
                   "declarations": [
                     {
                       "constant": false,
@@ -2179,9 +2152,7 @@
                   "src": "2175:73:0"
                 },
                 {
-                  "assignments": [
-                    159
-                  ],
+                  "assignments": [159],
                   "declarations": [
                     {
                       "constant": false,
@@ -2502,10 +2473,7 @@
                       "id": 173,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2351:7:0",
                       "typeDescriptions": {
@@ -2699,10 +2667,7 @@
                       "id": 184,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2455:7:0",
                       "typeDescriptions": {
@@ -2896,10 +2861,7 @@
                       "id": 193,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2517:7:0",
                       "typeDescriptions": {
@@ -3847,21 +3809,14 @@
   "legacyAST": {
     "absolutePath": "/Users/john/shareandcharge/ocn-registry/contracts/EvDashboardRegistry.sol",
     "exportedSymbols": {
-      "EvDashboardRegistry": [
-        269
-      ]
+      "EvDashboardRegistry": [269]
     },
     "id": 270,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".15"
-        ],
+        "literals": ["solidity", "^", "0.5", ".15"],
         "nodeType": "PragmaDirective",
         "src": "0:24:0"
       },
@@ -3883,9 +3838,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 269,
-        "linearizedBaseContracts": [
-          269
-        ],
+        "linearizedBaseContracts": [269],
         "name": "EvDashboardRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -4386,10 +4339,7 @@
               "src": "719:151:0",
               "statements": [
                 {
-                  "assignments": [
-                    48,
-                    null
-                  ],
+                  "assignments": [48, null],
                   "declarations": [
                     {
                       "constant": false,
@@ -4614,10 +4564,7 @@
                       "id": 54,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "797:7:0",
                       "typeDescriptions": {
@@ -4705,9 +4652,7 @@
               "src": "1282:398:0",
               "statements": [
                 {
-                  "assignments": [
-                    76
-                  ],
+                  "assignments": [76],
                   "declarations": [
                     {
                       "constant": false,
@@ -4842,9 +4787,7 @@
                   "src": "1292:53:0"
                 },
                 {
-                  "assignments": [
-                    85
-                  ],
+                  "assignments": [85],
                   "declarations": [
                     {
                       "constant": false,
@@ -5165,10 +5108,7 @@
                       "id": 99,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "1448:7:0",
                       "typeDescriptions": {
@@ -5362,10 +5302,7 @@
                       "id": 110,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "1552:7:0",
                       "typeDescriptions": {
@@ -5679,9 +5616,7 @@
               "src": "2165:560:0",
               "statements": [
                 {
-                  "assignments": [
-                    148
-                  ],
+                  "assignments": [148],
                   "declarations": [
                     {
                       "constant": false,
@@ -5850,9 +5785,7 @@
                   "src": "2175:73:0"
                 },
                 {
-                  "assignments": [
-                    159
-                  ],
+                  "assignments": [159],
                   "declarations": [
                     {
                       "constant": false,
@@ -6173,10 +6106,7 @@
                       "id": 173,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2351:7:0",
                       "typeDescriptions": {
@@ -6370,10 +6300,7 @@
                       "id": 184,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2455:7:0",
                       "typeDescriptions": {
@@ -6567,10 +6494,7 @@
                       "id": 193,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        2212,
-                        2213
-                      ],
+                      "overloadedDeclarations": [2212, 2213],
                       "referencedDeclaration": 2213,
                       "src": "2517:7:0",
                       "typeDescriptions": {

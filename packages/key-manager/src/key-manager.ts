@@ -1,4 +1,4 @@
-import { IKeyPair } from "./IKeyPair"
-import { KeyManager } from "./KeyManager"
+import { IKeyPair } from "./IKeyPair";
+import { KeyManager } from "./KeyManager";
 
-export { KeyManager, IKeyPair }
+export { KeyManager, IKeyPair };

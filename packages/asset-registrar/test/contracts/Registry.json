@@ -692,21 +692,14 @@
   "ast": {
     "absolutePath": "/Users/john/shareandcharge/ocn-registry/contracts/Registry.sol",
     "exportedSymbols": {
-      "Registry": [
-        1779
-      ]
+      "Registry": [1779]
     },
     "id": 1780,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 726,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".15"
-        ],
+        "literals": ["solidity", "^", "0.5", ".15"],
         "nodeType": "PragmaDirective",
         "src": "603:24:2"
       },
@@ -742,19 +735,12 @@
             "src": "715:7:2"
           }
         ],
-        "contractDependencies": [
-          1806,
-          1924
-        ],
+        "contractDependencies": [1806, 1924],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 1779,
-        "linearizedBaseContracts": [
-          1779,
-          1924,
-          1806
-        ],
+        "linearizedBaseContracts": [1779, 1924, 1806],
         "name": "Registry",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -1231,10 +1217,7 @@
                       "id": 772,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "1465:10:2",
                       "typeDescriptions": {
@@ -1342,9 +1325,7 @@
               "src": "1647:96:2",
               "statements": [
                 {
-                  "assignments": [
-                    787
-                  ],
+                  "assignments": [787],
                   "declarations": [
                     {
                       "constant": false,
@@ -1473,10 +1454,7 @@
                       "id": 794,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "1718:11:2",
                       "typeDescriptions": {
@@ -1921,10 +1899,7 @@
                       "id": 821,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "2287:7:2",
                       "typeDescriptions": {
@@ -2064,10 +2039,7 @@
                       "id": 831,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "2435:7:2",
                       "typeDescriptions": {
@@ -2701,10 +2673,7 @@
                       "id": 882,
                       "name": "setNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        877,
-                        889
-                      ],
+                      "overloadedDeclarations": [877, 889],
                       "referencedDeclaration": 877,
                       "src": "3002:7:2",
                       "typeDescriptions": {
@@ -2791,9 +2760,7 @@
               "src": "3310:208:2",
               "statements": [
                 {
-                  "assignments": [
-                    903
-                  ],
+                  "assignments": [903],
                   "declarations": [
                     {
                       "constant": false,
@@ -2945,9 +2912,7 @@
                   "src": "3320:65:2"
                 },
                 {
-                  "assignments": [
-                    913
-                  ],
+                  "assignments": [913],
                   "declarations": [
                     {
                       "constant": false,
@@ -3231,10 +3196,7 @@
                       "id": 927,
                       "name": "setNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        877,
-                        889
-                      ],
+                      "overloadedDeclarations": [877, 889],
                       "referencedDeclaration": 877,
                       "src": "3488:7:2",
                       "typeDescriptions": {
@@ -3426,9 +3388,7 @@
               "src": "3654:289:2",
               "statements": [
                 {
-                  "assignments": [
-                    939
-                  ],
+                  "assignments": [939],
                   "declarations": [
                     {
                       "constant": false,
@@ -3642,10 +3602,7 @@
                       "id": 944,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "3713:7:2",
                       "typeDescriptions": {
@@ -3991,10 +3948,7 @@
                       "id": 974,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "4076:10:2",
                       "typeDescriptions": {
@@ -4054,9 +4008,7 @@
               "src": "4367:195:2",
               "statements": [
                 {
-                  "assignments": [
-                    992
-                  ],
+                  "assignments": [992],
                   "declarations": [
                     {
                       "constant": false,
@@ -4191,9 +4143,7 @@
                   "src": "4377:57:2"
                 },
                 {
-                  "assignments": [
-                    1001
-                  ],
+                  "assignments": [1001],
                   "declarations": [
                     {
                       "constant": false,
@@ -4460,10 +4410,7 @@
                       "id": 1015,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "4537:10:2",
                       "typeDescriptions": {
@@ -5535,10 +5482,7 @@
                       "id": 1109,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6108:7:2",
                       "typeDescriptions": {
@@ -5689,10 +5633,7 @@
                       "id": 1118,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6217:7:2",
                       "typeDescriptions": {
@@ -5821,10 +5762,7 @@
                       "id": 1127,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6318:7:2",
                       "typeDescriptions": {
@@ -5975,10 +5913,7 @@
                       "id": 1135,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6375:7:2",
                       "typeDescriptions": {
@@ -6005,9 +5940,7 @@
                   "src": "6375:93:2"
                 },
                 {
-                  "assignments": [
-                    1145
-                  ],
+                  "assignments": [1145],
                   "declarations": [
                     {
                       "constant": false,
@@ -6297,10 +6230,7 @@
                       "id": 1152,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6616:7:2",
                       "typeDescriptions": {
@@ -6594,10 +6524,7 @@
                       "id": 1173,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6860:7:2",
                       "typeDescriptions": {
@@ -6862,9 +6789,7 @@
                   "src": "7048:34:2"
                 },
                 {
-                  "assignments": [
-                    1205
-                  ],
+                  "assignments": [1205],
                   "declarations": [
                     {
                       "constant": false,
@@ -7611,10 +7536,7 @@
                       "id": 1249,
                       "name": "setParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1237,
-                        1259
-                      ],
+                      "overloadedDeclarations": [1237, 1259],
                       "referencedDeclaration": 1237,
                       "src": "7554:8:2",
                       "typeDescriptions": {
@@ -7792,9 +7714,7 @@
               "src": "8020:350:2",
               "statements": [
                 {
-                  "assignments": [
-                    1280
-                  ],
+                  "assignments": [1280],
                   "declarations": [
                     {
                       "constant": false,
@@ -7997,9 +7917,7 @@
                   "src": "8030:93:2"
                 },
                 {
-                  "assignments": [
-                    1293
-                  ],
+                  "assignments": [1293],
                   "declarations": [
                     {
                       "constant": false,
@@ -8320,10 +8238,7 @@
                       "id": 1307,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "8226:7:2",
                       "typeDescriptions": {
@@ -8445,10 +8360,7 @@
                       "id": 1314,
                       "name": "setParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1237,
-                        1259
-                      ],
+                      "overloadedDeclarations": [1237, 1259],
                       "referencedDeclaration": 1237,
                       "src": "8308:8:2",
                       "typeDescriptions": {
@@ -8731,9 +8643,7 @@
               "src": "8551:416:2",
               "statements": [
                 {
-                  "assignments": [
-                    1335
-                  ],
+                  "assignments": [1335],
                   "declarations": [
                     {
                       "constant": false,
@@ -8932,10 +8842,7 @@
                       "id": 1340,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "8608:7:2",
                       "typeDescriptions": {
@@ -9172,9 +9079,7 @@
                   "src": "8749:42:2"
                 },
                 {
-                  "assignments": [
-                    1366
-                  ],
+                  "assignments": [1366],
                   "declarations": [
                     {
                       "constant": false,
@@ -9668,10 +9573,7 @@
                       "id": 1394,
                       "name": "setPartyModules",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1385,
-                        1402
-                      ],
+                      "overloadedDeclarations": [1385, 1402],
                       "referencedDeclaration": 1385,
                       "src": "9153:15:2",
                       "typeDescriptions": {
@@ -9808,9 +9710,7 @@
               "src": "9511:315:2",
               "statements": [
                 {
-                  "assignments": [
-                    1420
-                  ],
+                  "assignments": [1420],
                   "declarations": [
                     {
                       "constant": false,
@@ -9979,9 +9879,7 @@
                   "src": "9521:72:2"
                 },
                 {
-                  "assignments": [
-                    1431
-                  ],
+                  "assignments": [1431],
                   "declarations": [
                     {
                       "constant": false,
@@ -10302,10 +10200,7 @@
                       "id": 1445,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "9696:7:2",
                       "typeDescriptions": {
@@ -10393,10 +10288,7 @@
                       "id": 1452,
                       "name": "setPartyModules",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1385,
-                        1402
-                      ],
+                      "overloadedDeclarations": [1385, 1402],
                       "referencedDeclaration": 1385,
                       "src": "9778:15:2",
                       "typeDescriptions": {
@@ -10789,10 +10681,7 @@
                       "id": 1464,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "9956:7:2",
                       "typeDescriptions": {
@@ -10880,9 +10769,7 @@
                   "src": "10085:24:2"
                 },
                 {
-                  "assignments": [
-                    1481
-                  ],
+                  "assignments": [1481],
                   "declarations": [
                     {
                       "constant": false,
@@ -11139,9 +11026,7 @@
                   "src": "10241:21:2"
                 },
                 {
-                  "assignments": [
-                    1503
-                  ],
+                  "assignments": [1503],
                   "declarations": [
                     {
                       "constant": false,
@@ -11188,9 +11073,7 @@
                   "src": "10273:24:2"
                 },
                 {
-                  "assignments": [
-                    1508
-                  ],
+                  "assignments": [1508],
                   "declarations": [
                     {
                       "constant": false,
@@ -11572,10 +11455,7 @@
                       "id": 1528,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "10593:11:2",
                       "typeDescriptions": {
@@ -11635,9 +11515,7 @@
               "src": "10874:275:2",
               "statements": [
                 {
-                  "assignments": [
-                    1546
-                  ],
+                  "assignments": [1546],
                   "declarations": [
                     {
                       "constant": false,
@@ -11772,9 +11650,7 @@
                   "src": "10884:54:2"
                 },
                 {
-                  "assignments": [
-                    1555
-                  ],
+                  "assignments": [1555],
                   "declarations": [
                     {
                       "constant": false,
@@ -12095,10 +11971,7 @@
                       "id": 1569,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "11041:7:2",
                       "typeDescriptions": {
@@ -12152,10 +12025,7 @@
                       "id": 1576,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "11123:11:2",
                       "typeDescriptions": {
@@ -12582,9 +12452,7 @@
               "src": "11666:141:2",
               "statements": [
                 {
-                  "assignments": [
-                    1615
-                  ],
+                  "assignments": [1615],
                   "declarations": [
                     {
                       "constant": false,
@@ -12972,9 +12840,7 @@
               "src": "12218:379:2",
               "statements": [
                 {
-                  "assignments": [
-                    1658
-                  ],
+                  "assignments": [1658],
                   "declarations": [
                     {
                       "constant": false,
@@ -13919,9 +13785,7 @@
                   "src": "13021:50:2"
                 },
                 {
-                  "assignments": [
-                    1734
-                  ],
+                  "assignments": [1734],
                   "declarations": [
                     {
                       "constant": false,
@@ -14735,21 +14599,14 @@
   "legacyAST": {
     "absolutePath": "/Users/john/shareandcharge/ocn-registry/contracts/Registry.sol",
     "exportedSymbols": {
-      "Registry": [
-        1779
-      ]
+      "Registry": [1779]
     },
     "id": 1780,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 726,
-        "literals": [
-          "solidity",
-          "^",
-          "0.5",
-          ".15"
-        ],
+        "literals": ["solidity", "^", "0.5", ".15"],
         "nodeType": "PragmaDirective",
         "src": "603:24:2"
       },
@@ -14785,19 +14642,12 @@
             "src": "715:7:2"
           }
         ],
-        "contractDependencies": [
-          1806,
-          1924
-        ],
+        "contractDependencies": [1806, 1924],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 1779,
-        "linearizedBaseContracts": [
-          1779,
-          1924,
-          1806
-        ],
+        "linearizedBaseContracts": [1779, 1924, 1806],
         "name": "Registry",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -15274,10 +15124,7 @@
                       "id": 772,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "1465:10:2",
                       "typeDescriptions": {
@@ -15385,9 +15232,7 @@
               "src": "1647:96:2",
               "statements": [
                 {
-                  "assignments": [
-                    787
-                  ],
+                  "assignments": [787],
                   "declarations": [
                     {
                       "constant": false,
@@ -15516,10 +15361,7 @@
                       "id": 794,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "1718:11:2",
                       "typeDescriptions": {
@@ -15964,10 +15806,7 @@
                       "id": 821,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "2287:7:2",
                       "typeDescriptions": {
@@ -16107,10 +15946,7 @@
                       "id": 831,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "2435:7:2",
                       "typeDescriptions": {
@@ -16744,10 +16580,7 @@
                       "id": 882,
                       "name": "setNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        877,
-                        889
-                      ],
+                      "overloadedDeclarations": [877, 889],
                       "referencedDeclaration": 877,
                       "src": "3002:7:2",
                       "typeDescriptions": {
@@ -16834,9 +16667,7 @@
               "src": "3310:208:2",
               "statements": [
                 {
-                  "assignments": [
-                    903
-                  ],
+                  "assignments": [903],
                   "declarations": [
                     {
                       "constant": false,
@@ -16988,9 +16819,7 @@
                   "src": "3320:65:2"
                 },
                 {
-                  "assignments": [
-                    913
-                  ],
+                  "assignments": [913],
                   "declarations": [
                     {
                       "constant": false,
@@ -17274,10 +17103,7 @@
                       "id": 927,
                       "name": "setNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        877,
-                        889
-                      ],
+                      "overloadedDeclarations": [877, 889],
                       "referencedDeclaration": 877,
                       "src": "3488:7:2",
                       "typeDescriptions": {
@@ -17469,9 +17295,7 @@
               "src": "3654:289:2",
               "statements": [
                 {
-                  "assignments": [
-                    939
-                  ],
+                  "assignments": [939],
                   "declarations": [
                     {
                       "constant": false,
@@ -17685,10 +17509,7 @@
                       "id": 944,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "3713:7:2",
                       "typeDescriptions": {
@@ -18034,10 +17855,7 @@
                       "id": 974,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "4076:10:2",
                       "typeDescriptions": {
@@ -18097,9 +17915,7 @@
               "src": "4367:195:2",
               "statements": [
                 {
-                  "assignments": [
-                    992
-                  ],
+                  "assignments": [992],
                   "declarations": [
                     {
                       "constant": false,
@@ -18234,9 +18050,7 @@
                   "src": "4377:57:2"
                 },
                 {
-                  "assignments": [
-                    1001
-                  ],
+                  "assignments": [1001],
                   "declarations": [
                     {
                       "constant": false,
@@ -18503,10 +18317,7 @@
                       "id": 1015,
                       "name": "deleteNode",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        971,
-                        980
-                      ],
+                      "overloadedDeclarations": [971, 980],
                       "referencedDeclaration": 971,
                       "src": "4537:10:2",
                       "typeDescriptions": {
@@ -19578,10 +19389,7 @@
                       "id": 1109,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6108:7:2",
                       "typeDescriptions": {
@@ -19732,10 +19540,7 @@
                       "id": 1118,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6217:7:2",
                       "typeDescriptions": {
@@ -19864,10 +19669,7 @@
                       "id": 1127,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6318:7:2",
                       "typeDescriptions": {
@@ -20018,10 +19820,7 @@
                       "id": 1135,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6375:7:2",
                       "typeDescriptions": {
@@ -20048,9 +19847,7 @@
                   "src": "6375:93:2"
                 },
                 {
-                  "assignments": [
-                    1145
-                  ],
+                  "assignments": [1145],
                   "declarations": [
                     {
                       "constant": false,
@@ -20340,10 +20137,7 @@
                       "id": 1152,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6616:7:2",
                       "typeDescriptions": {
@@ -20637,10 +20431,7 @@
                       "id": 1173,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "6860:7:2",
                       "typeDescriptions": {
@@ -20905,9 +20696,7 @@
                   "src": "7048:34:2"
                 },
                 {
-                  "assignments": [
-                    1205
-                  ],
+                  "assignments": [1205],
                   "declarations": [
                     {
                       "constant": false,
@@ -21654,10 +21443,7 @@
                       "id": 1249,
                       "name": "setParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1237,
-                        1259
-                      ],
+                      "overloadedDeclarations": [1237, 1259],
                       "referencedDeclaration": 1237,
                       "src": "7554:8:2",
                       "typeDescriptions": {
@@ -21835,9 +21621,7 @@
               "src": "8020:350:2",
               "statements": [
                 {
-                  "assignments": [
-                    1280
-                  ],
+                  "assignments": [1280],
                   "declarations": [
                     {
                       "constant": false,
@@ -22040,9 +21824,7 @@
                   "src": "8030:93:2"
                 },
                 {
-                  "assignments": [
-                    1293
-                  ],
+                  "assignments": [1293],
                   "declarations": [
                     {
                       "constant": false,
@@ -22363,10 +22145,7 @@
                       "id": 1307,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "8226:7:2",
                       "typeDescriptions": {
@@ -22488,10 +22267,7 @@
                       "id": 1314,
                       "name": "setParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1237,
-                        1259
-                      ],
+                      "overloadedDeclarations": [1237, 1259],
                       "referencedDeclaration": 1237,
                       "src": "8308:8:2",
                       "typeDescriptions": {
@@ -22774,9 +22550,7 @@
               "src": "8551:416:2",
               "statements": [
                 {
-                  "assignments": [
-                    1335
-                  ],
+                  "assignments": [1335],
                   "declarations": [
                     {
                       "constant": false,
@@ -22975,10 +22749,7 @@
                       "id": 1340,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "8608:7:2",
                       "typeDescriptions": {
@@ -23215,9 +22986,7 @@
                   "src": "8749:42:2"
                 },
                 {
-                  "assignments": [
-                    1366
-                  ],
+                  "assignments": [1366],
                   "declarations": [
                     {
                       "constant": false,
@@ -23711,10 +23480,7 @@
                       "id": 1394,
                       "name": "setPartyModules",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1385,
-                        1402
-                      ],
+                      "overloadedDeclarations": [1385, 1402],
                       "referencedDeclaration": 1385,
                       "src": "9153:15:2",
                       "typeDescriptions": {
@@ -23851,9 +23617,7 @@
               "src": "9511:315:2",
               "statements": [
                 {
-                  "assignments": [
-                    1420
-                  ],
+                  "assignments": [1420],
                   "declarations": [
                     {
                       "constant": false,
@@ -24022,9 +23786,7 @@
                   "src": "9521:72:2"
                 },
                 {
-                  "assignments": [
-                    1431
-                  ],
+                  "assignments": [1431],
                   "declarations": [
                     {
                       "constant": false,
@@ -24345,10 +24107,7 @@
                       "id": 1445,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "9696:7:2",
                       "typeDescriptions": {
@@ -24436,10 +24195,7 @@
                       "id": 1452,
                       "name": "setPartyModules",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1385,
-                        1402
-                      ],
+                      "overloadedDeclarations": [1385, 1402],
                       "referencedDeclaration": 1385,
                       "src": "9778:15:2",
                       "typeDescriptions": {
@@ -24832,10 +24588,7 @@
                       "id": 1464,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "9956:7:2",
                       "typeDescriptions": {
@@ -24923,9 +24676,7 @@
                   "src": "10085:24:2"
                 },
                 {
-                  "assignments": [
-                    1481
-                  ],
+                  "assignments": [1481],
                   "declarations": [
                     {
                       "constant": false,
@@ -25182,9 +24933,7 @@
                   "src": "10241:21:2"
                 },
                 {
-                  "assignments": [
-                    1503
-                  ],
+                  "assignments": [1503],
                   "declarations": [
                     {
                       "constant": false,
@@ -25231,9 +24980,7 @@
                   "src": "10273:24:2"
                 },
                 {
-                  "assignments": [
-                    1508
-                  ],
+                  "assignments": [1508],
                   "declarations": [
                     {
                       "constant": false,
@@ -25615,10 +25362,7 @@
                       "id": 1528,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "10593:11:2",
                       "typeDescriptions": {
@@ -25678,9 +25422,7 @@
               "src": "10874:275:2",
               "statements": [
                 {
-                  "assignments": [
-                    1546
-                  ],
+                  "assignments": [1546],
                   "declarations": [
                     {
                       "constant": false,
@@ -25815,9 +25557,7 @@
                   "src": "10884:54:2"
                 },
                 {
-                  "assignments": [
-                    1555
-                  ],
+                  "assignments": [1555],
                   "declarations": [
                     {
                       "constant": false,
@@ -26138,10 +25878,7 @@
                       "id": 1569,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1942,
-                        1943
-                      ],
+                      "overloadedDeclarations": [1942, 1943],
                       "referencedDeclaration": 1943,
                       "src": "11041:7:2",
                       "typeDescriptions": {
@@ -26195,10 +25932,7 @@
                       "id": 1576,
                       "name": "deleteParty",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        1525,
-                        1534
-                      ],
+                      "overloadedDeclarations": [1525, 1534],
                       "referencedDeclaration": 1525,
                       "src": "11123:11:2",
                       "typeDescriptions": {
@@ -26625,9 +26359,7 @@
               "src": "11666:141:2",
               "statements": [
                 {
-                  "assignments": [
-                    1615
-                  ],
+                  "assignments": [1615],
                   "declarations": [
                     {
                       "constant": false,
@@ -27015,9 +26747,7 @@
               "src": "12218:379:2",
               "statements": [
                 {
-                  "assignments": [
-                    1658
-                  ],
+                  "assignments": [1658],
                   "declarations": [
                     {
                       "constant": false,
@@ -27962,9 +27692,7 @@
                   "src": "13021:50:2"
                 },
                 {
-                  "assignments": [
-                    1734
-                  ],
+                  "assignments": [1734],
                   "declarations": [
                     {
                       "constant": false,

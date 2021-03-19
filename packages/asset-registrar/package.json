@@ -8,7 +8,7 @@
     "build:ts": "rimraf dist && tsc",
     "build:typechain": "rimraf ethers-types && typechain --target ethers-v4 --outDir ethers-types './test/contracts/*'",
     "test:watch": "pnpm run start-rpc -- \"jest --coverage --watchAll\"",
-    "test:prod": "pnpm run start-rpc -- \"jest --no-cache\"",
+    "test": "pnpm run start-rpc -- \"jest --coverage --no-cache\"",
     "start-rpc": "run-with-testrpc -m \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\" --port 8544 --accounts 20 --networkId=9 --gasLimit=10000000"
   },
   "author": "Energy Web",
