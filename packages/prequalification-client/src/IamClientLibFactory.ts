@@ -1,22 +1,25 @@
 import { CacheServerClient, IAM } from 'iam-client-lib';
 
 export class IamClientLibFactory {
-  constructor(private readonly params: IamClientLibFactoryParams) {}
+  private readonly _params: IamClientLibFactoryParams;
+  public constructor(params: IamClientLibFactoryParams) {
+    this._params = params;
+  }
   /**
    * Returns an initialized iam-client
    * @param privateKey
    * @param isForUserClaims
    */
-  public async create({ privateKey }: { privateKey: string }) {
+  public async create({ privateKey }: { privateKey: string }): Promise<IAM> {
     const cacheClient = new CacheServerClient({
-      url: this.params.cacheServerUrl
+      url: this._params.cacheServerUrl
     });
 
     // Because iam-client-lib is running on the server, the private key is passed in directly
     const iamClient = new IAM({
       privateKey,
-      rpcUrl: this.params.rpcUrl,
-      chainId: this.params.chainId,
+      rpcUrl: this._params.rpcUrl,
+      chainId: this._params.chainId,
       cacheClient
     });
 
@@ -26,6 +29,7 @@ export class IamClientLibFactory {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export interface IamClientLibFactoryParams {
   cacheServerUrl: string;
   rpcUrl: string;

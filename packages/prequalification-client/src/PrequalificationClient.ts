@@ -1,15 +1,15 @@
 import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
 import { Client } from 'nats';
 import { ISignerProvider } from '../../signer-provider-interface/src/ISignerProvider';
-import { Asset, PrequalificationRole } from './Asset';
+import { Asset, IPrequalificationRole } from './Asset';
 import { IamClientLibFactory, IamClientLibFactoryParams } from './IamClientLibFactory';
-import { NatsConnection, NatsUrl } from './NatsConnection';
+import { NatsConnection, INatsUrl } from './NatsConnection';
 
 export class PrequalificationClient {
-  private readonly iamClientLibFactory: IamClientLibFactory;
+  private readonly _iamClientLibFactory: IamClientLibFactory;
 
-  constructor(iamClientLibFactoryParams: IamClientLibFactoryParams) {
-    this.iamClientLibFactory = new IamClientLibFactory(iamClientLibFactoryParams);
+  public constructor(iamClientLibFactoryParams: IamClientLibFactoryParams) {
+    this._iamClientLibFactory = new IamClientLibFactory(iamClientLibFactoryParams);
   }
 
   public init({
@@ -18,11 +18,11 @@ export class PrequalificationClient {
     natsUrl
   }: {
     signerProvider: ISignerProvider;
-    prequalificationRole: PrequalificationRole;
-    natsUrl: NatsUrl;
-  }) {
-    const createSubscriptions = (natsConnection: Client) => {
-      this.initVehiclePrequalificationListener({
+    prequalificationRole: IPrequalificationRole;
+    natsUrl: INatsUrl;
+  }): void {
+    const createSubscriptions = (natsConnection: Client): void => {
+      this._initVehiclePrequalificationListener({
         natsClient: natsConnection,
         signerProvider,
         prequalificationRole
@@ -32,15 +32,15 @@ export class PrequalificationClient {
     new NatsConnection({ createSubscriptions, natsUrl });
   }
 
-  private initVehiclePrequalificationListener({
+  private _initVehiclePrequalificationListener({
     natsClient,
     signerProvider,
     prequalificationRole
   }: {
     natsClient: Client;
     signerProvider: ISignerProvider;
-    prequalificationRole: PrequalificationRole;
-  }) {
+    prequalificationRole: IPrequalificationRole;
+  }): void {
     // Listen for prequalification requests
     const PREQUALIFICATION_REQUEST_TOPIC = 'prequalification.exchange';
     natsClient.subscribe(`*.${PREQUALIFICATION_REQUEST_TOPIC}`, async (data) => {
@@ -53,7 +53,7 @@ export class PrequalificationClient {
         console.log(`[NATS] No available signer for asset: ${assetDID}`);
         return;
       }
-      const asset = new Asset(assetDID, wallet, this.iamClientLibFactory);
+      const asset = new Asset(assetDID, wallet, this._iamClientLibFactory);
       console.log(`[NATS] Requesting prequalification for asset: ${assetDID}`);
       await asset.requestPrequalification({ role: prequalificationRole });
     });
@@ -74,7 +74,7 @@ export class PrequalificationClient {
         console.log(`[NATS] No stored signer for asset: ${assetDID}`);
         return;
       }
-      const asset = new Asset(assetDID, signer, this.iamClientLibFactory);
+      const asset = new Asset(assetDID, signer, this._iamClientLibFactory);
       console.log(`[NATS] Publishing claim for asset: ${assetDID}`);
       await asset.publishPublicClaim(message.issuedToken);
     });
