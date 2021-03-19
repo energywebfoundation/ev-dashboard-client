@@ -73,5 +73,7 @@ $ rush build
 
 ### Linting and Formating
 
-This repository use ESLint for code conventions and prettier for syntax formatting.
-ESLint is configured per project while Prettier is configured globally. See rational here: https://rushjs.io/pages/maintainer/enabling_prettier/
+This repository use ESLint for code conventions and Prettier for syntax formatting.
+Both are setup according to [Rush recommendations](https://rushjs.io/pages/maintainer/enabling_prettier/):
+- ESLint is configured per project while Prettier is configured globally.
+- Prettier is configured to run as a pre-commit hook.
