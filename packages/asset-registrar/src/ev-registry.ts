@@ -7,22 +7,22 @@ import { soliditySha3 } from 'web3-utils';
 import abi from './ev-registry.abi';
 
 export class EvRegistry {
-  private readonly contract: Contract;
+  private readonly _contract: Contract;
 
-  constructor(operatorKeys: Keys, providerUrl: string, evRegistryAddress: string) {
+  public constructor(operatorKeys: Keys, providerUrl: string, evRegistryAddress: string) {
     console.log('[EV REGISTRY] connecting to provider', providerUrl);
     const provider = new JsonRpcProvider(providerUrl);
     const signer = new Wallet(operatorKeys.privateKey, provider);
     console.log('[EV REGISTRY] connecting to contract', evRegistryAddress);
-    this.contract = new Contract(evRegistryAddress, abi, signer);
+    this._contract = new Contract(evRegistryAddress, abi, signer);
   }
 
   /**
    * Check for existence of user
    */
   public async userExists(): Promise<boolean> {
-    const user = await this.contract.signer.getAddress();
-    const exists = await this.contract.getAllUserAddresses();
+    const user = await this._contract.signer.getAddress();
+    const exists = await this._contract.getAllUserAddresses();
     return exists.includes(user);
   }
 
@@ -30,7 +30,7 @@ export class EvRegistry {
    * Check for existence of device
    */
   public async deviceExists(address: string): Promise<boolean> {
-    const exists = await this.contract.getAllDeviceAddresses();
+    const exists = await this._contract.getAllDeviceAddresses();
     return exists.includes(address);
   }
 
@@ -44,7 +44,7 @@ export class EvRegistry {
     if (!uid) {
       return undefined;
     }
-    const deviceAddresses = await this.contract.getDeviceFromIdentifier(uid);
+    const deviceAddresses = await this._contract.getDeviceFromIdentifier(uid);
     return { deviceAddress: deviceAddresses[0], userAddress: deviceAddresses[1] };
   }
 
@@ -57,9 +57,9 @@ export class EvRegistry {
       return;
     }
     console.log('[EV REGISTRY] user does not exist');
-    const user = await this.contract.signer.getAddress();
-    const { r, s, v } = await this.getSignature(user);
-    await this.contract.addUser(user, v, r, s);
+    const user = await this._contract.signer.getAddress();
+    const { r, s, v } = await this._getSignature(user);
+    await this._contract.addUser(user, v, r, s);
   }
 
   /**
@@ -71,10 +71,10 @@ export class EvRegistry {
       return;
     }
     console.log(`[${new Date()}]`, '[EV REGISTRY] device does not exist', address, uid);
-    const user = await this.contract.signer.getAddress();
+    const user = await this._contract.signer.getAddress();
     // convert uid to buffer so vehicle ID isn't parsed as an integer
-    const { r, v, s } = await this.getSignature(address, Buffer.from(uid), user);
-    await this.contract.addDevice(address, uid, user, v, r, s);
+    const { r, v, s } = await this._getSignature(address, Buffer.from(uid), user);
+    await this._contract.addDevice(address, uid, user, v, r, s);
   }
 
   /**
@@ -83,10 +83,11 @@ export class EvRegistry {
    *
    * @param params arbitrary number of parameters that will be signed
    */
-  private async getSignature(...params: any[]): Promise<Signature> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private async _getSignature(...params: any[]): Promise<Signature> {
     const hash = soliditySha3(...params);
     const hashBytes = arrayify(hash as string);
-    const signature = await this.contract.signer.signMessage(hashBytes);
+    const signature = await this._contract.signer.signMessage(hashBytes);
     return splitSignature(signature);
   }
 }

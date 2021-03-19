@@ -9,14 +9,14 @@ import { getDIDFromAddress } from './utils';
 import { Methods } from '@ew-did-registry/did';
 
 export class DID {
-  private readonly resolverSettings: IResolverSettings;
+  private readonly _resolverSettings: IResolverSettings;
+  private readonly _signerProvider: ISignerProvider;
+  private readonly _operatorKeys: Keys;
 
-  constructor(
-    private readonly signerProvider: ISignerProvider,
-    private readonly operatorKeys: Keys,
-    providerUrl: string
-  ) {
-    this.resolverSettings = {
+  public constructor(signerProvider: ISignerProvider, operatorKeys: Keys, providerUrl: string) {
+    this._signerProvider = signerProvider;
+    this._operatorKeys = operatorKeys;
+    this._resolverSettings = {
       provider: {
         uriOrInfo: providerUrl,
         type: ProviderTypes.HTTP
@@ -32,15 +32,15 @@ export class DID {
    */
   public async createDocument(address: string): Promise<void> {
     const did = getDIDFromAddress(address);
-    const signer = await this.signerProvider.getSignerForDID(did);
+    const signer = await this._signerProvider.getSignerForDID(did);
     if (!signer) {
       throw Error('Unable to create DID Document as unable to retrieve signer');
     }
-    const operator = new Operator(signer, this.resolverSettings);
+    const operator = new Operator(signer, this._resolverSettings);
     const document = new DIDDocumentFull(did, operator);
     console.log(`[${new Date()}]`, '[DID] minting tokens before did creation', did);
     // send tokens to address so they can create/update their document
-    await this.mint(address);
+    await this._mint(address);
     console.log(`[${new Date()}]`, '[DID] creating did document', did);
     await document.create();
     console.log(`[${new Date()}]`, `[DID] Created identity for ${did}`);
@@ -50,9 +50,9 @@ export class DID {
    * Fund asset wallet with minimal EWT
    * @param assetAddress wallet address of asset
    */
-  private async mint(assetAddress: string): Promise<void> {
-    const provider = new JsonRpcProvider(this.resolverSettings.provider?.uriOrInfo);
-    const wallet = new Wallet(this.operatorKeys.privateKey, provider);
+  private async _mint(assetAddress: string): Promise<void> {
+    const provider = new JsonRpcProvider(this._resolverSettings.provider?.uriOrInfo);
+    const wallet = new Wallet(this._operatorKeys.privateKey, provider);
     const valueInEther = 0.001;
     console.log(
       `[${new Date()}]`,
