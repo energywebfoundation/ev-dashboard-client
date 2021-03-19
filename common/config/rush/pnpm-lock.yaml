@@ -732,7 +732,7 @@ packages:
   /@ew-did-registry/did-document/0.0.1-alpha.694.1:
     dependencies:
       '@ew-did-registry/did': 0.0.1-alpha.694.1
-      '@ew-did-registry/did-ethr-resolver': 0.0.1-alpha.694.1
+      '@ew-did-registry/did-ethr-resolver': 0.0.1-alpha.827.0
       '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
     dev: false
@@ -9764,9 +9764,11 @@ packages:
   file:projects/asset-operator-server.tgz:
     dependencies:
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
+      '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
       '@types/express': 4.17.11
       '@types/node': 14.14.35
       body-parser: 1.19.0
+      eslint: 7.22.0
       express: 4.17.1
       rimraf: 3.0.2
       ts-node: 9.1.1_typescript@4.2.3
@@ -9774,7 +9776,7 @@ packages:
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-mlFPYiRKu9JEiLlWgV1xsQzK8a5Mbw+TM20RHM4UwMUsmY70NOx4b+5C4ydcgu56bFF4e0XdQGbuq2mkcX+gOQ==
+      integrity: sha512-s/5aqV3JVttjxY7VrF+t1+hqqi8WqrqNwZPaev8V1T8L9ps8UzeMsl8TbC+q4dvoiFasjRAd99tG19M+U/Fz9A==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
   file:projects/asset-registrar.tgz_ts-node@9.1.1:
@@ -9814,29 +9816,35 @@ packages:
       '@ew-did-registry/did-ipfs-store': 0.0.1-alpha.694.1
       '@ew-did-registry/did-resolver-interface': 0.0.1-alpha.694.1
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
+      '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
+      eslint: 7.22.0
       ethers: 4.0.48
       rimraf: 3.0.2
       typescript: 4.2.3
     dev: false
     name: '@rush-temp/did-hydrator'
     resolution:
-      integrity: sha512-W11iiL4TzGyjxXKykknI/j0QKrg15fq/MO2DrVz+DPnw1Tndq3UQIn5sJIS2acsdhN1L8DP5getMOMYVrqbwHg==
+      integrity: sha512-7wAfYKNUcOCUJURRrafXQxAK8n7jlgxMM74tYagBngQUq5BXkFvkDzly4bjwxYNHWxCia7/qEvWuAPdBCt2QwQ==
       tarball: file:projects/did-hydrator.tgz
     version: 0.0.0
   file:projects/key-manager.tgz:
     dependencies:
+      '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
       better-sqlite3: 5.4.3
+      eslint: 7.22.0
       ethers: 4.0.48
       typescript: 4.2.3
     dev: false
     name: '@rush-temp/key-manager'
     resolution:
-      integrity: sha512-rpBD3S+fd4O3Pl6lInxMHsnwqQzGyIAm2lVBeAHWgJh+RL5VAv33q5b1BS7l0qGq9snMhA5fTBGiydxYGMD61Q==
+      integrity: sha512-ACSheJAo8jet0JW3xua8dtKTyCwsHqUPL62SSSc2NCrl/3mYJk2+YBIC2gsynjbewz5b07K1vQ1vk2bfC1d8nQ==
       tarball: file:projects/key-manager.tgz
     version: 0.0.0
   file:projects/prequalification-client.tgz:
     dependencies:
+      '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
       '@types/events': 3.0.0
+      eslint: 7.22.0
       ethers: 4.0.48
       iam-client-lib: 2.0.0-alpha.3
       nats: 1.4.12
@@ -9844,17 +9852,19 @@ packages:
     dev: false
     name: '@rush-temp/prequalification-client'
     resolution:
-      integrity: sha512-6v2hAtefV42or6yYDjK64vZdxJH4rgXxqHyFkJfzqVFWc7O80lVQLpEEz/kP0BQ4PPsCjgtqK8inFEeSlwoguA==
+      integrity: sha512-lSv+g8cHJk/wJcbK4wiykLyB7pFD9dwMPsKUZGpxBhtmdgPNCDnoDXqY8ExWOK3V3oi1oGwUXQcVoEse8Jh34A==
       tarball: file:projects/prequalification-client.tgz
     version: 0.0.0
   file:projects/signer-provider-interface.tgz:
     dependencies:
+      '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
+      eslint: 7.22.0
       ethers: 4.0.48
       typescript: 4.2.3
     dev: false
     name: '@rush-temp/signer-provider-interface'
     resolution:
-      integrity: sha512-BVhuh7Rff3c8dPxhjJHE336thdQRUiczA60s367nEpAaJc4Q8wF6VrCjBD0mHT8YTx7wXQBE3gjBrS2XY06BfQ==
+      integrity: sha512-04N7ExgzeWxPv2ZMz2fBD04RQUeyxfej9goD2dl6dmX/Dj+iedYuGqHDGlXx3t3fIxpviujN1ne3oPD9pLxAdA==
       tarball: file:projects/signer-provider-interface.tgz
     version: 0.0.0
   github.com/ethereumjs/ethereumjs-abi/1a27c59c15ab1e95ee8e5c4ed6ad814c49cc439e:
