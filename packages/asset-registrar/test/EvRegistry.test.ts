@@ -4,7 +4,6 @@ import { EvRegistry } from "../src/ev-registry";
 import { Keys } from "@ew-did-registry/keys";
 import { toHex } from "web3-utils";
 
-
 const wallet = Wallet.createRandom()
 const keys = new Keys({ privateKey: wallet.privateKey })
 
@@ -27,4 +26,5 @@ describe("EvRegistry tests", () => {
     expect(deviceInfo?.deviceAddress).toEqual(deviceAddress);
     expect(deviceInfo?.userAddress).toEqual(wallet.address);
   });
+
 });
