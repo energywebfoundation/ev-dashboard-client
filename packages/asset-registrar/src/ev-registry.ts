@@ -39,7 +39,7 @@ export class EvRegistry {
      * 
      * @returns device address and user address associated with a OCPI uid
      */
-    public async getRegisteredDevice(uid: string): Promise<{deviceAddress: string, userAddress: string} | undefined> {
+    public async getRegisteredDevice(uid: string): Promise<{ deviceAddress: string, userAddress: string } | undefined> {
         if (!uid) {
             return undefined
         }
