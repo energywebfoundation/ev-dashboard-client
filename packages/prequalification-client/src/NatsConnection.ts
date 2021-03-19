@@ -1,4 +1,4 @@
-import { Client, connect } from "nats";
+import { Client, connect } from 'nats';
 
 export interface NatsUrl {
   host: string;
@@ -10,7 +10,7 @@ export interface NatsUrl {
  * Event handling code taken from: https://docs.nats.io/developing-with-nats/events/events
  */
 export class NatsConnection {
-  private static readonly logPrefix = "[NATS Connection]";
+  private static readonly logPrefix = '[NATS Connection]';
   private readonly createSubscriptions: (Client) => void;
   private readonly natsUrl: NatsUrl;
   private natsClient: Client;
@@ -26,33 +26,33 @@ export class NatsConnection {
     console.log(`[NATS] Connecting to ${url}`);
     const nc = connect({ url: `nats://${url}` });
 
-    nc.on("error", (err) => {
+    nc.on('error', (err) => {
       console.error(`${NatsConnection.logPrefix} error occured`, err);
       this.reconnect();
     });
-    nc.on("connect", () => {
+    nc.on('connect', () => {
       console.log(`${NatsConnection.logPrefix} client connected. Creating subscriptions.`);
       this.createSubscriptions(nc);
     });
 
-    nc.on("disconnect", () => {
+    nc.on('disconnect', () => {
       console.log(`${NatsConnection.logPrefix} client disconnected`);
     });
 
-    nc.on("reconnecting", () => {
+    nc.on('reconnecting', () => {
       console.log(`${NatsConnection.logPrefix} client reconnecting`);
     });
 
-    nc.on("reconnect", () => {
+    nc.on('reconnect', () => {
       console.log(`${NatsConnection.logPrefix} client reconnected`);
     });
 
-    nc.on("close", () => {
+    nc.on('close', () => {
       console.log(`${NatsConnection.logPrefix} client closed`);
       this.reconnect();
     });
 
-    nc.on("permission_error", (err) => {
+    nc.on('permission_error', (err) => {
       console.error(`${NatsConnection.logPrefix} permission_error`, err);
     });
     return nc;

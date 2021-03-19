@@ -1,9 +1,9 @@
-import { NATS_EXCHANGE_TOPIC } from "iam-client-lib";
-import { Client } from "nats";
-import { ISignerProvider } from "../../signer-provider-interface/src/ISignerProvider";
-import { Asset, PrequalificationRole } from "./Asset";
-import { IamClientLibFactory, IamClientLibFactoryParams } from "./IamClientLibFactory";
-import { NatsConnection, NatsUrl } from "./NatsConnection";
+import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
+import { Client } from 'nats';
+import { ISignerProvider } from '../../signer-provider-interface/src/ISignerProvider';
+import { Asset, PrequalificationRole } from './Asset';
+import { IamClientLibFactory, IamClientLibFactoryParams } from './IamClientLibFactory';
+import { NatsConnection, NatsUrl } from './NatsConnection';
 
 export class PrequalificationClient {
   private readonly iamClientLibFactory: IamClientLibFactory;
@@ -15,7 +15,7 @@ export class PrequalificationClient {
   public init({
     signerProvider,
     prequalificationRole,
-    natsUrl,
+    natsUrl
   }: {
     signerProvider: ISignerProvider;
     prequalificationRole: PrequalificationRole;
@@ -25,7 +25,7 @@ export class PrequalificationClient {
       this.initVehiclePrequalificationListener({
         natsClient: natsConnection,
         signerProvider,
-        prequalificationRole,
+        prequalificationRole
       });
     };
     // tslint:disable-next-line: no-unused-expression
@@ -35,14 +35,14 @@ export class PrequalificationClient {
   private initVehiclePrequalificationListener({
     natsClient,
     signerProvider,
-    prequalificationRole,
+    prequalificationRole
   }: {
     natsClient: Client;
     signerProvider: ISignerProvider;
     prequalificationRole: PrequalificationRole;
   }) {
     // Listen for prequalification requests
-    const PREQUALIFICATION_REQUEST_TOPIC = "prequalification.exchange";
+    const PREQUALIFICATION_REQUEST_TOPIC = 'prequalification.exchange';
     natsClient.subscribe(`*.${PREQUALIFICATION_REQUEST_TOPIC}`, async (data) => {
       const json = JSON.parse(data);
       console.log(`[NATS] Received prequalification REQUEST for: ${JSON.stringify(json)}`);
@@ -78,7 +78,7 @@ export class PrequalificationClient {
       console.log(`[NATS] Publishing claim for asset: ${assetDID}`);
       await asset.publishPublicClaim(message.issuedToken);
     });
-    console.log("[NATS] Listening for asset claim requests and issued claims");
+    console.log('[NATS] Listening for asset claim requests and issued claims');
   }
 }
 

@@ -1,7 +1,7 @@
-import * as sqlite3 from "better-sqlite3";
-import { Wallet } from "ethers";
-import { ISignerProvider } from "@ev-dashboard-client/signer-provider-interface";
-import { IKeyPair } from "./IKeyPair";
+import * as sqlite3 from 'better-sqlite3';
+import { Wallet } from 'ethers';
+import { ISignerProvider } from '@ev-dashboard-client/signer-provider-interface';
+import { IKeyPair } from './IKeyPair';
 
 export class KeyManager implements ISignerProvider {
   private db: sqlite3.Database;
@@ -9,7 +9,7 @@ export class KeyManager implements ISignerProvider {
   constructor(name: string) {
     this.db = sqlite3.default(name);
     this.db
-      .prepare("CREATE TABLE IF NOT EXISTS dids (id INTEGER PRIMARY KEY, did TEXT, private_key TEXT)")
+      .prepare('CREATE TABLE IF NOT EXISTS dids (id INTEGER PRIMARY KEY, did TEXT, private_key TEXT)')
       .run();
   }
 
@@ -32,17 +32,17 @@ export class KeyManager implements ISignerProvider {
   }
 
   private getKeyPair(did: string): IKeyPair | undefined {
-    const keypair = this.db.prepare("SELECT * FROM dids WHERE did = ?").get(did);
+    const keypair = this.db.prepare('SELECT * FROM dids WHERE did = ?').get(did);
     if (!keypair) {
       return;
     }
     return {
       did: keypair.did,
-      privateKey: keypair.private_key,
+      privateKey: keypair.private_key
     };
   }
 
   private setKeyPair(keyPair: IKeyPair): void {
-    this.db.prepare("INSERT INTO dids (did, private_key) VALUES (?,?)").run(keyPair.did, keyPair.privateKey);
+    this.db.prepare('INSERT INTO dids (did, private_key) VALUES (?,?)').run(keyPair.did, keyPair.privateKey);
   }
 }

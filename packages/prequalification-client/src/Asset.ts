@@ -1,5 +1,5 @@
-import { Wallet } from "ethers";
-import { IamClientLibFactory } from "./IamClientLibFactory";
+import { Wallet } from 'ethers';
+import { IamClientLibFactory } from './IamClientLibFactory';
 
 export class Asset {
   private readonly logPrefix: string;
@@ -17,11 +17,11 @@ export class Asset {
 
     const claimData = {
       fields: [],
-      claimType: role.roleName,
+      claimType: role.roleName
     };
 
     const iamClient = await this.iamClientLibFactory.create({
-      privateKey: this.wallet.privateKey,
+      privateKey: this.wallet.privateKey
     });
 
     console.log(`${this.logPrefix}, retrieving DIDs with role: ${role.roleName}`);
@@ -33,12 +33,12 @@ export class Asset {
 
     console.log(`${this.logPrefix} is creating claim request`, {
       issuer: tsoDids,
-      claim: JSON.stringify(claimData),
+      claim: JSON.stringify(claimData)
     });
 
     await iamClient.createClaimRequest({
       issuer: tsoDids,
-      claim: claimData,
+      claim: claimData
     });
 
     console.log(`${this.logPrefix} claim request created`);
@@ -46,7 +46,7 @@ export class Asset {
 
   public async publishPublicClaim(token: string): Promise<string | null> {
     const assetIamClient = await this.iamClientLibFactory.create({
-      privateKey: this.wallet.privateKey,
+      privateKey: this.wallet.privateKey
     });
     const ipfsUrl = await assetIamClient.publishPublicClaim({ token });
     console.log(`${this.logPrefix} published claim to DID Document`);

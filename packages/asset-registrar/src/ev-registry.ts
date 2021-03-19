@@ -1,19 +1,19 @@
-import { arrayify, Signature, splitSignature } from "@ethersproject/bytes";
-import { Contract } from "@ethersproject/contracts";
-import { JsonRpcProvider } from "@ethersproject/providers";
-import { Wallet } from "@ethersproject/wallet";
-import { Keys } from "@ew-did-registry/keys";
-import { soliditySha3 } from "web3-utils";
-import abi from "./ev-registry.abi";
+import { arrayify, Signature, splitSignature } from '@ethersproject/bytes';
+import { Contract } from '@ethersproject/contracts';
+import { JsonRpcProvider } from '@ethersproject/providers';
+import { Wallet } from '@ethersproject/wallet';
+import { Keys } from '@ew-did-registry/keys';
+import { soliditySha3 } from 'web3-utils';
+import abi from './ev-registry.abi';
 
 export class EvRegistry {
   private readonly contract: Contract;
 
   constructor(operatorKeys: Keys, providerUrl: string, evRegistryAddress: string) {
-    console.log("[EV REGISTRY] connecting to provider", providerUrl);
+    console.log('[EV REGISTRY] connecting to provider', providerUrl);
     const provider = new JsonRpcProvider(providerUrl);
     const signer = new Wallet(operatorKeys.privateKey, provider);
-    console.log("[EV REGISTRY] connecting to contract", evRegistryAddress);
+    console.log('[EV REGISTRY] connecting to contract', evRegistryAddress);
     this.contract = new Contract(evRegistryAddress, abi, signer);
   }
 
@@ -53,10 +53,10 @@ export class EvRegistry {
    */
   public async addUser(): Promise<void> {
     if (await this.userExists()) {
-      console.log("[EV REGISTRY] user already exists");
+      console.log('[EV REGISTRY] user already exists');
       return;
     }
-    console.log("[EV REGISTRY] user does not exist");
+    console.log('[EV REGISTRY] user does not exist');
     const user = await this.contract.signer.getAddress();
     const { r, s, v } = await this.getSignature(user);
     await this.contract.addUser(user, v, r, s);
@@ -67,10 +67,10 @@ export class EvRegistry {
    */
   public async addDevice(address: string, uid: string): Promise<void> {
     if (await this.deviceExists(address)) {
-      console.log("[EV REGISTRY] device already exists", address, uid);
+      console.log('[EV REGISTRY] device already exists', address, uid);
       return;
     }
-    console.log(`[${new Date()}]`, "[EV REGISTRY] device does not exist", address, uid);
+    console.log(`[${new Date()}]`, '[EV REGISTRY] device does not exist', address, uid);
     const user = await this.contract.signer.getAddress();
     // convert uid to buffer so vehicle ID isn't parsed as an integer
     const { r, v, s } = await this.getSignature(address, Buffer.from(uid), user);

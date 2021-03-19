@@ -1,8 +1,8 @@
-import { Wallet, providers, utils } from "ethers";
-import { EvDashboardRegistry } from "../ethers-types/EvDashboardRegistry";
-import { Registry } from "../ethers-types/Registry";
-import { EvDashboardRegistry__factory } from "../ethers-types/factories/EvDashboardRegistry__factory";
-import { Registry__factory } from "../ethers-types/factories/Registry__factory";
+import { Wallet, providers, utils } from 'ethers';
+import { EvDashboardRegistry } from '../ethers-types/EvDashboardRegistry';
+import { Registry } from '../ethers-types/Registry';
+import { EvDashboardRegistry__factory } from '../ethers-types/factories/EvDashboardRegistry__factory';
+import { Registry__factory } from '../ethers-types/factories/Registry__factory';
 
 const { JsonRpcProvider } = providers;
 const { parseEther } = utils;
@@ -16,7 +16,7 @@ export const replenish = async (acc: string): Promise<void> => {
   const faucet = provider.getSigner(2);
   await faucet.sendTransaction({
     to: acc,
-    value: parseEther("1.0"),
+    value: parseEther('1.0')
   });
 };
 

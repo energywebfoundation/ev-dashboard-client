@@ -1,4 +1,4 @@
-import { Wallet } from "ethers";
+import { Wallet } from 'ethers';
 
 export interface ISignerProvider {
   // Currently need to return wallet as iam-client-lib needs private key
