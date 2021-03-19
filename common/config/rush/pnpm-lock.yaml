@@ -17,12 +17,14 @@ dependencies:
   '@rush-temp/signer-provider-interface': file:projects/signer-provider-interface.tgz
   '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
   '@typechain/ethers-v4': 4.0.0_ethers@4.0.48+typechain@4.0.3
+  '@types/convict': 6.0.1
   '@types/events': 3.0.0
   '@types/express': 4.17.11
   '@types/jest': 26.0.21
   '@types/node': 14.14.35
   better-sqlite3: 5.4.3
   body-parser: 1.19.0
+  convict: 6.0.1
   eslint: 7.22.0
   ethers: 4.0.48
   express: 4.17.1
@@ -1250,6 +1252,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ePPA/JuI+X0vb+gSWlPKOY0NdNAie/rPUqX2GUPpbZwiKTkSPhjXWuee47E4MtE54QVzGCQMQkAL6JhV2E1+cQ==
+  /@types/convict/6.0.1:
+    dependencies:
+      '@types/node': 14.14.35
+    dev: false
+    resolution:
+      integrity: sha512-5094Bw9nSvkUNV7qqUvzDt6lgWZpKbpR/AJu8lmtojKa12nxtHHGrPFwK3YP4YZA1rCc2tbpI5TUEBU35eqVxg==
   /@types/elliptic/6.4.12:
     dependencies:
       '@types/bn.js': 5.1.0
@@ -2658,6 +2666,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-4FJkXzKXEDB1snCFZlLP4gpC3JILicCpGbzG9f9G7tGqGCzETQ2hWPrcinA9oU4wtf2biUaEH5065UnMeR33oA==
+  /convict/6.0.1:
+    dependencies:
+      lodash.clonedeep: 4.5.0
+      yargs-parser: 18.1.3
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-M4YNNq5NV4/VS8JhvBSHAokwvQRL4evEuU0VFe1GNPiqnj9TAkLXpf39ImCCVZlsp3CFp04bc/kRSWPGsJGJWg==
   /cookie-signature/1.0.6:
     dev: false
     resolution:
@@ -6217,6 +6234,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
+  /lodash.clonedeep/4.5.0:
+    dev: false
+    resolution:
+      integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
   /lodash.debounce/4.0.8:
     dev: false
     resolution:
@@ -9765,9 +9786,11 @@ packages:
     dependencies:
       '@ew-did-registry/keys': 0.0.1-alpha.694.1
       '@rushstack/eslint-config': 2.3.2_eslint@7.22.0+typescript@4.2.3
+      '@types/convict': 6.0.1
       '@types/express': 4.17.11
       '@types/node': 14.14.35
       body-parser: 1.19.0
+      convict: 6.0.1
       eslint: 7.22.0
       express: 4.17.1
       rimraf: 3.0.2
@@ -9776,7 +9799,7 @@ packages:
     dev: false
     name: '@rush-temp/asset-operator-server'
     resolution:
-      integrity: sha512-jzjMyQ2aTPFiLhj0OUholBd0SXMP8iBuQmjRzFLiSvtbdFXs+6srIpmDHKYuLuPFx0hNChwiOX8/a+vKija5Pg==
+      integrity: sha512-pQ0ySAIswZ5c4mTa7pc8VIyOIRA+qbTaWeohw5hjjftMkjGPPm/d6vP+yo/s+Z7EQ5mjt0DzCP3P2ftSdEUjuA==
       tarball: file:projects/asset-operator-server.tgz
     version: 0.0.0
   file:projects/asset-registrar.tgz_ts-node@9.1.1:
@@ -9876,6 +9899,7 @@ packages:
     resolution:
       tarball: https://codeload.github.com/ethereumjs/ethereumjs-abi/tar.gz/1a27c59c15ab1e95ee8e5c4ed6ad814c49cc439e
     version: 0.6.8
+registry: ''
 specifiers:
   '@ethersproject/bytes': ^5.0.8
   '@ethersproject/contracts': ^5.0.8
@@ -9895,12 +9919,14 @@ specifiers:
   '@rush-temp/signer-provider-interface': file:./projects/signer-provider-interface.tgz
   '@rushstack/eslint-config': ~2.3.2
   '@typechain/ethers-v4': ~4.0.0
+  '@types/convict': ~6.0.1
   '@types/events': ~3.0.0
   '@types/express': ~4.17.11
   '@types/jest': ~26.0.21
   '@types/node': ~14.14.35
   better-sqlite3: ^5.4.3
   body-parser: ~1.19.0
+  convict: ~6.0.1
   eslint: ~7.22.0
   ethers: ^4.0.48
   express: ~4.17.1

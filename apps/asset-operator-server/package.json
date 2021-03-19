@@ -15,7 +15,8 @@
     "@ev-dashboard-client/prequalification-client": "1.0.0",
     "@ew-did-registry/keys": "0.0.1-alpha.694.1",
     "express": "~4.17.1",
-    "body-parser": "~1.19.0"
+    "body-parser": "~1.19.0",
+    "convict": "~6.0.1"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "~2.3.2",
@@ -24,6 +25,7 @@
     "eslint": "~7.22.0",
     "ts-node": "~9.1.1",
     "typescript": "~4.2.3",
-    "rimraf": "~3.0.2"
+    "rimraf": "~3.0.2",
+    "@types/convict": "~6.0.1"
   }
 }

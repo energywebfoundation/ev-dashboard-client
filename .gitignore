@@ -73,3 +73,5 @@ keymanager.db
 
 # Contract ethers typechain
 ethers-types
+
+config
