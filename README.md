@@ -1,7 +1,7 @@
 # EV Dashboard Client v0.1
 
 ## Disclaimer
-> The EW-DID library is not ready for production grade applications.
+> The EV Dashboard Client is not ready for production grade applications.
 
 ## Introduction
 This repository provides apps and packages to allow assets/devices to register in the ev-dashboard
