@@ -7,6 +7,18 @@
 This repository provides apps and packages to allow assets/devices to register in the ev-dashboard
 and obtain claims for participation in a flexibility market
 
+## Usage
+
+Thus far, the only app that is available is the [asset-operator-server](#asset-operator-server).
+Currently, the repository must be built as per the [Development instructions](#development).
+Several configuration values are required to run the app. Please request these values as necessary.
+
+Once the app is built and the configuration has been provided, the app can be run by executing:
+```
+cd apps/asset-operator-server
+pnpm start
+```
+
 ## Architecture Diagram
 
 ![EV Dashboard Client Architecture](https://github.com/energywebfoundation/ev-dashboard-client/blob/master/architecture.png)
@@ -17,7 +29,7 @@ and obtain claims for participation in a flexibility market
 
 #### asset-operator-server
 
-A node express HTTP server which bundles and operator the client libraries
+A node express HTTP server which bundles and operator the client libraries.
 
 ### Libraries
 
