@@ -4,13 +4,68 @@
 > The EV Dashboard Client is not ready for production grade applications.
 
 ## Introduction
-This repository provides apps and packages to allow assets/devices to register in the ev-dashboard
+This repository provides apps and packages to allow users and assets/devices to register in the ev-dashboard registry
 and obtain claims for participation in a flexibility market
 
 ## Usage
 
-Thus far, the only app that is available is the [asset-operator-server](#asset-operator-server).
-Currently, the repository must be built as per the [Development instructions](#development).
+The two apps which are available are the [asset-operator-server](#asset-operator-server)
+and the [asset-operator-cli](#asset-operator-cli)
+Currently, the libraries are not published to npm and so the repository must be built as per the [Development instructions](#development) in order to use the apps.
+
+### Running asset-operator-cli
+
+First, build the project as per [Development instructions](#development). Then, commands can be executed againts the compiled files.
+
+#### Add a user
+
+This command will register the OCN party corresponding to
+the private key as a user in the ocn registry
+
+```
+cd apps/asset-operator-cli
+pnpx node dist/src/cli.js add-user \
+ --operator-key <private key of OCN party>
+ --ev-registry-address <address of EV reg>
+ --provider-url <RPC url>
+```
+
+#### Generate device keypair
+
+This command will generate a sqlite db file named `keymanager.db`
+if it doesn't exist and will generate a keypair with an address and private key.
+
+```
+cd apps/asset-operator-cli
+pnpx node dist/src/cli.js generate-key
+```
+
+#### Add a device 
+
+This command will register the device to the party corresponding to
+the private key.
+The device UID can be for example an OCPI token UID or an OCPI evse ID. 
+
+```
+cd apps/asset-operator-cli
+pnpx node dist/src/cli.js add-device \
+ --operator-key <private key of OCN party>
+ --ev-registry-address <address of EV reg>
+ --provider-url <RPC url> \
+ --device-address <the address from generate-key. Only address, not with did method> \
+ --device-uid <the OCPI uid of the device>
+```
+Example:
+```
+pnpx node dist/src/cli.js add-device \
+ --operator-key 424b82cb3f4c74a975c209192c4b6867a0d9294a0dd41dd83b468fe0d0c634da>
+ --ev-registry-address 0xacbcC4db79893CDA1714795Ce26686EEb7D85E5C
+ --provider-url https://volta-rpc.energyweb.org \
+ --device-address 0x95caf3C2aBa58497ea2381Fdc1D7D09deC41C620 \
+ --device-uid 123456 
+```
+
+### Running asset-operator-server
 Several configuration values are required to run the app. Please request these values as necessary.
 
 Once the app is built and the configuration has been provided, the app can be run by executing:

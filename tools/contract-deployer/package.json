@@ -1,0 +1,23 @@
+{
+  "name": "@ev-dashboard-client/contract-deployer",
+  "version": "1.0.0",
+  "description": "Deploys contracts to local blockchain for use in tests",
+  "main": "dist/src/setup_contracts.js",
+  "scripts": {
+    "build": "rimraf dist & pnpm run build:typechain && pnpm run build:ts",
+    "build:ts": "tsc",
+    "build:typechain": "rimraf ethers-types && typechain --target ethers-v4 --outDir ethers-types './src/contracts/*'"
+  },
+  "author": "Energy Web",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ethers": "^4.0.48"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-config": "~2.3.2",
+    "eslint": "~7.22.0",
+    "typescript": "~4.2.3",
+    "typechain": "~4.0.3",
+    "rimraf": "~3.0.2"
+  }
+}
