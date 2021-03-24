@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { EvRegistry } from '@ev-dashboard-client/asset-registrar';
 import { KeyManager } from '@ev-dashboard-client/key-manager';
 import { Keys } from '@ew-did-registry/keys';
