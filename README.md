@@ -58,7 +58,7 @@ pnpx node dist/src/cli.js add-device \
 Example:
 ```
 pnpx node dist/src/cli.js add-device \
- --operator-key 424b82cb3f4c74a975c209192c4b6867a0d9294a0dd41dd83b468fe0d0c634da>
+ --operator-key 424b82cb3f4c74a975c209192c4b6867a0d9294a0dd41dd83b468fe0d0c634da
  --ev-registry-address 0xacbcC4db79893CDA1714795Ce26686EEb7D85E5C
  --provider-url https://volta-rpc.energyweb.org \
  --device-address 0x95caf3C2aBa58497ea2381Fdc1D7D09deC41C620 \
