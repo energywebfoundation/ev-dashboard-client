@@ -9,6 +9,12 @@
   },
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
+  "files": [
+    "dist/*"
+  ],
+  "bin": {
+    "ev-cli": "dist/cli.js"
+  },
   "dependencies": {
     "@ev-dashboard-client/asset-registrar": "1.0.0",
     "@ev-dashboard-client/did-hydrator": "1.0.0",
