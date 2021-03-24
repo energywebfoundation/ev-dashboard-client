@@ -1,5 +1,10 @@
 import { Wallet } from 'ethers';
-import { deployContracts, GANACHE_PORT, evDashboardRegistry, ocnRegistry } from './setup_contracts';
+import {
+  deployContracts,
+  GANACHE_PORT,
+  evDashboardRegistry,
+  ocnRegistry
+} from '@ev-dashboard-client/contract-deployer';
 import { EvRegistry } from '../src/ev-registry';
 import { Keys } from '@ew-did-registry/keys';
 import { toHex } from 'web3-utils';
