@@ -15,11 +15,11 @@ export const initExpressServer = (): void => {
   const keys: Keys = new Keys({ privateKey: config.assetOperator.operatorKey });
 
   /** REGISTRATION */
-  const evRegistry: EvRegistry = new EvRegistry(
-    keys,
-    config.assetOperator.evRegistry.providerUrl,
-    config.assetOperator.evRegistry.address
-  );
+  const evRegistry: EvRegistry = new EvRegistry({
+    operatorKeys: keys,
+    providerUrl: config.assetOperator.evRegistry.providerUrl,
+    evRegistryAddress: config.assetOperator.evRegistry.address
+  });
 
   app.post('/asset-operator/register-user', async (_req, res) => {
     await evRegistry.addUser();

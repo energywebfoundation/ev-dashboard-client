@@ -6,7 +6,7 @@ module.exports = {
   },
   transformIgnorePatterns: ['node_modules/.+\\.!mjs$'],
   testEnvironment: 'jsdom',
-  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
+  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
   coverageThreshold: {

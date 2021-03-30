@@ -20,33 +20,46 @@ const test = (command: string, args): string => {
 };
 
 describe('asset-operator-cli', () => {
-  let baseArgs: string;
+  let readArgs: string;
+  let writeArgs: string;
 
   beforeAll(async () => {
     await deployContracts(wallet.privateKey);
-    baseArgs = `--provider-url ${rpcUrl} --operator-key ${wallet.privateKey} --ev-registry-address ${evDashboardRegistry.address}`;
+    readArgs = `--provider-url ${rpcUrl} --ev-registry-address ${evDashboardRegistry.address}`;
+    writeArgs = `--operator-key ${wallet.privateKey} ${readArgs}`;
     await ocnRegistry.setNode('http://node.org');
     await ocnRegistry.setParty(toHex('DE'), toHex('CPO'), [0], wallet.address);
   });
 
   it('can add-user', async () => {
-    const args = baseArgs;
+    const args = writeArgs;
     test('add-user', args);
-    const evRegistry = new EvRegistry(keys, rpcUrl, evDashboardRegistry.address);
+    const evRegistry = new EvRegistry({
+      operatorKeys: keys,
+      providerUrl: rpcUrl,
+      evRegistryAddress: evDashboardRegistry.address
+    });
     expect(await evRegistry.userExists()).toBe(true);
+    const userExistsArgs = `${readArgs} --user-address ${keys.getAddress()}`;
+    const result = test('user-exists', userExistsArgs);
+    expect(result.includes('user is registered')).toBe(true);
   });
 
   it('can add-device', async () => {
     const uid = '72583848';
     const deviceAddress = '0x1c540B7C970F37917650e744d3627A64ac7DCc48';
-    const args = `${baseArgs} --device-address ${deviceAddress} --device-uid ${uid}`;
+    const args = `${writeArgs} --device-address ${deviceAddress} --device-uid ${uid}`;
     test('add-device', args);
-    const evRegistry = new EvRegistry(keys, rpcUrl, evDashboardRegistry.address);
+    const evRegistry = new EvRegistry({
+      operatorKeys: keys,
+      providerUrl: rpcUrl,
+      evRegistryAddress: evDashboardRegistry.address
+    });
     expect(await evRegistry.deviceExists(deviceAddress)).toBe(true);
   });
 
   it('can generate-key', async () => {
-    const args = baseArgs;
+    const args = writeArgs;
     const result = test('generate-key', args);
     console.log(result);
   });
