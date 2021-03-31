@@ -1,6 +1,9 @@
 name: Publish
 
 on:
+  push:
+    branches:
+      - 'DOI-759-ev-dashboard-client-npm-publish'
   pull_request:
     branches:
       - '*'
