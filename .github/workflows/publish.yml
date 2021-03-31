@@ -38,4 +38,4 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc
 
       - name: Publish packages
-        run: node common/scripts/install-run-rush.js publish --include-all
+        run: node common/scripts/install-run-rush.js publish --publish --include-all
