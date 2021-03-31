@@ -4,26 +4,42 @@ import { JsonRpcProvider } from '@ethersproject/providers';
 import { Wallet } from '@ethersproject/wallet';
 import { Keys } from '@ew-did-registry/keys';
 import { soliditySha3 } from 'web3-utils';
+import { ERROR_MESSAGES } from './errors';
 import abi from './ev-registry.abi';
 
 export class EvRegistry {
   private readonly _contract: Contract;
 
-  public constructor(operatorKeys: Keys, providerUrl: string, evRegistryAddress: string) {
+  public constructor({
+    providerUrl,
+    evRegistryAddress,
+    operatorKeys
+  }: {
+    providerUrl: string;
+    evRegistryAddress: string;
+    operatorKeys?: Keys;
+  }) {
     console.log('[EV REGISTRY] connecting to provider', providerUrl);
     const provider = new JsonRpcProvider(providerUrl);
-    const signer = new Wallet(operatorKeys.privateKey, provider);
+    const providerOrSigner = operatorKeys ? new Wallet(operatorKeys.privateKey, provider) : provider;
     console.log('[EV REGISTRY] connecting to contract', evRegistryAddress);
-    this._contract = new Contract(evRegistryAddress, abi, signer);
+    this._contract = new Contract(evRegistryAddress, abi, providerOrSigner);
   }
 
   /**
    * Check for existence of user
    */
-  public async userExists(): Promise<boolean> {
-    const user = await this._contract.signer.getAddress();
+  public async userExists(address?: string): Promise<boolean> {
+    const userAddress = address ?? (await this._contract.signer.getAddress());
     const exists = await this._contract.getAllUserAddresses();
-    return exists.includes(user);
+    return exists.includes(userAddress);
+  }
+
+  /**
+   * List all users
+   */
+  public async listUsers(): Promise<string[]> {
+    return await this._contract.getAllUserAddresses();
   }
 
   /**
@@ -52,8 +68,9 @@ export class EvRegistry {
    * Adds user (MSP/CPO, represented by wallet) to registry contract
    */
   public async addUser(): Promise<void> {
+    this._checkSigner();
     if (await this.userExists()) {
-      console.log('[EV REGISTRY] user already exists');
+      console.log(ERROR_MESSAGES.USER_ALREADY_EXISTS);
       return;
     }
     console.log('[EV REGISTRY] user does not exist');
@@ -66,6 +83,7 @@ export class EvRegistry {
    * Adds asset (vehicle/charge point, represented by wallet) to registry contract
    */
   public async addDevice(address: string, uid: string): Promise<void> {
+    this._checkSigner();
     if (await this.deviceExists(address)) {
       console.log('[EV REGISTRY] device already exists', address, uid);
       return;
@@ -89,5 +107,11 @@ export class EvRegistry {
     const hashBytes = arrayify(hash as string);
     const signature = await this._contract.signer.signMessage(hashBytes);
     return splitSignature(signature);
+  }
+
+  private _checkSigner(): void {
+    if (!this._contract.signer) {
+      throw new Error(ERROR_MESSAGES.SIGNER_NOT_INITIALIZED);
+    }
   }
 }

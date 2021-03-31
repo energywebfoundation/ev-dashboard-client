@@ -21,6 +21,11 @@ yargs
     string: true,
     describe: 'RPC Url'
   })
+  .option('user-address', {
+    alias: 'u',
+    string: true,
+    describe: 'account address of user to verify'
+  })
   .option('device-address', {
     alias: 'd',
     string: true,
@@ -36,15 +41,50 @@ yargs
     'add user to EV Registry smart contract',
     () => {},
     async (args) => {
-      checkEvRegistryArgs(args);
+      checkEvRegistryWriteArgs(args);
 
       const keys: Keys = new Keys({ privateKey: args['operator-key'] as string });
-      const evRegistry = new EvRegistry(
-        keys,
-        args['provider-url'] as string,
-        args['ev-registry-address'] as string
-      );
+      const evRegistry = new EvRegistry({
+        operatorKeys: keys,
+        providerUrl: args['provider-url'] as string,
+        evRegistryAddress: args['ev-registry-address'] as string
+      });
       await evRegistry.addUser();
+    }
+  )
+  .command(
+    'user-exists',
+    'check for user in the EV Registry smart contract',
+    () => {},
+    async (args) => {
+      checkEvRegistryReadArgs(args);
+      const userAddress = args['user-address'];
+      const keys = args['operator-key'] ? new Keys({ privateKey: args['operator-key'] }) : undefined;
+      if (!keys && !userAddress) {
+        console.log('Need operator-key or user-address to check for user');
+        process.exit(1);
+      }
+      const evRegistry = new EvRegistry({
+        operatorKeys: keys,
+        providerUrl: args['provider-url'] as string,
+        evRegistryAddress: args['ev-registry-address'] as string
+      });
+      const exists = await evRegistry.userExists(userAddress);
+      console.log(exists ? 'user is registered' : 'user is not registered');
+    }
+  )
+  .command(
+    'list-users',
+    'list alls user in the EV Registry smart contract',
+    () => {},
+    async (args) => {
+      checkEvRegistryReadArgs(args);
+      const evRegistry = new EvRegistry({
+        providerUrl: args['provider-url'] as string,
+        evRegistryAddress: args['ev-registry-address'] as string
+      });
+      const users = await evRegistry.listUsers();
+      console.log(users);
     }
   )
   .command(
@@ -52,17 +92,17 @@ yargs
     'add device to EV Registry smart contract',
     () => {},
     async (args) => {
-      checkEvRegistryArgs(args);
+      checkEvRegistryWriteArgs(args);
       if (!args['device-address'] || !args['device-uid']) {
         console.log('Need both device address and device uid to add-device');
         process.exit(1);
       }
       const keys: Keys = new Keys({ privateKey: args['operator-key'] as string });
-      const evRegistry = new EvRegistry(
-        keys,
-        args['provider-url'] as string,
-        args['ev-registry-address'] as string
-      );
+      const evRegistry = new EvRegistry({
+        operatorKeys: keys,
+        providerUrl: args['provider-url'] as string,
+        evRegistryAddress: args['ev-registry-address'] as string
+      });
       await evRegistry.addDevice(args['device-address'] as string, args['device-uid']);
     }
   )
@@ -79,11 +119,15 @@ yargs
   .help()
   .parse();
 
-function checkEvRegistryArgs(args: any): void {
+function checkEvRegistryWriteArgs(args: any): void {
   if (!args['operator-key']) {
     console.log('operator-key needs to be provided');
     process.exit(1);
   }
+  checkEvRegistryReadArgs(args);
+}
+
+function checkEvRegistryReadArgs(args: any): void {
   if (!args['ev-registry-address']) {
     console.log('ev-registry-address needs to be provided');
     process.exit(1);
