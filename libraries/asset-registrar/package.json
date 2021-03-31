@@ -28,6 +28,7 @@
     "@typechain/ethers-v4": "~4.0.0",
     "@types/jest": "~26.0.21",
     "eslint": "~7.22.0",
+    "ganache-cli": "^6.4.2",
     "jest": "~26.6.3",
     "rimraf": "~3.0.2",
     "run-with-testrpc": "~0.3.1",
