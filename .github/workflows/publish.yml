@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v2-beta
-         with:
+        with:
           node-version: '14'
 
       - name: Rush install
