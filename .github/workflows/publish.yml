@@ -31,8 +31,12 @@ jobs:
       - name: Rush install
         run: node common/scripts/install-run-rush.js install
 
+      - name: Run test
+        run: node common/scripts/install-run-rush.js test --verbose
+
       - name: Build packages
         run: node common/scripts/install-run-rush.js build --verbose
+
 
       - name: Set npm credentials
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc
