@@ -1,9 +1,6 @@
 name: Publish
 
 on:
-  push:
-    branches:
-      - '*'
   pull_request:
     branches:
       - '*'
@@ -31,11 +28,11 @@ jobs:
       - name: Rush install
         run: node common/scripts/install-run-rush.js install
 
-      - name: Rush build
+      - name: Build packages
         run: node common/scripts/install-run-rush.js build --verbose
 
       - name: Set npm credentials
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc
 
-      - name: Rush build
-        run: node common/scripts/install-run-rush.js publish
+      - name: Publish packages
+        run: node common/scripts/install-run-rush.js publish --include-all
