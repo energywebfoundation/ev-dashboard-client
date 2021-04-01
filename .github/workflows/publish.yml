@@ -27,6 +27,7 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
+          registry-url: https://registry.npmjs.org/
 
       - name: Rush install
         run: node common/scripts/install-run-rush.js install
@@ -42,3 +43,5 @@ jobs:
 
       - name: Publish packages
         run: node common/scripts/install-run-rush.js publish --publish --include-all
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
