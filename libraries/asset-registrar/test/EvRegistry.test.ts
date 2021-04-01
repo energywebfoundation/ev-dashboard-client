@@ -4,7 +4,7 @@ import {
   GANACHE_PORT,
   evDashboardRegistry,
   ocnRegistry
-} from '@ev-dashboard-client/contract-deployer';
+} from '@energyweb/ev-contract-deployer';
 import { EvRegistry } from '../src/ev-registry';
 import { Keys } from '@ew-did-registry/keys';
 import { toHex } from 'web3-utils';

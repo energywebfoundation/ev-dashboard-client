@@ -1,5 +1,5 @@
 {
-  "name": "@ev-dashboard-client/contract-deployer",
+  "name": "@energyweb/ev-contract-deployer",
   "version": "1.0.0",
   "description": "Deploys contracts to local blockchain for use in tests",
   "main": "dist/src/setup_contracts.js",

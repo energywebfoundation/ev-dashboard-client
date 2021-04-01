@@ -1,6 +1,6 @@
 import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
 import { Client } from 'nats';
-import { ISignerProvider } from '@ev-dashboard-client/signer-provider-interface';
+import { ISignerProvider } from '@energyweb/ev-signer-interface';
 import { Asset, IPrequalificationRole } from './Asset';
 import { IamClientLibFactory, IamClientLibFactoryParams } from './IamClientLibFactory';
 import { NatsConnection } from './NatsConnection';

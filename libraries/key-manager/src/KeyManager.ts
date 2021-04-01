@@ -1,6 +1,6 @@
 import * as sqlite3 from 'better-sqlite3';
 import { Wallet } from 'ethers';
-import { ISignerProvider } from '@ev-dashboard-client/signer-provider-interface';
+import { ISignerProvider } from '@energyweb/ev-signer-interface';
 import { IKeyPair } from './IKeyPair';
 
 export class KeyManager implements ISignerProvider {

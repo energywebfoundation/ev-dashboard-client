@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { EvRegistry } from '@ev-dashboard-client/asset-registrar';
-import { DID } from '@ev-dashboard-client/did-hydrator';
+import { EvRegistry } from '@energyweb/ev-registry';
+import { DID } from '@energyweb/ev-did-hydrator';
 import { Keys } from '@ew-did-registry/keys';
 import { config } from './config';
 import { keyManager } from './keyManager';

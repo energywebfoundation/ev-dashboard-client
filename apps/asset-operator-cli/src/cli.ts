@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { EvRegistry } from '@ev-dashboard-client/asset-registrar';
-import { KeyManager } from '@ev-dashboard-client/key-manager';
+import { EvRegistry } from '@energyweb/ev-registry';
+import { KeyManager } from '@energyweb/ev-key-manager';
 import { Keys } from '@ew-did-registry/keys';
 import * as yargs from 'yargs';
 

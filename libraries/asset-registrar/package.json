@@ -1,5 +1,5 @@
 {
-  "name": "@ev-dashboard-client/asset-registrar",
+  "name": "@energyweb/ev-registry",
   "version": "1.0.0",
   "description": "API for AssetOperators to enable their assets to register in the ev-dashboard.",
   "main": "dist/src/ev-registry.js",
@@ -10,6 +10,14 @@
     "test:watch": "pnpm run start-rpc -- \"jest --coverage --watchAll\"",
     "test": "pnpm run start-rpc -- \"jest --coverage --no-cache\"",
     "start-rpc": "run-with-testrpc -m \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\" --port 8544 --accounts 20 --networkId=9 --gasLimit=10000000"
+  },
+  "homepage": "https://github.com/energywebfoundation/ev-dashboard-client/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energywebfoundation/ev-dashboard-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/energywebfoundation/ev-dashboard-client/issues"
   },
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
@@ -23,7 +31,7 @@
     "web3-utils": "^1.3.0"
   },
   "devDependencies": {
-    "@ev-dashboard-client/contract-deployer": "1.0.0",
+    "@energyweb/ev-contract-deployer": "1.0.0",
     "@rushstack/eslint-config": "~2.3.2",
     "@typechain/ethers-v4": "~4.0.0",
     "@types/jest": "~26.0.21",

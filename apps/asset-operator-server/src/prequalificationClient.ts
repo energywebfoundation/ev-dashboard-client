@@ -1,7 +1,4 @@
-import {
-  PrequalificationClient,
-  IamClientLibFactoryParams
-} from '@ev-dashboard-client/prequalification-client';
+import { PrequalificationClient, IamClientLibFactoryParams } from '@energyweb/ev-prequalification';
 import { config } from './config';
 import { keyManager } from './keyManager';
 

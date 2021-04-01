@@ -4,8 +4,8 @@ import {
   GANACHE_PORT,
   evDashboardRegistry,
   ocnRegistry
-} from '@ev-dashboard-client/contract-deployer';
-import { EvRegistry } from '@ev-dashboard-client/asset-registrar';
+} from '@energyweb/ev-contract-deployer';
+import { EvRegistry } from '@energyweb/ev-registry';
 import { execSync } from 'child_process';
 import { Keys } from '@ew-did-registry/keys';
 import { toHex } from 'web3-utils';

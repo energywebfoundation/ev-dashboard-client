@@ -418,42 +418,42 @@
     // },
     //
     {
-      "packageName": "@ev-dashboard-client/asset-registrar",
+      "packageName": "@energyweb/ev-registry",
       "projectFolder": "libraries/asset-registrar",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/did-hydrator",
+      "packageName": "@energyweb/ev-did-hydrator",
       "projectFolder": "libraries/did-hydrator",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/key-manager",
+      "packageName": "@energyweb/ev-key-manager",
       "projectFolder": "libraries/key-manager",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/prequalification-client",
+      "packageName": "@energyweb/ev-prequalification",
       "projectFolder": "libraries/prequalification-client",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/signer-provider-interface",
+      "packageName": "@energyweb/ev-signer-interface",
       "projectFolder": "libraries/signer-provider-interface",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/asset-operator-server",
+      "packageName": "@energyweb/ev-asset-operator-server",
       "projectFolder": "apps/asset-operator-server",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/asset-operator-cli",
+      "packageName": "@energyweb/ev-asset-operator-cli",
       "projectFolder": "apps/asset-operator-cli",
       "shouldPublish": true
     },
     {
-      "packageName": "@ev-dashboard-client/contract-deployer",
+      "packageName": "@energyweb/ev-contract-deployer",
       "projectFolder": "tools/contract-deployer"
     }
     //
