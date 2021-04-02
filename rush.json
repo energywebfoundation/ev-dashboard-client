@@ -420,27 +420,27 @@
     {
       "packageName": "@energyweb/ev-registry",
       "projectFolder": "libraries/asset-registrar",
-      "shouldPublish": true
+      "versionPolicyName": "libraries"
     },
     {
       "packageName": "@energyweb/ev-did-hydrator",
       "projectFolder": "libraries/did-hydrator",
-      "shouldPublish": true
+      "versionPolicyName": "libraries"
     },
     {
       "packageName": "@energyweb/ev-key-manager",
       "projectFolder": "libraries/key-manager",
-      "shouldPublish": true
+      "versionPolicyName": "libraries"
     },
     {
       "packageName": "@energyweb/ev-prequalification",
       "projectFolder": "libraries/prequalification-client",
-      "shouldPublish": true
+      "versionPolicyName": "libraries"
     },
     {
       "packageName": "@energyweb/ev-signer-interface",
       "projectFolder": "libraries/signer-provider-interface",
-      "shouldPublish": true
+      "versionPolicyName": "libraries"
     },
     {
       "packageName": "@energyweb/ev-asset-operator-server",
