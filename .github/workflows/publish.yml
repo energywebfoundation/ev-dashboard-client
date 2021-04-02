@@ -29,6 +29,12 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
 
+      - name: Check for change files
+        run: node common/scripts/install-run-rush.js change -v 
+      
+      - name: Bump version 
+        run: node common/scripts/install-run-rush.js version --bump 
+      
       - name: Rush install
         run: node common/scripts/install-run-rush.js install
 
