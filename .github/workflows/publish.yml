@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - 'DOI-759-ev-dashboard-client-npm-publish'
+      - 'publish'
 
 jobs:
   cancel-previous:
@@ -38,7 +38,6 @@ jobs:
 
       - name: Check for change files
         run: node common/scripts/install-run-rush.js change -v
-        continue-on-error: true
 
       - name: Bump version
         run: node common/scripts/install-run-rush.js version --bump
