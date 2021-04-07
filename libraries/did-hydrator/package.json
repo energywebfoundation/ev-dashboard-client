@@ -1,7 +1,15 @@
 {
-  "name": "@ev-dashboard-client/did-hydrator",
+  "name": "@energyweb/ev-did-hydrator",
   "version": "1.0.0",
   "description": "API for AssetOperators to enable their assets to participate in the ev-dashboard.",
+  "homepage": "https://github.com/energywebfoundation/ev-dashboard-client#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energywebfoundation/ev-dashboard-client"
+  },
+  "bugs": {
+    "url": "https://github.com/energywebfoundation/ev-dashboard-client/issues"
+  },
   "main": "dist/DID.js",
   "scripts": {
     "build": "rimraf dist && tsc"
@@ -9,7 +17,7 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@ev-dashboard-client/signer-provider-interface": "1.0.0",
+    "@energyweb/ev-signer-interface": "1.0.0",
     "@ew-did-registry/did": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-document": "0.0.1-alpha.694.1",
     "@ew-did-registry/did-ethr-resolver": "0.0.1-alpha.694.1",
@@ -23,5 +31,9 @@
     "eslint": "~7.22.0",
     "rimraf": "~3.0.2",
     "typescript": "~4.2.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

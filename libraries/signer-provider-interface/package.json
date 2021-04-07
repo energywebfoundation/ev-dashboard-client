@@ -1,10 +1,18 @@
 {
-  "name": "@ev-dashboard-client/signer-provider-interface",
+  "name": "@energyweb/ev-signer-interface",
   "version": "1.0.0",
   "description": "An interface which provides access to a Signer for a given DID",
   "main": "dist/ISignerProvider.js",
   "scripts": {
     "build": "tsc"
+  },
+  "homepage": "https://github.com/energywebfoundation/ev-dashboard-client/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energywebfoundation/ev-dashboard-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/energywebfoundation/ev-dashboard-client/issues"
   },
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
@@ -15,5 +23,9 @@
     "@rushstack/eslint-config": "~2.3.2",
     "eslint": "~7.22.0",
     "typescript": "~4.2.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }

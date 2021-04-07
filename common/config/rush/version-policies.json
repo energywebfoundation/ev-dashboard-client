@@ -87,4 +87,13 @@
   //    */
   //   "exemptFromRushChange": false
   // }
+
+
+  // Libraries are in lockStep so that it will be easier in future to publish an umbrellla package
+  {
+    "policyName": "libraries",
+    "definitionName": "lockStepVersion",
+    "version": "1.0.0",
+    "nextBump": "minor"
+  }
 ]

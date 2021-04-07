@@ -106,3 +106,5 @@ lib
 # Root tsconfig.json has a bunch of comments and prettier messes up the spacing
 /tsconfig.json
 
+# Github workflow
+.github/workflows/*.yml

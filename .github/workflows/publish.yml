@@ -1,0 +1,52 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - 'publish'
+
+jobs:
+  cancel-previous:
+    name: 'Cancel Previous Runs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: styfle/cancel-workflow-action@0.8.0
+        with:
+          access_token: ${{ github.token }}
+
+  publish-packages:
+    runs-on: ubuntu-latest
+    needs: cancel-previous
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+          registry-url: https://registry.npmjs.org/
+
+      - name: Rush install
+        run: node common/scripts/install-run-rush.js install
+
+      - name: Build packages
+        run: node common/scripts/install-run-rush.js build --verbose
+
+      - name: Run test
+        run: node common/scripts/install-run-rush.js test --verbose
+
+      - name: Check for change files
+        run: node common/scripts/install-run-rush.js change -v
+
+      - name: Bump version
+        run: node common/scripts/install-run-rush.js version --bump
+
+      - name: Set npm credentials
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc
+
+      - name: Publish packages
+        run: node common/scripts/install-run-rush.js publish --apply --publish --include-all
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

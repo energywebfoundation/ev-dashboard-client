@@ -4,7 +4,7 @@ import { IResolverSettings, ProviderTypes } from '@ew-did-registry/did-resolver-
 import { Keys } from '@ew-did-registry/keys';
 import { Wallet } from 'ethers';
 import { JsonRpcProvider } from 'ethers/providers';
-import { ISignerProvider } from '@ev-dashboard-client/signer-provider-interface';
+import { ISignerProvider } from '@energyweb/ev-signer-interface';
 import { getDIDFromAddress } from './utils';
 import { Methods } from '@ew-did-registry/did';
 
