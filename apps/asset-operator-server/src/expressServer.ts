@@ -43,7 +43,11 @@ export const initExpressServer = (): void => {
 
   /** DID DOCUMENT */
   app.post('/asset-operator/create-did-document', async (req, res) => {
-    const did = new DID(keyManager, keys, config.assetOperator.didDocument.providerUrl);
+    const did = new DID({
+      signerProvider: keyManager,
+      operatorKeys: keys,
+      providerUrl: config.assetOperator.didDocument.providerUrl
+    });
     await did.createDocument(req.body.address);
     res.send('did document created');
   });

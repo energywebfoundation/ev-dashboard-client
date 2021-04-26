@@ -19,7 +19,7 @@
   "dependencies": {
     "@energyweb/ev-signer-interface": "1.0.0",
     "better-sqlite3": "^5.4.3",
-    "ethers": "^4.0.48"
+    "ethers": "4.0.45"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "~2.3.2",
