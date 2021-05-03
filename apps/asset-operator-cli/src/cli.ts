@@ -9,10 +9,13 @@ import * as yargs from 'yargs';
 
 enum Args {
   operatorKey = 'operator-key',
+  evRegistryAddress = 'ev-registry-address',
+  didRegistryAddress = 'did-registry-address',
   providerUrl = 'provider-url',
   transferAmount = 'transfer-amount',
+  deviceAddress = 'device-address',
   deviceDID = 'device-did',
-  didRegistryAddress = 'did-registry-address',
+  deviceUID = 'device-uid',
   dataEndpoint = 'data-endpoint'
 }
 
@@ -22,32 +25,32 @@ yargs
     string: true,
     describe: 'asset operator private key'
   })
-  .option('ev-registry-address', {
+  .option(Args.evRegistryAddress, {
     alias: 'e',
     string: true,
     describe: 'evRegistry Smart Contract address'
   })
-  .option('did-registry-address', {
+  .option(Args.didRegistryAddress, {
     alias: 'i',
     string: true,
     describe: 'DID Registry Smart Contract address'
   })
-  .option('provider-url', {
+  .option(Args.providerUrl, {
     alias: 'p',
     string: true,
     describe: 'RPC Url'
   })
-  .option('device-address', {
+  .option(Args.deviceAddress, {
     alias: 'a',
     string: true,
     describe: 'account address of device to register'
   })
-  .option('device-did', {
+  .option(Args.deviceDID, {
     alias: 'v',
     string: true,
     describe: 'DID of device'
   })
-  .option('device-uid', {
+  .option(Args.deviceUID, {
     alias: 'u',
     string: true,
     describe: 'uid of device to register'
@@ -67,14 +70,7 @@ yargs
     'add user to EV Registry smart contract',
     () => {},
     async (args) => {
-      checkEvRegistryArgs(args);
-
-      const keys: Keys = new Keys({ privateKey: args['operator-key'] as string });
-      const evRegistry = new EvRegistry(
-        keys,
-        args['provider-url'] as string,
-        args['ev-registry-address'] as string
-      );
+      const evRegistry = createEvRegistry(args);
       await evRegistry.addUser();
     }
   )
@@ -83,18 +79,10 @@ yargs
     'add device to EV Registry smart contract',
     () => {},
     async (args) => {
-      checkEvRegistryArgs(args);
-      if (!args['device-address'] || !args['device-uid']) {
-        console.log('Need both device address and device uid to add-device');
-        process.exit(1);
-      }
-      const keys: Keys = new Keys({ privateKey: args['operator-key'] as string });
-      const evRegistry = new EvRegistry(
-        keys,
-        args['provider-url'] as string,
-        args['ev-registry-address'] as string
-      );
-      await evRegistry.addDevice(args['device-address'] as string, args['device-uid']);
+      const deviceAddress = checkForArg(Args.deviceAddress, args);
+      const deviceUID = checkForArg(Args.deviceUID, args);
+      const evRegistry = createEvRegistry(args);
+      await evRegistry.addDevice(deviceAddress, deviceUID);
     }
   )
   .command(
@@ -136,17 +124,19 @@ yargs
   .help()
   .parse();
 
-function checkEvRegistryArgs(args: object): void {
-  checkForArg(Args.operatorKey, args);
-  checkForArg('ev-registry-address', args);
-  checkForArg('provider-url', args);
+function createEvRegistry(args: object): EvRegistry {
+  const operatorKey = checkForArg(Args.operatorKey, args);
+  const evRegistryAddress = checkForArg(Args.evRegistryAddress, args);
+  const providerUrl = checkForArg(Args.providerUrl, args);
+  const keys: Keys = new Keys({ privateKey: operatorKey });
+  return new EvRegistry(keys, providerUrl, evRegistryAddress);
 }
 
 function createDID(args: object): DID {
   const didRegistryAddress = checkForArg(Args.didRegistryAddress, args);
   const operatorKey = checkForArg(Args.operatorKey, args);
   const providerUrl = checkForArg(Args.providerUrl, args);
-  const keys: Keys = new Keys({ privateKey: operatorKey as string });
+  const keys: Keys = new Keys({ privateKey: operatorKey });
   const keyManager = new KeyManager('keymanager.db');
   const ipfsUrl = 'https://ipfs.infura.io:5001/api/v0/';
   const ipfsStore = new DidStore(ipfsUrl);
