@@ -19,10 +19,10 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "files": [
-    "dist/*"
+    "dist/src/*"
   ],
   "bin": {
-    "ev-cli": "dist/cli.js"
+    "ev-cli": "dist/src/cli.js"
   },
   "dependencies": {
     "@energyweb/ev-registry": "1.0.0",
