@@ -11,7 +11,7 @@ const assetWallet = Wallet.createRandom();
 export const rpcUrl = `http://localhost:${GANACHE_PORT}`;
 
 class MockSignerProvider implements ISignerProvider {
-  public async getSignerForDID(did: string): Promise<Wallet> {
+  public async getSignerForDID(): Promise<Wallet> {
     return assetWallet;
   }
 }

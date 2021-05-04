@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@energyweb/ev-did-hydrator",
+      "comment": "remove unused param in DID.test.ts",
+      "type": "none"
+    }
+  ],
+  "packageName": "@energyweb/ev-did-hydrator",
+  "email": "john.henderson@energyweb.org"
+}
