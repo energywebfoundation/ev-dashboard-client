@@ -1,0 +1,28 @@
+{
+  "name": "@energyweb/ev-asset-operator-cli",
+  "entries": [
+    {
+      "version": "1.1.0",
+      "tag": "@energyweb/ev-asset-operator-cli_v1.1.0",
+      "date": "Tue, 04 May 2021 15:35:33 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": " create-document and add-claim via the cli."
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Dependency @energyweb/ev-did-hydrator version bump from 1.0.0 to 1.1.0."
+          },
+          {
+            "comment": "Dependency @energyweb/ev-key-manager version bump from 1.0.0 to 1.1.0."
+          },
+          {
+            "comment": "Dependency @energyweb/ev-registry version bump from 1.0.0 to 1.1.0."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "@energyweb/ev-asset-operator-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A cli for AssetOperators to enable their assets to participate in the ev-dashboard.",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -25,9 +25,9 @@
     "ev-cli": "dist/src/cli.js"
   },
   "dependencies": {
-    "@energyweb/ev-registry": "1.0.0",
-    "@energyweb/ev-did-hydrator": "1.0.0",
-    "@energyweb/ev-key-manager": "1.0.0",
+    "@energyweb/ev-registry": "1.1.0",
+    "@energyweb/ev-did-hydrator": "1.1.0",
+    "@energyweb/ev-key-manager": "1.1.0",
     "@ew-did-registry/did-ipfs-store": "~0.5.0",
     "@ew-did-registry/keys": "~0.5.0",
     "yargs": "~16.2.0"

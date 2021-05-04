@@ -1,0 +1,20 @@
+{
+  "name": "@energyweb/ev-did-hydrator",
+  "entries": [
+    {
+      "version": "1.1.0",
+      "tag": "@energyweb/ev-did-hydrator_v1.1.0",
+      "date": "Tue, 04 May 2021 15:35:33 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "add addClaim to DID class. Also can pass in mint amount to createDocument."
+          },
+          {
+            "comment": "remove unused param in DID.test.ts"
+          }
+        ]
+      }
+    }
+  ]
+}
