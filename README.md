@@ -238,3 +238,10 @@ This repository use ESLint for code conventions and Prettier for syntax formatti
 Both are setup according to [Rush recommendations](https://rushjs.io/pages/maintainer/enabling_prettier/):
 - ESLint is configured per project while Prettier is configured globally.
 - Prettier is configured to run as a pre-commit hook.
+
+### Publishing new version
+
+Steps are currently:
+1. Run `rush change` manually to generate change files
+2. Run `rush version --bump` to convert change files to changelog entries and update package.json versions
+3. Merge to `publish` branch to trigger publishing via GitHub actions
