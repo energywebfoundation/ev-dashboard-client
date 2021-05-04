@@ -36,12 +36,6 @@ jobs:
       - name: Run test
         run: node common/scripts/install-run-rush.js test --verbose
 
-      - name: Check for change files
-        run: node common/scripts/install-run-rush.js change -v
-
-      - name: Bump version
-        run: node common/scripts/install-run-rush.js version --bump --bypass-policy
-
       - name: Set npm credentials
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc
 
