@@ -19,7 +19,7 @@
   "dependencies": {
     "@energyweb/ev-key-manager": "1.0.0",
     "@energyweb/ev-signer-interface": "1.0.0",
-    "ethers": "^4.0.48",
+    "ethers": "4.0.45",
     "iam-client-lib": "2.0.0-alpha.3",
     "nats": "^1.4.12"
   },

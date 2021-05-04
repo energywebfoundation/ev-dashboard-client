@@ -5,7 +5,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "pnpm run start-rpc -- \"jest\"",
-    "start-rpc": "run-with-testrpc -m \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\" --port 8544 --accounts 20 --networkId=9 --gasLimit=10000000"
+    "start-rpc": "run-with-testrpc -m \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\" --port 8544 --accounts 20 --networkId=9 --gasLimit=10000000",
+    "ganache": "ganache-cli -m \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\" --port 8544 --accounts 20 --networkId=9 --gasLimit=10000000"
   },
   "homepage": "https://github.com/energywebfoundation/ev-dashboard-client/#readme",
   "repository": {
@@ -18,16 +19,17 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "files": [
-    "dist/*"
+    "dist/src/*"
   ],
   "bin": {
-    "ev-cli": "dist/cli.js"
+    "ev-cli": "dist/src/cli.js"
   },
   "dependencies": {
     "@energyweb/ev-registry": "1.0.0",
     "@energyweb/ev-did-hydrator": "1.0.0",
     "@energyweb/ev-key-manager": "1.0.0",
-    "@ew-did-registry/keys": "0.0.1-alpha.694.1",
+    "@ew-did-registry/did-ipfs-store": "~0.5.0",
+    "@ew-did-registry/keys": "~0.5.0",
     "yargs": "~16.2.0"
   },
   "devDependencies": {
@@ -36,8 +38,10 @@
     "@types/jest": "~26.0.21",
     "@types/node": "~14.14.35",
     "@types/yargs": "~16.0.0",
+    "babel-jest": "26.6.3",
     "eslint": "~7.22.0",
-    "ethers": "^4.0.48",
+    "ethers": "4.0.45",
+    "ganache-cli": "^6.4.2",
     "jest": "~26.6.3",
     "rimraf": "~3.0.2",
     "run-with-testrpc": "~0.3.1",

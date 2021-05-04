@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@energyweb/ev-registry",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@energyweb/ev-registry",
+  "email": "john.henderson@energyweb.org"
+}
