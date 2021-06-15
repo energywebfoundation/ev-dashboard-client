@@ -1,0 +1,25 @@
+{
+  "keyManagerDbPath": "/path/to/keymanager.db",
+  "assetOperator": {
+    "operatorKey": "<EV registry operator private key>",
+    "evRegistry": {
+      "providerUrl": "https://volta-rpc.energyweb.org",
+      "address": "<EV registry contract address"
+    },
+    "didDocument": {
+      "providerUrl": "https://volta-rpc.energyweb.org"
+    }
+  },
+  "prequalification": {
+    "prequalificationIssuerRole": "<issuer role>",
+    "prequalifcationRole": "<prequalification role>",
+    "providerUrl": "https://volta-rpc.energyweb.org",
+    "userClaimsIam": {
+      "cacheServerUrl": "<cache-server url>"
+    },
+    "assetClaimsIam": {
+      "cacheServerUrl": "<cache-server url>",
+      "natsServerUrl": "<nats url with port>"
+    }
+  }
+}

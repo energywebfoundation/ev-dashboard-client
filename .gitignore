@@ -74,4 +74,6 @@ keymanager.db
 # Contract ethers typechain
 ethers-types
 
-config
+common/config/
+apps/asset-operator-server/config/**
+!/apps/asset-operator-server/config/example-config.json
