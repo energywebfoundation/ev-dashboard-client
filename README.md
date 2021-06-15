@@ -55,8 +55,8 @@ Install and start the [asset-operator-server](apps/asset-operator-server)
 
 ### Apps
 
-The two apps which are available are the [asset-operator-server](#asset-operator-server)
-and the [asset-operator-cli](#asset-operator-cli).
+The two apps which are available are the [asset-operator-server](apps/asset-operator-server)
+and the [asset-operator-cli](apps/asset-operator-cli).
 
 #### asset-operator-server
 A node server which listens for NATS messages related to the EV charging prequalification process.
