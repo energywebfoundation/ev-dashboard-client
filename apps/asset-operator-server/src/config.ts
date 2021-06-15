@@ -17,6 +17,13 @@ const convictConfig = convict({
     default: 'development',
     env: 'NODE_ENV'
   },
+  keyManagerDbPath: {
+    doc: 'Path and name of keymanager file (e.g. "/mypath/keymanager.db"',
+    format: 'strict-string',
+    default: 'keymanager.db',
+    env: 'KEY_MANAGER_PATH',
+    sensitive: true
+  },
   assetOperator: {
     operatorKey: {
       doc: 'Private key of the OCN identity of the operator',

@@ -1,2 +1,3 @@
 import { KeyManager } from '@energyweb/ev-key-manager';
-export const keyManager: KeyManager = new KeyManager('keymanager.db');
+import { config } from './config';
+export const keyManager: KeyManager = new KeyManager(config.keyManagerDbPath);
