@@ -1,4 +1,5 @@
 import { Wallet } from 'ethers';
+import { ENSNamespaceTypes, IRoleDefinition } from 'iam-client-lib';
 import { IamClientLibFactory } from './IamClientLibFactory';
 
 export class Asset {
@@ -17,11 +18,6 @@ export class Asset {
   public async requestPrequalification({ role }: { role: IPrequalificationRole }): Promise<void> {
     console.log(`${this._logPrefix} is requestingPrequalification`);
 
-    const claimData = {
-      fields: [],
-      claimType: role.roleName
-    };
-
     const iamClient = await this._iamClientLibFactory.create({
       privateKey: this._wallet.privateKey
     });
@@ -34,6 +30,19 @@ export class Asset {
       );
       return;
     }
+
+    const roleDef = await iamClient.getDefinition({
+      type: ENSNamespaceTypes.Roles,
+      namespace: role.roleName
+    });
+    if (!roleDef) {
+      throw Error(`role ${role.roleName} not known to cache server`);
+    }
+    const claimData = {
+      fields: [],
+      claimType: role.roleName,
+      claimTypeVersion: (roleDef as IRoleDefinition).version
+    };
 
     console.log(`${this._logPrefix} is creating claim request`, {
       issuer: tsoDids,
