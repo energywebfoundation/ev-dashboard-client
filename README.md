@@ -50,8 +50,7 @@ At a high level the process is:
 ## App Usage
 
 The two apps which are available are the [asset-operator-server](#asset-operator-server)
-and the [asset-operator-cli](#asset-operator-cli)
-Currently, the libraries are not published to npm and so the repository must be built as per the [Development instructions](#development) in order to use the apps.
+and the [asset-operator-cli](#asset-operator-cli).
 
 ### Running asset-operator-cli
 
@@ -151,6 +150,9 @@ ev-cli add-claim \
 
 
 ### Running asset-operator-server
+
+The `asset-operator-server` can be installed by running `npm i -g @energyweb/ev-asset-operator-server`
+
 Several configuration values are required to run the app. Please request these values as necessary.
 
 Once the app is built and the configuration has been provided, the app can be run by executing:
