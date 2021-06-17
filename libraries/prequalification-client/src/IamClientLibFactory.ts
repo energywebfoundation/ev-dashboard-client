@@ -1,4 +1,4 @@
-import { CacheServerClient, IAM } from 'iam-client-lib';
+import { IAM, setCacheClientOptions } from 'iam-client-lib';
 
 export class IamClientLibFactory {
   private readonly _params: IamClientLibFactoryParams;
@@ -11,16 +11,14 @@ export class IamClientLibFactory {
    * @param isForUserClaims
    */
   public async create({ privateKey }: { privateKey: string }): Promise<IAM> {
-    const cacheClient = new CacheServerClient({
+    setCacheClientOptions(this._params.chainId, {
       url: this._params.cacheServerUrl
     });
 
     // Because iam-client-lib is running on the server, the private key is passed in directly
     const iamClient = new IAM({
       privateKey,
-      rpcUrl: this._params.rpcUrl,
-      chainId: this._params.chainId,
-      cacheClient
+      rpcUrl: this._params.rpcUrl
     });
 
     // TODO: document why initialization is necessary.

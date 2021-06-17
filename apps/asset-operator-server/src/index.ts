@@ -1,5 +1,4 @@
-import { initExpressServer } from './expressServer';
 import { initPrequalificationClient } from './prequalificationClient';
 
-initExpressServer();
+//initExpressServer();
 initPrequalificationClient();
