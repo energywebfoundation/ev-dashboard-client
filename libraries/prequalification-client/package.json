@@ -1,6 +1,6 @@
 {
   "name": "@energyweb/ev-prequalification",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "listens for prequalification claim events on behalf of assets",
   "main": "dist/prequalification-client.js",
   "scripts": {
@@ -17,8 +17,8 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@energyweb/ev-key-manager": "1.1.0",
-    "@energyweb/ev-signer-interface": "1.1.0",
+    "@energyweb/ev-key-manager": "1.2.0",
+    "@energyweb/ev-signer-interface": "1.2.0",
     "ethers": "4.0.45",
     "iam-client-lib": "2.2.0-alpha.5",
     "nats": "^1.4.12"

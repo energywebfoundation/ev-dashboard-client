@@ -2,6 +2,18 @@
   "name": "@energyweb/ev-prequalification",
   "entries": [
     {
+      "version": "1.2.0",
+      "tag": "@energyweb/ev-prequalification_v1.2.0",
+      "date": "Tue, 15 Jun 2021 23:24:58 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "update iam-client-lib to fix prequalification"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.1.0",
       "tag": "@energyweb/ev-prequalification_v1.1.0",
       "date": "Tue, 04 May 2021 15:35:33 GMT",

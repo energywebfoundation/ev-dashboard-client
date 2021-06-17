@@ -1,6 +1,6 @@
 {
   "name": "@energyweb/ev-did-hydrator",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "API for AssetOperators to enable their assets to participate in the ev-dashboard.",
   "homepage": "https://github.com/energywebfoundation/ev-dashboard-client#readme",
   "repository": {
@@ -20,7 +20,7 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@energyweb/ev-signer-interface": "1.1.0",
+    "@energyweb/ev-signer-interface": "1.2.0",
     "@ew-did-registry/claims": "~0.5.0",
     "@ew-did-registry/did": "~0.5.0",
     "@ew-did-registry/did-document": "~0.5.0",
