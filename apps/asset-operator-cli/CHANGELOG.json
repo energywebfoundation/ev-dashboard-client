@@ -2,6 +2,29 @@
   "name": "@energyweb/ev-asset-operator-cli",
   "entries": [
     {
+      "version": "1.2.0",
+      "tag": "@energyweb/ev-asset-operator-cli_v1.2.0",
+      "date": "Tue, 15 Jun 2021 23:24:58 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "add README"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Dependency @energyweb/ev-did-hydrator version bump from 1.1.0 to 1.2.0."
+          },
+          {
+            "comment": "Dependency @energyweb/ev-key-manager version bump from 1.1.0 to 1.2.0."
+          },
+          {
+            "comment": "Dependency @energyweb/ev-registry version bump from 1.1.0 to 1.2.0."
+          }
+        ]
+      }
+    },
+    {
       "version": "1.1.0",
       "tag": "@energyweb/ev-asset-operator-cli_v1.1.0",
       "date": "Tue, 04 May 2021 15:35:33 GMT",

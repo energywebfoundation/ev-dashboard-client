@@ -11,11 +11,12 @@ convict.addFormat({
 
 // eslint-disable-next-line @rushstack/typedef-var
 const convictConfig = convict({
-  env: {
-    doc: 'The application environment.',
-    format: ['production', 'development', 'test'],
-    default: 'development',
-    env: 'NODE_ENV'
+  keyManagerDbPath: {
+    doc: 'Path and name of keymanager file (e.g. "/mypath/keymanager.db"',
+    format: 'strict-string',
+    default: 'keymanager.db',
+    env: 'KEY_MANAGER_PATH',
+    sensitive: true
   },
   assetOperator: {
     operatorKey: {
@@ -97,8 +98,8 @@ const convictConfig = convict({
   }
 });
 
-const env: string = convictConfig.get('env');
-convictConfig.loadFile(`./config/${env}.json`);
+const configPath: string = process.argv.slice(2)[0]; //https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
+convictConfig.loadFile(configPath);
 convictConfig.validate(); // throws error if config does not conform to schema
 // eslint-disable-next-line @rushstack/typedef-var
 export const config = convictConfig.getProperties();

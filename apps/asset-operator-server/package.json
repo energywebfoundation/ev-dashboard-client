@@ -1,10 +1,10 @@
 {
   "name": "@energyweb/ev-asset-operator-server",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "HTTP API for AssetOperators to enable their assets to participate in the ev-dashboard.",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js ./config/development.json"
   },
   "homepage": "https://github.com/energywebfoundation/ev-dashboard-client/#readme",
   "repository": {
@@ -17,14 +17,17 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@energyweb/ev-registry": "1.1.0",
-    "@energyweb/ev-did-hydrator": "1.1.0",
-    "@energyweb/ev-key-manager": "1.1.0",
-    "@energyweb/ev-prequalification": "1.1.0",
+    "@energyweb/ev-registry": "1.2.0",
+    "@energyweb/ev-did-hydrator": "1.2.0",
+    "@energyweb/ev-key-manager": "1.2.0",
+    "@energyweb/ev-prequalification": "1.2.0",
     "@ew-did-registry/keys": "~0.5.0",
     "express": "~4.17.1",
     "body-parser": "~1.19.0",
     "convict": "~6.0.1"
+  },
+  "bin": {
+    "ev-server": "dist/index.js"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "~2.3.2",
