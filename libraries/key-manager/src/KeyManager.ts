@@ -21,6 +21,11 @@ export class KeyManager implements ISignerProvider {
     return new Wallet(keyPair.privateKey);
   }
 
+  public async getAllSigners(): Promise<Wallet[]> {
+    const keyPairs = this.getAllKeyPairs();
+    return keyPairs.map((keyPair) => new Wallet(keyPair.privateKey));
+  }
+
   /**
    * @returns the DID of the generated keypair
    */
@@ -44,5 +49,15 @@ export class KeyManager implements ISignerProvider {
 
   private setKeyPair(keyPair: IKeyPair): void {
     this.db.prepare('INSERT INTO dids (did, private_key) VALUES (?,?)').run(keyPair.did, keyPair.privateKey);
+  }
+
+  private getAllKeyPairs(): IKeyPair[] {
+    const keypairs = this.db.prepare('SELECT * FROM dids').get();
+    return keypairs.map((keypair) => {
+      return {
+        did: keypair.did,
+        privateKey: keypair.private_key
+      };
+    });
   }
 }

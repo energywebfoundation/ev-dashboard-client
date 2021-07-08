@@ -65,6 +65,21 @@ export class Asset {
     console.log(`${this._logPrefix} published claim to DID Document`);
     return ipfsUrl;
   }
+
+  public async checkForClaimsToPublish(): Promise<void> {
+    const assetIamClient = await this._iamClientLibFactory.create({
+      privateKey: this._wallet.privateKey
+    });
+    const issuedClaims = await assetIamClient.getClaimsByRequester({
+      did: assetIamClient.getDid()!!,
+      isAccepted: true
+    });
+    // check for claims in DID document and compare (see how Switchboard does it)
+    for (const issuedClaim of issuedClaims) {
+      await assetIamClient.publishPublicClaim({ token: issuedClaim.issuedToken!! });
+      console.log(`${this._logPrefix} published claim to DID Document`);
+    }
+  }
 }
 
 export interface IPrequalificationRole {
