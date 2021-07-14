@@ -24,6 +24,13 @@ Upon start up, a message similar to this should be displayed:
 ## Prequalification process
 
 ### Prequalification request
+
+As an MSP or a CPO, the steps to initiate prequalification of an asset are:
+1. Sign-in to the EV Dashboard
+2. Navigate to the Vehicle or Chargepoints section in the left navigation
+3. Click on one of the vehicles (if an MSP) or chargepoints (if a CPO). This should open the vehicle details box.
+4. Check the checkbox beside "Request Prequalification" then click the "Apply to this vehicle/chargepoint" 
+
 When prequalification is initiated by the MSP or CPO using the EV Dashboard, a message is sent over NATS which is a trigger for the
 asset-operator-server to request prequalification on behalf of an asset. This must be done server side (instead of in the EV Dashboard
 client) because the asset's private key is held server side.
