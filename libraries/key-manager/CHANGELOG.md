@@ -1,6 +1,11 @@
 # Change Log - @energyweb/ev-key-manager
 
-This log was last generated on Fri, 18 Jun 2021 00:21:50 GMT and should not be manually modified.
+This log was last generated on Thu, 29 Jul 2021 12:49:07 GMT and should not be manually modified.
+
+## 1.4.0
+Thu, 29 Jul 2021 12:49:07 GMT
+
+_Version update only_
 
 ## 1.3.0
 Fri, 18 Jun 2021 00:21:50 GMT
