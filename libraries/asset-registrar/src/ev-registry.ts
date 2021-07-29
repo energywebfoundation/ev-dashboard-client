@@ -59,7 +59,7 @@ export class EvRegistry {
     console.log('[EV REGISTRY] user does not exist');
     const user = await this._contract.signer.getAddress();
     const { r, s, v } = await this._getSignature(user);
-    await this._contract.addUser(user, v, r, s);
+    await this._contract.addUser(user, v, r, s, { gasLimit: 1000000 });
   }
 
   /**
@@ -74,7 +74,7 @@ export class EvRegistry {
     const user = await this._contract.signer.getAddress();
     // convert uid to buffer so vehicle ID isn't parsed as an integer
     const { r, v, s } = await this._getSignature(address, Buffer.from(uid), user);
-    await this._contract.addDevice(address, uid, user, v, r, s);
+    await this._contract.addDevice(address, uid, user, v, r, s, { gasLimit: 1000000 });
   }
 
   /**
