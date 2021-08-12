@@ -6,7 +6,9 @@ generating keypairs for devices.
 
 The `asset-operator-cli` can be installed by running `npm i -g @energyweb/ev-asset-operator-cli`
 
-#### Add a user
+## Commands
+
+### Add a user
 
 This command will register the OCN party corresponding to
 the private key as a user in the ocn registry
@@ -18,7 +20,7 @@ ev-cli add-user \
  --provider-url <RPC url>
 ```
 
-#### Generate device keypair
+### Generate device keypair
 
 This command will generate a sqlite db file named `keymanager.db`
 if it doesn't exist and will generate a keypair with an address and private key.
@@ -27,7 +29,7 @@ if it doesn't exist and will generate a keypair with an address and private key.
 ev-cli generate-key
 ```
 
-#### Add a device 
+### Add a device 
 
 This command will register the device to the party corresponding to
 the private key.
@@ -51,7 +53,7 @@ ev-cli add-device \
  --device-uid 123456 
 ```
 
-#### Hydrate a device DID document
+### Hydrate a device DID document
 
 This command will transfer some tokens from the operator to the device account
 and "create" the device's DID document (i.e. will add the device's public key to the document).
@@ -74,7 +76,7 @@ ev-cli create-document \
  --device-did did:ethr:0x90052544A684935E3D5Ede4741505e332770E5D7
  ``` 
 
- #### Add claim to DID document
+ ### Add device OEM data-endpoint claim to DID document
 
  This command will issue a credential signed by the `operator-key` and retrieves the key associated
  with the device DID from the `keymanager.db` to add the claim to the device's DID document.
@@ -97,3 +99,13 @@ ev-cli add-claim \
  --data-endpoint http://device-manufacturer/#did:ethr:0x90052544A684935E3D5Ede4741505e332770E5D7 \
  --device-did did:ethr:0x90052544A684935E3D5Ede4741505e332770E5D7
  ``` 
+
+#### OEM data-endpoint
+
+It is useful for EV Dashboard use cases, such as making a device prequalification decision, for additional
+data from the Original Equipment Manufacturer (OEM) to be able. This data be associated with the device by
+having an OEM issue a credential which contains a URL which derefences to the data. 
+The URL should be dereferencable via HTTP GET request and the response should be a JSON object.
+
+For **chargepoints**, the necessary data to return in the reponse can seen in the JSON Schema [here](schemas/oem/chargepoint-schema.json).
+An example JSON response is [here](schemas/oem/chargepoint-data-example.json).
