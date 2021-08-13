@@ -59,7 +59,7 @@ export class DID {
     const issuingWallet = new Wallet(this._operatorKeys.privateKey, this._provider);
     const issuingIdentity = withKey(issuingWallet, walletPubKey);
     const issuingOperator = new Operator(issuingIdentity, this._resolverSettings);
-    const issuingDocument = new DIDDocumentFull(did, issuingOperator);
+    const issuingDocument = new DIDDocumentFull(`did:ethr:${issuingWallet.address}`, issuingOperator);
     const claimsIssuer = new ClaimsIssuer(issuingIdentity, issuingDocument, this._didStore);
 
     // Request, issue and persist credential
@@ -71,7 +71,7 @@ export class DID {
       value: {
         id: uuid(),
         serviceEndpoint: url,
-        hash: hashes.SHA256(token),
+        hash: hashes.SHA256(issuedToken),
         hashAlg: 'SHA256'
       }
     });
@@ -94,6 +94,21 @@ export class DID {
     console.log(`[${new Date()}]`, '[DID] creating did document', did);
     await document.create();
     console.log(`[${new Date()}]`, `[DID] Created identity for ${did}`);
+  }
+
+  /**
+   * Create DIDDocument for Operator
+   */
+  public async createDocumentForOperator(): Promise<void> {
+    const connectedSigner = new Wallet(this._operatorKeys.privateKey, this._provider);
+    const identityOwner = withKey(connectedSigner, walletPubKey);
+    console.log(identityOwner.publicKey);
+    const operator = new Operator(identityOwner, this._resolverSettings);
+    const did = `did:ethr:${connectedSigner.address}`;
+    const document = new DIDDocumentFull(did, operator);
+    console.log(`[${new Date()}]`, '[DID] creating did document', did);
+    await document.create();
+    console.log(`[${new Date()}]`, `[DID] did document created for ${did}`);
   }
 
   /**

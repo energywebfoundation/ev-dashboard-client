@@ -8,6 +8,7 @@ dependencies:
   '@ew-did-registry/did-document': 0.5.1
   '@ew-did-registry/did-ethr-resolver': 0.5.1
   '@ew-did-registry/did-ipfs-store': 0.5.0
+  '@ew-did-registry/did-registry': 0.5.1
   '@ew-did-registry/did-resolver-interface': 0.5.1
   '@ew-did-registry/did-store-interface': 0.5.0
   '@ew-did-registry/keys': 0.5.0
@@ -866,6 +867,21 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Ufc/OLr65V2S8TOjhIlmR2vHcWEs56sEGymnY/h0PXv5XpKfWHAajrURQKL99pdsWGQmajNlmEDVfuTxbwyVcw==
+  /@ew-did-registry/did-registry/0.5.1:
+    dependencies:
+      '@ew-did-registry/claims': 0.5.1
+      '@ew-did-registry/did': 0.5.1
+      '@ew-did-registry/did-document': 0.5.1
+      '@ew-did-registry/did-ethr-resolver': 0.5.1
+      '@ew-did-registry/did-ipfs-store': 0.5.0
+      '@ew-did-registry/did-resolver-interface': 0.5.1
+      '@ew-did-registry/did-store-interface': 0.5.0
+      '@ew-did-registry/jwt': 0.5.0
+      '@ew-did-registry/keys': 0.5.0
+      '@ew-did-registry/proxyidentity': 0.5.1
+    dev: false
+    resolution:
+      integrity: sha512-soP7UOSS4Jn1AriCdbxLvsMHxU0UnxfGGRw61tVdBVGBRG+JmOH61xYCwTvkBSt2mxLPooVvsV2GZyuVIyWwbw==
   /@ew-did-registry/did-resolver-interface/0.5.1:
     dependencies:
       '@ew-did-registry/did': 0.5.1
@@ -9250,7 +9266,7 @@ packages:
     dev: false
     name: '@rush-temp/ev-asset-operator-cli'
     resolution:
-      integrity: sha512-x+XPMtqus5kDSWy3QqkipJ8zoMFEs9R0Vbe8RwLMwm//9CAHRVFmtOa4DfajMUWDPJDv5+jAQrD5BJ6BsCjayQ==
+      integrity: sha512-idN1gXnxxO//XhxeT8FVELL7k3XaFy78eY5hpvnCxuRrummHpzBiH0i4lNEAkjnSv0ffsWWxAjyegm2s4dKFVQ==
       tarball: file:projects/ev-asset-operator-cli.tgz
     version: 0.0.0
   file:projects/ev-asset-operator-server.tgz:
@@ -9270,7 +9286,7 @@ packages:
     dev: false
     name: '@rush-temp/ev-asset-operator-server'
     resolution:
-      integrity: sha512-Ez72QoABHz5v3bhJWTam0X1FITQGpkBySCXftJ3zDKOPu2DMhAhapyT+SzhzIZyxnpCLM+8cv7H5D9D34O738w==
+      integrity: sha512-qV+MEta3SuLYoN0D2AS12ZgHmop/7e/ar1Gkvg+XBc3YynZ1gI6ISYC+bGWka3fN3gkNwyDWzXM4jxiYJkscVA==
       tarball: file:projects/ev-asset-operator-server.tgz
     version: 0.0.0
   file:projects/ev-contract-deployer.tgz:
@@ -9296,6 +9312,7 @@ packages:
       '@ew-did-registry/did-document': 0.5.1
       '@ew-did-registry/did-ethr-resolver': 0.5.1
       '@ew-did-registry/did-ipfs-store': 0.5.0
+      '@ew-did-registry/did-registry': 0.5.1
       '@ew-did-registry/did-resolver-interface': 0.5.1
       '@ew-did-registry/did-store-interface': 0.5.0
       '@ew-did-registry/keys': 0.5.0
@@ -9316,7 +9333,7 @@ packages:
     peerDependencies:
       ts-node: '*'
     resolution:
-      integrity: sha512-5NPZCFf3t78VFgy1e9pTtzgUmvzLXtkzWqy/GgBxUuSTENWMFZSvVyGRyFvZHnlJfIaK/VwHrqbuagPGE7d3IA==
+      integrity: sha512-JAuuHYqk/ts4j1UARLbuyyhmBmmm8zXcLGeTIJw181AuSprBkby/VgUa+wphqNyMjbpFmUb0DAf0JmQ33S/0OQ==
       tarball: file:projects/ev-did-hydrator.tgz
     version: 0.0.0
   file:projects/ev-key-manager.tgz:
@@ -9329,7 +9346,7 @@ packages:
     dev: false
     name: '@rush-temp/ev-key-manager'
     resolution:
-      integrity: sha512-exhbVNGkNdAQHr0rKgDd2jZwlW837PLlGX0BdiIuB9eHTRCACStSserkNhzyDrJmHA2jEhyiGAa32uG31+307Q==
+      integrity: sha512-npnyh+XlLYmNPdiCFlJ6Zt0zo8Kt7HZjbA26a2RfSIom79egz+3Jz5c3qkmuDehloiQvvePO8gDp++mAndFOiw==
       tarball: file:projects/ev-key-manager.tgz
     version: 0.0.0
   file:projects/ev-prequalification.tgz:
@@ -9344,7 +9361,7 @@ packages:
     dev: false
     name: '@rush-temp/ev-prequalification'
     resolution:
-      integrity: sha512-H7+323IEFblzU5zxq1IMjLBwcO543TsbGOeyRWSXaqx582FhMKhGnOcg0l0UpuQAnqnwtdHPmAql3nIzMHkVMg==
+      integrity: sha512-prhcyyt7unU+JcgtCE6g5f4L1Jm0zM+4c/a4aZgMFQzYvJiyi5DH37XCmPxWL++VMO0H9cB9CIuepxwmOTrPFQ==
       tarball: file:projects/ev-prequalification.tgz
     version: 0.0.0
   file:projects/ev-registry.tgz_ts-node@9.1.1:
@@ -9408,6 +9425,7 @@ specifiers:
   '@ew-did-registry/did-document': ~0.5.0
   '@ew-did-registry/did-ethr-resolver': ~0.5.0
   '@ew-did-registry/did-ipfs-store': ~0.5.0
+  '@ew-did-registry/did-registry': ~0.5.0
   '@ew-did-registry/did-resolver-interface': ~0.5.0
   '@ew-did-registry/did-store-interface': ~0.5.0
   '@ew-did-registry/keys': ~0.5.0
