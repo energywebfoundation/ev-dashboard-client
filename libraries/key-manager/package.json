@@ -1,6 +1,6 @@
 {
   "name": "@energyweb/ev-key-manager",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Optional component that can be used to centrally manage keys",
   "main": "dist/KeyManager.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "author": "Energy Web",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@energyweb/ev-signer-interface": "1.4.0",
+    "@energyweb/ev-signer-interface": "1.5.0",
     "better-sqlite3": "^5.4.3",
     "ethers": "4.0.45"
   },

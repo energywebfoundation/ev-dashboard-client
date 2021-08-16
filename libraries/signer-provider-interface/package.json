@@ -1,6 +1,6 @@
 {
   "name": "@energyweb/ev-signer-interface",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "An interface which provides access to a Signer for a given DID",
   "main": "dist/ISignerProvider.js",
   "scripts": {

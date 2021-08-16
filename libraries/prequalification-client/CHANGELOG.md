@@ -1,6 +1,11 @@
 # Change Log - @energyweb/ev-prequalification
 
-This log was last generated on Thu, 29 Jul 2021 12:49:07 GMT and should not be manually modified.
+This log was last generated on Mon, 16 Aug 2021 22:23:27 GMT and should not be manually modified.
+
+## 1.5.0
+Mon, 16 Aug 2021 22:23:27 GMT
+
+_Version update only_
 
 ## 1.4.0
 Thu, 29 Jul 2021 12:49:07 GMT
