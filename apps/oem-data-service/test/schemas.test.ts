@@ -1,6 +1,6 @@
 import Ajv, { Schema } from 'ajv';
-import chargepointOemSchema from '../schemas/oem/chargepoint-schema.json';
-import chargepointOemDataExample from '../schemas/oem/chargepoint-data-example.json';
+import chargepointOemSchema from '../schemas/chargepoint-schema.json';
+import chargepointOemDataExample from '../schemas/chargepoint-data-example.json';
 
 const ajv = new Ajv();
 

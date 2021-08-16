@@ -1,0 +1,13 @@
+{
+  "brandName": "Vexter",
+  "modelName": "XS",
+  "chargePort": {
+    "type": "Type 1",
+    "power": 80
+  },
+  "fastChargePort": {
+    "type": "Type 1",
+    "power": 400
+  },
+  "batteryCapacity": 66
+}
