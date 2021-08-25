@@ -453,6 +453,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@energyweb/oem-data-service",
+      "projectFolder": "apps/oem-data-service",
+      "shouldPublish": false
+    },
+    {
       "packageName": "@energyweb/ev-contract-deployer",
       "projectFolder": "tools/contract-deployer"
     }
