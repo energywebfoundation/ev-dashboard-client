@@ -71,13 +71,25 @@ export class Asset {
       privateKey: this._wallet.privateKey
     });
     const issuedClaims = await assetIamClient.getClaimsByRequester({
-      did: assetIamClient.getDid()!!,
+      did: this._did,
       isAccepted: true
     });
-    // check for claims in DID document and compare (see how Switchboard does it)
+    console.log(`${this._logPrefix} found ${issuedClaims.length} claims available on the cache-server`);
+    const didDoc = await assetIamClient.getDidDocument({ did: this._did, includeClaims: true });
+    console.log(
+      `${this._logPrefix} found ${
+        didDoc.service.filter((s) => s.claimType).length
+      } role claims available on the cache-server`
+    );
     for (const issuedClaim of issuedClaims) {
-      await assetIamClient.publishPublicClaim({ token: issuedClaim.issuedToken!! });
-      console.log(`${this._logPrefix} published claim to DID Document`);
+      if (didDoc.service.filter((s) => s.id === issuedClaim.id).length < 1) {
+        console.log(
+          `${this._logPrefix} claim with id ${issuedClaim.id} found on cache-server but not found in DID Document`
+        );
+        console.log(`${this._logPrefix} publishing ${issuedClaim.id} with role ${issuedClaim.claimType}`);
+        await assetIamClient.publishPublicClaim({ token: issuedClaim.issuedToken!! });
+        console.log(`${this._logPrefix} published claim to DID Document`);
+      }
     }
   }
 }

@@ -6,7 +6,7 @@ import { IKeyPair } from './IKeyPair';
 export class KeyManager implements ISignerProvider {
   private db: sqlite3.Database;
 
-  constructor(name: string) {
+  public constructor(name: string) {
     this.db = sqlite3.default(name);
     this.db
       .prepare('CREATE TABLE IF NOT EXISTS dids (id INTEGER PRIMARY KEY, did TEXT, private_key TEXT)')
@@ -52,7 +52,8 @@ export class KeyManager implements ISignerProvider {
   }
 
   private getAllKeyPairs(): IKeyPair[] {
-    const keypairs = this.db.prepare('SELECT * FROM dids').get();
+    const keypairs = this.db.prepare('SELECT * FROM dids').all();
+    console.log(`found keypairs ${JSON.stringify(keypairs)}`);
     return keypairs.map((keypair) => {
       return {
         did: keypair.did,

@@ -33,11 +33,11 @@ export class PrequalificationClient {
     natsConnection._connect();
 
     // check for any prequalification requests that were missed
-    // 1. query all stored DID
-    // 2. for each DID, instantiate IAM and check for issued requests
     const wallets = await signerProvider.getAllSigners();
     for (const wallet of wallets) {
-      const asset = new Asset(`did:ethr:${wallet.address}`, wallet, this._iamClientLibFactory);
+      const did = `did:ethr:${wallet.address}`;
+      const asset = new Asset(did, wallet, this._iamClientLibFactory);
+      console.log(`[Prequalification Client] checking for claimsToPublish for: ${did}`);
       await asset.checkForClaimsToPublish();
     }
   }
