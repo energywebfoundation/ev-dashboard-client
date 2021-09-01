@@ -14,9 +14,6 @@
     "prequalificationIssuerRole": "<issuer role>",
     "prequalifcationRole": "<prequalification role>",
     "providerUrl": "https://volta-rpc.energyweb.org",
-    "userClaimsIam": {
-      "cacheServerUrl": "<cache-server url>"
-    },
     "assetClaimsIam": {
       "cacheServerUrl": "<cache-server url>",
       "natsServerUrl": "<nats url with port>"

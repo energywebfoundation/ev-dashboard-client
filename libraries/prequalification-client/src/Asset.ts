@@ -22,15 +22,6 @@ export class Asset {
       privateKey: this._wallet.privateKey
     });
 
-    console.log(`${this._logPrefix}, retrieving DIDs with role: ${role.roleName}`);
-    const tsoDids = await iamClient.getRoleDIDs({ namespace: role.issuerRoleName });
-    if (tsoDids?.length < 1) {
-      console.log(
-        `${this._logPrefix}, no DIDs with issuer role found and so no claim request can be created`
-      );
-      return;
-    }
-
     const roleDef = await iamClient.getDefinition({
       type: ENSNamespaceTypes.Roles,
       namespace: role.roleName
@@ -45,12 +36,10 @@ export class Asset {
     };
 
     console.log(`${this._logPrefix} is creating claim request`, {
-      issuer: tsoDids,
       claim: JSON.stringify(claimData)
     });
 
     await iamClient.createClaimRequest({
-      issuer: tsoDids,
       claim: claimData
     });
 
@@ -78,7 +67,7 @@ export class Asset {
     const didDoc = await assetIamClient.getDidDocument({ did: this._did, includeClaims: true });
     console.log(
       `${this._logPrefix} found ${
-        didDoc.service.filter((s) => s.claimType).length
+        didDoc.service.filter((s) => s.claimType !== undefined).length
       } role claims available on the cache-server`
     );
     for (const issuedClaim of issuedClaims) {
@@ -87,6 +76,7 @@ export class Asset {
           `${this._logPrefix} claim with id ${issuedClaim.id} found on cache-server but not found in DID Document`
         );
         console.log(`${this._logPrefix} publishing ${issuedClaim.id} with role ${issuedClaim.claimType}`);
+        console.log(`claim jwt is ${issuedClaim.issuedToken}`);
         await assetIamClient.publishPublicClaim({ token: issuedClaim.issuedToken!! });
         console.log(`${this._logPrefix} published claim to DID Document`);
       }
