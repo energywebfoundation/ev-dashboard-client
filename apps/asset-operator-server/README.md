@@ -65,6 +65,7 @@ This is because for each known issuer of the role, a notification is sent.
 When the TSO approves the prequalification request and issues the prequalification claim on the EV dashboard,
 a message is sent over NATS which contains the issued (signed) credential. This credential is received by the 
 server which persists it on IPFS and adds a link to it in the asset's DID document service array.
+The server also checks for prequalification requests from the cache-server upon startup.
 
 ```
 [NATS] Received ISSUED CLAIM: {"id":"adff46b5-5e45-4ae5-9401-c6a538524e71","issuedToken":"<issued jwt>","requester":"did:ethr:0xDE7dF6a331c9244702bB99C22370e3447252629F","claimIssuer":["<issuer DID>"],"acceptedBy":"<issuer DID>"}
