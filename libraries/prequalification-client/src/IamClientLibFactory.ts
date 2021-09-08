@@ -22,7 +22,7 @@ export class IamClientLibFactory {
     });
 
     // TODO: document why initialization is necessary.
-    await iamClient.initializeConnection();
+    await iamClient.initializeConnection({});
     return iamClient;
   }
 }

@@ -73,14 +73,6 @@ const convictConfig = convict({
       format: Number,
       default: 73799
     },
-    userClaimsIam: {
-      cacheServerUrl: {
-        doc: 'URL to iam-cache-server which has record of user claims.',
-        format: 'strict-string',
-        default: 'undefined',
-        env: 'USER_CACHE_SERVER_URL'
-      }
-    },
     assetClaimsIam: {
       cacheServerUrl: {
         doc: 'URL to iam-cache-server which facilitates asset claim.',

@@ -25,6 +25,9 @@ class MockSignerProvider implements ISignerProvider {
   public async getSignerForDID(): Promise<Wallet> {
     return assetWallet;
   }
+  public async getAllSigners(): Promise<Wallet[]> {
+    return [assetWallet];
+  }
 }
 
 // Test can take a while as they are quite a few transactions and chain reads

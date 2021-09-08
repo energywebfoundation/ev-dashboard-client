@@ -12,7 +12,7 @@ export class PrequalificationClient {
     this._iamClientLibFactory = new IamClientLibFactory(iamClientLibFactoryParams);
   }
 
-  public init({
+  public async init({
     signerProvider,
     prequalificationRole,
     natsUrl
@@ -20,7 +20,7 @@ export class PrequalificationClient {
     signerProvider: ISignerProvider;
     prequalificationRole: IPrequalificationRole;
     natsUrl: string;
-  }): void {
+  }): Promise<void> {
     const createSubscriptions = (natsConnection: Client): void => {
       this._initVehiclePrequalificationListener({
         natsClient: natsConnection,
@@ -31,6 +31,15 @@ export class PrequalificationClient {
     // tslint:disable-next-line: no-unused-expression
     const natsConnection = new NatsConnection({ createSubscriptions, natsUrl });
     natsConnection._connect();
+
+    // check for any prequalification requests that were missed
+    const wallets = await signerProvider.getAllSigners();
+    for (const wallet of wallets) {
+      const did = `did:ethr:${wallet.address}`;
+      const asset = new Asset(did, wallet, this._iamClientLibFactory);
+      console.log(`[Prequalification Client] checking for claimsToPublish for: ${did}`);
+      await asset.checkForClaimsToPublish();
+    }
   }
 
   private _initVehiclePrequalificationListener({
