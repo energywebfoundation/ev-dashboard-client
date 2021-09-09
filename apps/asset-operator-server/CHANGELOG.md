@@ -1,6 +1,13 @@
 # Change Log - @energyweb/ev-asset-operator-server
 
-This log was last generated on Mon, 16 Aug 2021 22:23:27 GMT and should not be manually modified.
+This log was last generated on Thu, 09 Sep 2021 09:10:31 GMT and should not be manually modified.
+
+## 1.2.0
+Thu, 09 Sep 2021 09:10:31 GMT
+
+### Minor changes
+
+- Now checks for issued claims on startup
 
 ## 1.1.3
 Mon, 16 Aug 2021 22:23:27 GMT

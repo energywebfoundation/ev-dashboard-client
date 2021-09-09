@@ -2,6 +2,18 @@
   "name": "@energyweb/ev-prequalification",
   "entries": [
     {
+      "version": "1.6.0",
+      "tag": "@energyweb/ev-prequalification_v1.6.0",
+      "date": "Thu, 09 Sep 2021 09:10:31 GMT",
+      "comments": {
+        "none": [
+          {
+            "comment": "checks for issued claims for all assets on startup and adds them to DID document"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.5.0",
       "tag": "@energyweb/ev-prequalification_v1.5.0",
       "date": "Mon, 16 Aug 2021 22:23:27 GMT",

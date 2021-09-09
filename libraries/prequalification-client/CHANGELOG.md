@@ -1,6 +1,13 @@
 # Change Log - @energyweb/ev-prequalification
 
-This log was last generated on Mon, 16 Aug 2021 22:23:27 GMT and should not be manually modified.
+This log was last generated on Thu, 09 Sep 2021 09:10:31 GMT and should not be manually modified.
+
+## 1.6.0
+Thu, 09 Sep 2021 09:10:31 GMT
+
+### Updates
+
+- checks for issued claims for all assets on startup and adds them to DID document
 
 ## 1.5.0
 Mon, 16 Aug 2021 22:23:27 GMT

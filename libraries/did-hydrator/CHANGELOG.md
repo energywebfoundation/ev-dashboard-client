@@ -1,6 +1,11 @@
 # Change Log - @energyweb/ev-did-hydrator
 
-This log was last generated on Mon, 16 Aug 2021 22:23:27 GMT and should not be manually modified.
+This log was last generated on Thu, 09 Sep 2021 09:10:31 GMT and should not be manually modified.
+
+## 1.6.0
+Thu, 09 Sep 2021 09:10:31 GMT
+
+_Version update only_
 
 ## 1.5.0
 Mon, 16 Aug 2021 22:23:27 GMT
