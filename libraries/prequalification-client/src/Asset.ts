@@ -1,5 +1,5 @@
 import { Wallet } from 'ethers';
-import { ENSNamespaceTypes, IRoleDefinition } from 'iam-client-lib';
+import { IRoleDefinition, RegistrationTypes } from 'iam-client-lib';
 import { IamClientLibFactory } from './IamClientLibFactory';
 
 export class Asset {
@@ -18,19 +18,15 @@ export class Asset {
   public async requestPrequalification({ role }: { role: IPrequalificationRole }): Promise<void> {
     console.log(`${this._logPrefix} is requestingPrequalification`);
 
-    const iamClient = await this._iamClientLibFactory.create({
+    const { claimsService, cacheClient } = await this._iamClientLibFactory.create({
       privateKey: this._wallet.privateKey
     });
 
-    const roleDef = await iamClient.getDefinition({
-      type: ENSNamespaceTypes.Roles,
-      namespace: role.roleName
-    });
+    const roleDef = await cacheClient.getRoleDefinition(role.roleName);
     if (!roleDef) {
       throw Error(`role ${role.roleName} not known to cache server`);
     }
     const claimData = {
-      fields: [],
       claimType: role.roleName,
       claimTypeVersion: (roleDef as IRoleDefinition).version
     };
@@ -39,32 +35,37 @@ export class Asset {
       claim: JSON.stringify(claimData)
     });
 
-    await iamClient.createClaimRequest({
-      claim: claimData
+    await claimsService.createClaimRequest({
+      claim: claimData,
+      registrationTypes: [RegistrationTypes.OffChain]
     });
 
     console.log(`${this._logPrefix} claim request created`);
   }
 
   public async publishPublicClaim(token: string): Promise<string> {
-    const assetIamClient = await this._iamClientLibFactory.create({
+    const { claimsService } = await this._iamClientLibFactory.create({
       privateKey: this._wallet.privateKey
     });
-    const ipfsUrl = await assetIamClient.publishPublicClaim({ token });
+    const ipfsUrl = await claimsService.publishPublicClaim({
+      claim: {
+        token
+      }
+    });
     console.log(`${this._logPrefix} published claim to DID Document`);
-    return ipfsUrl;
+    return ipfsUrl || 'No IPFS URL returned';
   }
 
   public async checkForClaimsToPublish(): Promise<void> {
-    const assetIamClient = await this._iamClientLibFactory.create({
+    const { claimsService, cacheClient } = await this._iamClientLibFactory.create({
       privateKey: this._wallet.privateKey
     });
-    const issuedClaims = await assetIamClient.getClaimsByRequester({
+    const issuedClaims = await claimsService.getClaimsByRequester({
       did: this._did,
       isAccepted: true
     });
     console.log(`${this._logPrefix} found ${issuedClaims.length} claims available on the cache-server`);
-    const didDoc = await assetIamClient.getDidDocument({ did: this._did, includeClaims: true });
+    const didDoc = await cacheClient.getDidDocument(this._did, true);
     console.log(
       `${this._logPrefix} found ${
         didDoc.service.filter((s) => s.claimType !== undefined).length
@@ -77,7 +78,7 @@ export class Asset {
         );
         console.log(`${this._logPrefix} publishing ${issuedClaim.id} with role ${issuedClaim.claimType}`);
         console.log(`claim jwt is ${issuedClaim.issuedToken}`);
-        await assetIamClient.publishPublicClaim({ token: issuedClaim.issuedToken!! });
+        await claimsService.publishPublicClaim({ claim: { token: issuedClaim.issuedToken } });
         console.log(`${this._logPrefix} published claim to DID Document`);
       }
     }

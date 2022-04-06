@@ -1,4 +1,11 @@
-import { IAM, setCacheClientOptions } from 'iam-client-lib';
+import {
+  initWithPrivateKeySigner,
+  MessagingMethod,
+  setMessagingConfig,
+  setCacheConfig,
+  CacheClient,
+  ClaimsService
+} from 'iam-client-lib';
 
 export class IamClientLibFactory {
   private readonly _params: IamClientLibFactoryParams;
@@ -10,20 +17,28 @@ export class IamClientLibFactory {
    * @param privateKey
    * @param isForUserClaims
    */
-  public async create({ privateKey }: { privateKey: string }): Promise<IAM> {
-    setCacheClientOptions(this._params.chainId, {
-      url: this._params.cacheServerUrl
+  public async create({
+    privateKey
+  }: {
+    privateKey: string;
+  }): Promise<{ claimsService: ClaimsService; cacheClient: CacheClient }> {
+    const { connectToCacheServer } = await initWithPrivateKeySigner(privateKey, this._params.rpcUrl);
+
+    setMessagingConfig(73799, {
+      messagingMethod: MessagingMethod.Nats,
+      natsServerUrl: 'http://localhost:9222'
     });
 
-    // Because iam-client-lib is running on the server, the private key is passed in directly
-    const iamClient = new IAM({
-      privateKey,
-      rpcUrl: this._params.rpcUrl
+    setCacheConfig(73799, {
+      url: 'http://localhost:3000/v1',
+      cacheServerSupportsAuth: true
     });
 
-    // TODO: document why initialization is necessary.
-    await iamClient.initializeConnection({});
-    return iamClient;
+    const { cacheClient, connectToDidRegistry } = await connectToCacheServer();
+
+    const { claimsService } = await connectToDidRegistry();
+
+    return { cacheClient, claimsService };
   }
 }
 

@@ -1,4 +1,3 @@
-import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
 import { Client } from 'nats';
 import { ISignerProvider } from '@energyweb/ev-signer-interface';
 import { Asset, IPrequalificationRole } from './Asset';
@@ -35,7 +34,7 @@ export class PrequalificationClient {
     // check for any prequalification requests that were missed
     const wallets = await signerProvider.getAllSigners();
     for (const wallet of wallets) {
-      const did = `did:ethr:${wallet.address}`;
+      const did = `did:ethr:volta:${wallet.address}`;
       const asset = new Asset(did, wallet, this._iamClientLibFactory);
       console.log(`[Prequalification Client] checking for claimsToPublish for: ${did}`);
       await asset.checkForClaimsToPublish();
@@ -69,7 +68,7 @@ export class PrequalificationClient {
     });
 
     // Listen for issued prequalification claims
-    natsClient.subscribe(`*.${NATS_EXCHANGE_TOPIC}`, async (data) => {
+    natsClient.subscribe(`*.claim-exchange.*.*`, async (data) => {
       const message = JSON.parse(data) as IMessage;
       console.log(`[NATS] Received message on claims exchange.`);
       if (!message.issuedToken) {
