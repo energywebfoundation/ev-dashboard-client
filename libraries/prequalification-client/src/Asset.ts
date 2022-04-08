@@ -60,7 +60,7 @@ export class Asset {
     const { claimsService, cacheClient } = await this._iamClientLibFactory.create({
       privateKey: this._wallet.privateKey
     });
-    const issuedClaims = await claimsService.getClaimsByRequester({
+    const issuedClaims = await claimsService.getClaimsBySubject({
       did: this._did,
       isAccepted: true
     });
@@ -69,7 +69,7 @@ export class Asset {
     console.log(
       `${this._logPrefix} found ${
         didDoc.service.filter((s) => s.claimType !== undefined).length
-      } role claims available on the cache-server`
+      } role claims in asset DID Document`
     );
     for (const issuedClaim of issuedClaims) {
       if (didDoc.service.filter((s) => s.id === issuedClaim.id).length < 1) {
