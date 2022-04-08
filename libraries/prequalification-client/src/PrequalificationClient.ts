@@ -1,4 +1,3 @@
-import { NATS_EXCHANGE_TOPIC } from 'iam-client-lib';
 import { Client } from 'nats';
 import { ISignerProvider } from '@energyweb/ev-signer-interface';
 import { Asset, IPrequalificationRole } from './Asset';
@@ -35,7 +34,8 @@ export class PrequalificationClient {
     // check for any prequalification requests that were missed
     const wallets = await signerProvider.getAllSigners();
     for (const wallet of wallets) {
-      const did = `did:ethr:${wallet.address}`;
+      const did = `did:ethr:volta:${wallet.address}`;
+      // const did = `did:ethr:${wallet.address}`;
       const asset = new Asset(did, wallet, this._iamClientLibFactory);
       console.log(`[Prequalification Client] checking for claimsToPublish for: ${did}`);
       await asset.checkForClaimsToPublish();
@@ -56,7 +56,8 @@ export class PrequalificationClient {
     natsClient.subscribe(`*.${PREQUALIFICATION_REQUEST_TOPIC}`, async (data) => {
       const json = JSON.parse(data);
       console.log(`[NATS] Received prequalification REQUEST for: ${JSON.stringify(json)}`);
-      const assetDID: string = json.did;
+      const voltaAssetDID: string = json.did;
+      const assetDID = 'did:ethr:' + voltaAssetDID.split(':')[3];
       const wallet = await signerProvider.getSignerForDID(assetDID);
       console.log(`[NATS] Queried signer for asset: ${assetDID}`);
       if (!wallet) {
@@ -69,7 +70,7 @@ export class PrequalificationClient {
     });
 
     // Listen for issued prequalification claims
-    natsClient.subscribe(`*.${NATS_EXCHANGE_TOPIC}`, async (data) => {
+    natsClient.subscribe(`*.claim-exchange.*.*`, async (data) => {
       const message = JSON.parse(data) as IMessage;
       console.log(`[NATS] Received message on claims exchange.`);
       if (!message.issuedToken) {
@@ -77,7 +78,8 @@ export class PrequalificationClient {
         return;
       }
       console.log(`[NATS] Received ISSUED CLAIM: ${JSON.stringify(message)}`);
-      const assetDID: string = message.requester;
+      const voltaAssetDID: string = message.requester;
+      const assetDID = 'did:ethr:' + voltaAssetDID.split(':')[3];
       const signer = await signerProvider.getSignerForDID(assetDID);
       console.log(`[NATS] Retrieved signer for asset: ${assetDID}`);
       if (!signer) {

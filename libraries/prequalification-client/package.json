@@ -20,7 +20,7 @@
     "@energyweb/ev-key-manager": "1.6.0",
     "@energyweb/ev-signer-interface": "1.6.0",
     "ethers": "4.0.45",
-    "iam-client-lib": "3.0.0-alpha.41",
+    "iam-client-lib": "5.0.0",
     "nats": "^1.4.12"
   },
   "devDependencies": {
